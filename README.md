@@ -1,4 +1,4 @@
-Pocket-Monsters-Minified-
+Pocket-Monsters-Minified
 =========================
 
 OOP team project

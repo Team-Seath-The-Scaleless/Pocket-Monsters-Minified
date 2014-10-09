@@ -1,6 +1,0 @@
-c:\users\ivo\documents\visual studio 2013\Projects\GameProject\GameProjectDiagram\bin\Debug\GameProjectDiagram.exe.config
-c:\users\ivo\documents\visual studio 2013\Projects\GameProject\GameProjectDiagram\bin\Debug\GameProjectDiagram.exe
-c:\users\ivo\documents\visual studio 2013\Projects\GameProject\GameProjectDiagram\bin\Debug\GameProjectDiagram.pdb
-c:\users\ivo\documents\visual studio 2013\Projects\GameProject\GameProjectDiagram\obj\Debug\GameProjectDiagram.csprojResolveAssemblyReference.cache
-c:\users\ivo\documents\visual studio 2013\Projects\GameProject\GameProjectDiagram\obj\Debug\GameProjectDiagram.exe
-c:\users\ivo\documents\visual studio 2013\Projects\GameProject\GameProjectDiagram\obj\Debug\GameProjectDiagram.pdb
