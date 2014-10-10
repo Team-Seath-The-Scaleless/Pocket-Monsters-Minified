@@ -3,7 +3,7 @@ using System.Linq;
 using System.Text;
 using System.Collections.Generic;
 
-namespace GameProjectDiagram
+namespace Assets.Scripts
 {
     public abstract class Environment : GameElement
     {

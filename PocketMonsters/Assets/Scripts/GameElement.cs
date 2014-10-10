@@ -4,7 +4,7 @@ using System.Text;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GameProjectDiagram
+namespace Assets.Scripts
 {
     public abstract class GameElement : MonoBehaviour
     {
