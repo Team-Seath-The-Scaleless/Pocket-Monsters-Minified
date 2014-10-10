@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Assets.Scripts.Battlefield">
-    <Position X="7.25" Y="4" Width="1.5" />
+    <Position X="11.75" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\Battlefield.cs</FileName>
@@ -23,28 +23,28 @@
     <Lollipop Position="1.19" />
   </Class>
   <Class Name="Assets.Scripts.Environment">
-    <Position X="8.5" Y="2.25" Width="1.5" />
+    <Position X="13" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\Environment.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Assets.Scripts.GameElement">
-    <Position X="5" Y="0.5" Width="1.5" />
+    <Position X="7.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\GameElement.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Assets.Scripts.GameField">
-    <Position X="9.5" Y="4" Width="1.5" />
+    <Position X="14" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\GameField.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Assets.Scripts.Hero" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="12" Y="0.5" Width="1.5" />
+    <Position X="16.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\Hero.cs</FileName>
@@ -66,22 +66,43 @@
       <FileName>Assets\Scripts\Pokemon.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="Assets.Scripts.Ability" Collapsed="true">
+    <Position X="8.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Ability.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Assets.Scripts.SpecialAbility" Collapsed="true">
+    <Position X="9.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\SpecialAbility.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Assets.Scripts.NormalAttack" Collapsed="true">
+    <Position X="7.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\NormalAttack.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Interface Name="Assets.Scripts.IFightable" Collapsed="true">
-    <Position X="12" Y="1.75" Width="1.5" />
+    <Position X="16.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\IFightable.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Assets.Scripts.IMovable" Collapsed="true">
-    <Position X="13.75" Y="1.75" Width="1.5" />
+    <Position X="18.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\IMovable.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Assets.Scripts.ITalkable" Collapsed="true">
-    <Position X="12" Y="2.5" Width="1.5" />
+    <Position X="16.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\ITalkable.cs</FileName>

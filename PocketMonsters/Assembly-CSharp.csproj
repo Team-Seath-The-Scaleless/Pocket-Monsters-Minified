@@ -47,6 +47,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Ability.cs" />
     <Compile Include="Assets\Scripts\Battlefield.cs" />
     <Compile Include="Assets\Scripts\Creatures.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
@@ -58,7 +59,9 @@
     <Compile Include="Assets\Scripts\IMovable.cs" />
     <Compile Include="Assets\Scripts\ITalkable.cs" />
     <Compile Include="Assets\Scripts\NonFightingCrateures.cs" />
+    <Compile Include="Assets\Scripts\NormalAttack.cs" />
     <Compile Include="Assets\Scripts\Pokemon.cs" />
+    <Compile Include="Assets\Scripts\SpecialAbility.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Scripts\PokemonGameDiagram.cd" />
