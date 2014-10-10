@@ -46,19 +46,21 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Battlefield.cs" />
-     <Compile Include="Assets\Scripts\Creatures.cs" />
-     <Compile Include="Assets\Scripts\Enemy.cs" />
-     <Compile Include="Assets\Scripts\Environment.cs" />
-     <Compile Include="Assets\Scripts\GameElement.cs" />
-     <Compile Include="Assets\Scripts\GameField.cs" />
-     <Compile Include="Assets\Scripts\Hero.cs" />
-     <Compile Include="Assets\Scripts\IFightable.cs" />
-     <Compile Include="Assets\Scripts\IMovable.cs" />
-     <Compile Include="Assets\Scripts\ITalkable.cs" />
-     <Compile Include="Assets\Scripts\NonFightingCrateures.cs" />
-     <Compile Include="Assets\Scripts\Pokemon.cs" />
-     <None Include="Assets\Scripts\BaseDiagram.cd" />
+     <Compile Include="Assets\Scripts\Abilities\Ability.cs" />
+     <Compile Include="Assets\Scripts\Abilities\NormalAttack.cs" />
+     <Compile Include="Assets\Scripts\Abilities\SpecialAbility.cs" />
+     <Compile Include="Assets\Scripts\Common\GameElement.cs" />
+     <Compile Include="Assets\Scripts\Creatures\Creature.cs" />
+     <Compile Include="Assets\Scripts\Creatures\EnemyNpc.cs" />
+     <Compile Include="Assets\Scripts\Creatures\FriendlyNpc.cs" />
+     <Compile Include="Assets\Scripts\Creatures\Hero.cs" />
+     <Compile Include="Assets\Scripts\Creatures\Pokemon.cs" />
+     <Compile Include="Assets\Scripts\Environment\Battlefield.cs" />
+     <Compile Include="Assets\Scripts\Environment\Environment.cs" />
+     <Compile Include="Assets\Scripts\Environment\GameField.cs" />
+     <Compile Include="Assets\Scripts\Interfaces\IFightable.cs" />
+     <Compile Include="Assets\Scripts\Interfaces\IMovable.cs" />
+     <Compile Include="Assets\Scripts\Interfaces\ITalkable.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
