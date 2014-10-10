@@ -7,5 +7,6 @@ namespace GameProjectDiagram
 {
     public class Battlefield : Environment
     {
+
     }
 }

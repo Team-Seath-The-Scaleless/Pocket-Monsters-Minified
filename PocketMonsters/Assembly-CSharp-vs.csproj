@@ -50,8 +50,8 @@
      <Compile Include="Assets\Scripts\Creatures.cs" />
      <Compile Include="Assets\Scripts\Enemy.cs" />
      <Compile Include="Assets\Scripts\Environment.cs" />
+     <Compile Include="Assets\Scripts\GameElement.cs" />
      <Compile Include="Assets\Scripts\GameField.cs" />
-     <Compile Include="Assets\Scripts\GameObject.cs" />
      <Compile Include="Assets\Scripts\Hero.cs" />
      <Compile Include="Assets\Scripts\IFightable.cs" />
      <Compile Include="Assets\Scripts\IMovable.cs" />
