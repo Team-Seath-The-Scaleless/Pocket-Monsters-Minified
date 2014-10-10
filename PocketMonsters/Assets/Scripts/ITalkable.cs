@@ -7,5 +7,6 @@ namespace Assets.Scripts
 {
     public interface ITalkable
     {
+        string[] DialogueLines { get; }
     }
 }

@@ -2,10 +2,12 @@
 using System.Linq;
 using System.Text;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace Assets.Scripts
 {
-    public class Friendly : Creatures, ITalkable
+    public abstract class Creature : GameElement
     {
+        
     }
 }

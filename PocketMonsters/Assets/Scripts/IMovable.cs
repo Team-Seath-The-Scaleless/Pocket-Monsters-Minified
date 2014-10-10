@@ -7,5 +7,6 @@ namespace Assets.Scripts
 {
     public interface IMovable
     {
+        void Move(string direction);
     }
 }

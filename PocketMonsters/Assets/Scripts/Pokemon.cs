@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Assets.Scripts
 {
-    public class Pokemon : Creatures
+    public class Pokemon : Creature
     {
     }
 }
