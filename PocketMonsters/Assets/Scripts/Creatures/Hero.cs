@@ -5,6 +5,7 @@
     using System.Text;
     using System.Collections.Generic;
 
+    using UnityEngine;
     using Common;
     using Interfaces;
 
@@ -12,8 +13,11 @@
     {
         public Hero()
         {
+            //this.Player = this.gameObject;
             this.Pokemons = new List<IPokemon>();
         }
+
+        public GameObject Player { get; private set; }
 
         public IList<IPokemon> Pokemons { get; private set; }
 

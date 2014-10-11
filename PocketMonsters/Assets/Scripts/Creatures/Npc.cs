@@ -6,7 +6,6 @@
     using System.Collections.Generic;
 
     using UnityEngine;
-
     using Common;
 
     public abstract class Npc : GameElement

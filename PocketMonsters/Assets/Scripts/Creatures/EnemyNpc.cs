@@ -5,7 +5,7 @@
     using System.Text;
     using System.Collections.Generic;
 
-    using Interfaces
+    using Interfaces;
 
     public class EnemyNpc : Npc, IPokemonTrainer, ITalkable
     {

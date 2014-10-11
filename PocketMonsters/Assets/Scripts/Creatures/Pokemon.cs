@@ -44,6 +44,7 @@
 
         public IList<IAbility> Abilities { get; protected set; }
 
+        // Lol... Better Attack(target){}
         public void TakeDamage(int damage)
         {
             this.Health -= damage;
@@ -76,7 +77,7 @@
         public void ForgetAbility(IAbility ability)
         {
             // should probably add custom exception
-            if (this.Abilities.Contains(ability) && this.Abilities.Count <= 1))
+            if (this.Abilities.Contains(ability) && this.Abilities.Count <= 1)
             {
                 throw new InvalidOperationException();
             }
