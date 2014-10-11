@@ -52,6 +52,7 @@
     <Compile Include="Assets\Scripts\Abilities\NormalAttack.cs" />
     <Compile Include="Assets\Scripts\Abilities\SpecialAbility.cs" />
     <Compile Include="Assets\Scripts\Common\GameElement.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\IPokemon.cs" />
     <Compile Include="Assets\Scripts\Creatures\Npc.cs" />
     <Compile Include="Assets\Scripts\Creatures\EnemyNpc.cs" />
     <Compile Include="Assets\Scripts\Creatures\FriendlyNpc.cs" />
@@ -62,7 +63,7 @@
     <Compile Include="Assets\Scripts\Environment\Environment.cs" />
     <Compile Include="Assets\Scripts\Environment\GameField.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IAbility.cs" />
-    <Compile Include="Assets\Scripts\Interfaces\IFightable.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\IPokemonTrainer.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IMovable.cs" />
     <Compile Include="Assets\Scripts\Interfaces\ITalkable.cs" />
   </ItemGroup>

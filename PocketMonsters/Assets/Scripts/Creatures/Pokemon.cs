@@ -8,7 +8,7 @@
     using Interfaces;
     using Abilities;
 
-    public abstract class Pokemon
+    public abstract class Pokemon : IPokemon
     {
         protected Pokemon(int health, int attack, int defense, int specialAttack, int speed, int specialDefense, PokemonType type)
         {
