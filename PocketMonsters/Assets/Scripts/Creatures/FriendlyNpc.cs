@@ -6,7 +6,7 @@ using Interfaces;
 
 namespace Creatures
 {
-    public class FriendlyNpc : Creature, ITalkable
+    public class FriendlyNpc : Npc, ITalkable
     {
         public static readonly string[] DefaultDialogue = { "Hello", "How are you today" };
 

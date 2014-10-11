@@ -7,7 +7,7 @@ using Common;
 
 namespace Creatures
 {
-    public abstract class Creature : GameElement
+    public abstract class Npc : GameElement
     {
         
     }

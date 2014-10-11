@@ -6,7 +6,7 @@ using Interfaces;
 
 namespace Creatures
 {
-    public class EnemyNpc : Creature, IFightable
+    public class EnemyNpc : Npc, IFightable
     {
     }
 }
