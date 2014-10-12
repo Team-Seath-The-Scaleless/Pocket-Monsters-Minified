@@ -1,4 +1,4 @@
-﻿namespace Creatures
+﻿namespace Pokemons
 {
     using System;
     using System.Linq;
@@ -10,15 +10,15 @@
 
     public abstract class Pokemon : IPokemon
     {
-        protected Pokemon(int health, int attack, int defense, int specialAttack, int speed, int specialDefense, PokemonType type)
+        protected Pokemon(int health, int attack, int defense, int specialAttack, int specialDefense, int speed, PokemonType type)
         {
             this.Health = health;
             this.MaxHealth = health;
-            this.Speed = speed;
             this.Attack = attack;
             this.Defense = defense;
             this.SpecialAttack = specialAttack;
             this.SpecialDefense = specialDefense;
+            this.Speed = speed;
             this.Type = type;
             this.IsAlive = true;
             this.Abilities = new List<IAbility> { new NormalAttack(this.Attack) };

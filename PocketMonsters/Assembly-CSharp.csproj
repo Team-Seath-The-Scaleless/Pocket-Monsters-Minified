@@ -62,8 +62,11 @@
     <Compile Include="Assets\Scripts\Creatures\FriendlyNpc.cs" />
     <Compile Include="Assets\Scripts\Creatures\Hero.cs" />
     <Compile Include="Assets\Scripts\Creatures\Npc.cs" />
-    <Compile Include="Assets\Scripts\Creatures\Pokemon.cs" />
-    <Compile Include="Assets\Scripts\Creatures\PokemonType.cs" />
+    <Compile Include="Assets\Scripts\Pokemons\Bulbasaur.cs" />
+    <Compile Include="Assets\Scripts\Pokemons\Charmander.cs" />
+    <Compile Include="Assets\Scripts\Pokemons\Meowth.cs" />
+    <Compile Include="Assets\Scripts\Pokemons\Pokemon.cs" />
+    <Compile Include="Assets\Scripts\Pokemons\PokemonType.cs" />
     <Compile Include="Assets\Scripts\Environment\Battlefield.cs" />
     <Compile Include="Assets\Scripts\Environment\Environment.cs" />
     <Compile Include="Assets\Scripts\Environment\GameField.cs" />
@@ -72,6 +75,8 @@
     <Compile Include="Assets\Scripts\Interfaces\IPokemon.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IPokemonTrainer.cs" />
     <Compile Include="Assets\Scripts\Interfaces\ITalkable.cs" />
+    <Compile Include="Assets\Scripts\Pokemons\Rattata.cs" />
+    <Compile Include="Assets\Scripts\Pokemons\Squirtle.cs" />
     <None Include="Assets\PokemonGameDiagram.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

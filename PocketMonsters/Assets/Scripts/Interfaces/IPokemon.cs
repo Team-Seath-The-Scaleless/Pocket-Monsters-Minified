@@ -2,7 +2,7 @@
 {
     using System.Collections.Generic;
 
-    using Creatures;
+    using Pokemons;
 
     public interface IPokemon
     {

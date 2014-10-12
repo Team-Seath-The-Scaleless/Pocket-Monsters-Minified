@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Creatures
+﻿namespace Pokemons
 {
     public enum PokemonType
     {
