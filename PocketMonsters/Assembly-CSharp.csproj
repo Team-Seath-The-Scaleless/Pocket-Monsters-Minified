@@ -64,7 +64,10 @@
     <Compile Include="Assets\Scripts\Creatures\Npc.cs" />
     <Compile Include="Assets\Scripts\Pokemons\Bulbasaur.cs" />
     <Compile Include="Assets\Scripts\Pokemons\Charmander.cs" />
+    <Compile Include="Assets\Scripts\Pokemons\Drunkemon.cs" />
+    <Compile Include="Assets\Scripts\Pokemons\Grandfatty.cs" />
     <Compile Include="Assets\Scripts\Pokemons\Meowth.cs" />
+    <Compile Include="Assets\Scripts\Pokemons\Pesho.cs" />
     <Compile Include="Assets\Scripts\Pokemons\Pokemon.cs" />
     <Compile Include="Assets\Scripts\Pokemons\PokemonType.cs" />
     <Compile Include="Assets\Scripts\Environment\Battlefield.cs" />
@@ -76,6 +79,8 @@
     <Compile Include="Assets\Scripts\Interfaces\IPokemonTrainer.cs" />
     <Compile Include="Assets\Scripts\Interfaces\ITalkable.cs" />
     <Compile Include="Assets\Scripts\Pokemons\Rattata.cs" />
+    <Compile Include="Assets\Scripts\Pokemons\Separatist.cs" />
+    <Compile Include="Assets\Scripts\Pokemons\Sheldon.cs" />
     <Compile Include="Assets\Scripts\Pokemons\Squirtle.cs" />
     <None Include="Assets\PokemonGameDiagram.cd" />
   </ItemGroup>
