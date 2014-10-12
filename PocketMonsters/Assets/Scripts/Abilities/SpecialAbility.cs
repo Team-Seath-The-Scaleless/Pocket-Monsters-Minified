@@ -4,25 +4,20 @@
 
     public abstract class SpecialAbility : Ability
     {
-        Random hitChanceCalculation = new Random();
-        private int spellHitChance;
+        private readonly Random hitChanceCalculator = new Random();
 
         protected SpecialAbility(AbilityType type, int spellHitChance)
             : base(type)
         {
         }
+
+        public int SpellHitChance { get; protected set; }
         
-        protected bool targetHit()
+        protected bool TargetIsHit()
         {
-            int currentHitChance = hitChanceCalculation.Next(1, 11);
-            if (spellHitChance >= currentHitChance)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            int currentHitChance = this.hitChanceCalculator.Next(1, 11);
+
+            return this.SpellHitChance >= currentHitChance;
         }
     }
 }

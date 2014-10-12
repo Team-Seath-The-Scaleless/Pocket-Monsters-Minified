@@ -5,15 +5,17 @@
     public class Armageddon : SpecialAbility
     {
         public const int ArmageddonDamage = 15; // if pokemon max health = ~20/30.
-        public const AbilityType ArmageddonSpellType = AbilityType.Battle;
-        public const int ArmageddonHitChance = 3;
-        bool ArmageddonHit;
 
-        protected Armageddon(int ArmageddonDamage)
-            : base(ArmageddonSpellType, ArmageddonHitChance)
+        public const int ArmageddonHitChance = 3;
+
+        private bool armageddonHit;
+
+        protected Armageddon(int armageddonDamage)
+            : base(AbilityType.Battle, ArmageddonHitChance)
         {
-            ArmageddonHit = targetHit();
+            this.armageddonHit = this.TargetIsHit();
         }
+
         // do dmg method , enemyCurrentHP - ArmageddonDamage 
     }
 }
