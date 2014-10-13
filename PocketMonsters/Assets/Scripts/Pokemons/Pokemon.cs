@@ -9,7 +9,7 @@
 
     public abstract class Pokemon : IPokemon
     {
-        protected Pokemon(int health, int attack, int defense, int specialAttack, int specialDefense, int speed, PokemonType type, int currentlyActive = null)
+        protected Pokemon(int health, int attack, int defense, int specialAttack, int specialDefense, int speed, PokemonType type)
         {
             this.Health = health;
             this.MaxHealth = health;
@@ -21,7 +21,7 @@
             this.Type = type;
             this.IsAlive = true;
             this.Abilities = new List<IAbility> { new NormalAttack(this.Attack) };
-            this.CurrentlyActive = currentlyActive;
+            this.CurrentlyActive = false;
         }
 
         public int Health { get; protected set; }
@@ -44,7 +44,7 @@
 
         public IList<IAbility> Abilities { get; protected set; }
 
-        public int CurrentlyActive { get; protected set; }
+		public bool CurrentlyActive { get; set; }
 
         // Lol... Better Attack(target){}
         public void TakeDamage(int damage)
