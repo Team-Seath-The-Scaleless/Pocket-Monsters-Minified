@@ -4,13 +4,12 @@
     using System.Linq;
     using System.Text;
     using System.Collections.Generic;
-
     using Interfaces;
     using Abilities;
 
     public abstract class Pokemon : IPokemon
     {
-        protected Pokemon(int health, int attack, int defense, int specialAttack, int specialDefense, int speed, PokemonType type)
+        protected Pokemon(int health, int attack, int defense, int specialAttack, int specialDefense, int speed, PokemonType type, int currentlyActive = null)
         {
             this.Health = health;
             this.MaxHealth = health;
@@ -22,6 +21,7 @@
             this.Type = type;
             this.IsAlive = true;
             this.Abilities = new List<IAbility> { new NormalAttack(this.Attack) };
+            this.CurrentlyActive = currentlyActive;
         }
 
         public int Health { get; protected set; }
@@ -43,6 +43,8 @@
         public PokemonType Type { get; protected set; }
 
         public IList<IAbility> Abilities { get; protected set; }
+
+        public int CurrentlyActive { get; protected set; }
 
         // Lol... Better Attack(target){}
         public void TakeDamage(int damage)

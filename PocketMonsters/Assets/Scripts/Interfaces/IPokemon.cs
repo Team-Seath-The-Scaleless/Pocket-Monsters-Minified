@@ -26,6 +26,8 @@
 
         IList<IAbility> Abilities { get; }
 
+        int currentlyActive { get; }
+
         void TakeDamage(int damage);
 
         void Heal(int health);
