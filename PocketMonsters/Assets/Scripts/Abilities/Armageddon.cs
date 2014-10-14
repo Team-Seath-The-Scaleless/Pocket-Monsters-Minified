@@ -4,11 +4,11 @@
 
     public class Armageddon : SpecialAbility
     {
-        public const int ArmageddonDamage = 15; // if pokemon max health = ~20/30.
+        private int armageddonDamage = 15; 
 
         public const int ArmageddonHitChance = 3;
 
-        public const int ArmageddonCooldown = 4;
+        private int armageddonCooldown = 4;
 
         private bool armageddonHit;
 
@@ -38,6 +38,20 @@
             }
         }
 
-        // do dmg method , enemyCurrentHP - ArmageddonDamage 
+        public int ArmageddonDamage
+        {
+            get
+            {
+                return this.armageddonDamage;
+            }
+        }
+
+        public int ArmageddonCooldown
+        {
+            get
+            {
+                return this.armageddonCooldown;
+            }
+        }
     }
 }

@@ -4,11 +4,11 @@
 
     public class Glacialstorm : SpecialAbility
     {
-        public const int GlacialstormDamage = 10; // if pokemon max health = ~20/30.
+        private int glacialstormDamage = 10; 
 
         public const int GlacialstormHitChance = 9;
 
-        public const int GlacialstormCooldown = 5;
+        private int glacialstormCooldown = 5;
 
         private bool glacialstormHit;
 
@@ -21,8 +21,7 @@
         {
             this.glacialstormHit = this.TargetIsHit();
         }
-        // do dmg method , enemyCurrentHP - GlacialstormDamage 
-
+        
         public string GlacialstormOnHit
         {
             get
@@ -36,6 +35,22 @@
             get
             {
                 return this.glacialstormOnMiss;
+            }
+        }
+
+        public int GlacialstormDamage
+        {
+            get
+            {
+                return this.glacialstormDamage;
+            }
+        }
+
+        public int GlacialstormCooldown
+        {
+            get
+            {
+                return this.glacialstormCooldown;
             }
         }
 

@@ -4,11 +4,11 @@
 
     public class Balefrost : SpecialAbility
     {
-        public const int BalefrostDamage = 7; // if pokemon max health = ~20/30.
+        private int balefrostDamage = 7; 
 
         public const int BalefrostHitChance = 8;
 
-        public const int BalefrostCooldown = 3;
+        private int balefrostCooldown = 3;
 
         private bool balefrostHit;
 
@@ -21,8 +21,7 @@
         {
             this.balefrostHit = this.TargetIsHit();
         }
-        // do dmg method , enemyCurrentHP - BalefrostDamage 
-
+       
         public string BalefrostOnHit
         {
             get
@@ -39,5 +38,20 @@
             }
         }
 
+        public int BalefrostDamage
+        {
+            get
+            {
+                return this.balefrostDamage;
+            }
+        }
+
+        public int BalefrostCooldown
+        {
+            get
+            {
+                return this.balefrostCooldown;
+            }
+        }
     }
 }

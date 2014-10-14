@@ -4,13 +4,13 @@
 
     public class Eruption : SpecialAbility
     {
-        public const int EruptionDamage = 7; // if pokemon max health = ~20/30.
+        private int eruptionDamage = 7; 
 
-        public const int EruptionHeal = 5;
+        private int eruptionHeal = 5;
 
         public const int EruptionHitChance = 5;
 
-        public const int EruptionCooldown = 4;
+        private int eruptionCooldown = 4;
 
         private bool eruptionHit;
 
@@ -23,8 +23,7 @@
         {
             this.eruptionHit = this.TargetIsHit();
         }
-        // do dmg method , enemyCurrentHP - EruptionDamage  , allyCurrentHP + EruptionHeal
-
+       
         public string EruptionOnHit
         {
             get
@@ -41,5 +40,28 @@
             }
         }
 
+        public int EruptionDamage
+        {
+            get
+            {
+                return this.eruptionDamage;
+            }
+        }
+
+        public int EruptionHeal
+        {
+            get
+            {
+                return this.eruptionHeal;
+            }
+        }
+
+        public int EruptionCooldown
+        {
+            get
+            {
+                return this.eruptionCooldown;
+            }
+        }
     }
 }

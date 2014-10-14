@@ -4,11 +4,11 @@
 
     public class Flamestrike : SpecialAbility
     {
-        public const int FlamestrikeDamage = 6; // if pokemon max health = ~20/30.
-        
+        private int flamestrikeDamage = 6;
+
         public const int FlamestrikeHitChance = 7;
 
-        public const int FlamestrikeCooldown = 2;
+        private int flamestrikeCooldown = 2;
 
         private bool flamestrikeHit;
 
@@ -38,6 +38,20 @@
             }
         }
 
-        // do dmg method , enemyCurrentHP - FlamestrikeDamage 
+        public int FlamestrikeDamage
+        {
+            get
+            {
+                return this.flamestrikeDamage;
+            }
+        }
+
+        public int FlamestrikeCooldown
+        {
+            get
+            {
+                return this.flamestrikeCooldown;
+            }
+        }
     }
 }

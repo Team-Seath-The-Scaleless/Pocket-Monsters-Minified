@@ -4,7 +4,7 @@ namespace Abilities
 {
     public class NormalAttack : Ability
     {
-        public NormalAttack(int damage)
+       public NormalAttack(int damage)
             : base(AbilityType.Battle)
         {
             this.Damage = damage;

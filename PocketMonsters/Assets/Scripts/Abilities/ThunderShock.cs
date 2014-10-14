@@ -4,11 +4,11 @@
 
     public class Thundershock : SpecialAbility
     {
-        public const int ThundershockDamage = 5; // if pokemon max health = ~20/30.
+        private int thundershockDamage = 5; 
 
         public const int ThundershockHitChance = 8;
 
-        public const int ThundershockCooldown = 1;
+        private int thundershockCooldown = 1;
 
         private bool thundershockHit;
 
@@ -21,8 +21,7 @@
         {
             this.thundershockHit = this.TargetIsHit();
         }
-    // do dmg method , enemyCurrentHP - ThundershockDamage 
-        
+   
         public string ThundershockOnHit
         {
             get
@@ -36,6 +35,22 @@
             get
             {
                 return this.thundershockOnMiss;
+            }
+        }
+
+        public int ThundershockDamage
+        {
+            get
+            {
+                return this.thundershockDamage;
+            }
+        }
+
+        public int ThundershockCooldown
+        {
+            get
+            {
+                return this.thundershockCooldown;
             }
         }
 

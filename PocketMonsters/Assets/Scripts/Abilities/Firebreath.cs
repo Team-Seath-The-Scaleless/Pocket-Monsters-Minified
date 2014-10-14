@@ -4,13 +4,13 @@
 
     public class Firebreath : SpecialAbility
     {
-        public const int FirebreathHeal = 2;
+        private int firebreathHeal = 2;
 
-        public const int FirebreathDamage = 3; // if pokemon max health = ~20/30.
+        private int firebreathDamage = 3; 
 
         public const int FirebreathHitChance = 8;
 
-        public const int FirebreathCooldown = 1;
+        private int firebreathCooldown = 1;
         
         private bool firebreathHit;
 
@@ -40,8 +40,30 @@
             }
         }
 
-        
+        public int FirebreathDamage
+        {
+            get
+            {
+                return this.firebreathDamage;
+            }
+        }
 
-        // do dmg+heal method , allyCurrentHP + FlamebreathHeal  and EnemyCurrentHP - Flamebreath Damage
+        public int FirebreathHeal
+        {
+            get
+            {
+                return this.firebreathHeal;
+            }
+        }
+
+        public int FirebreathCooldown
+        {
+            get
+            {
+                return this.firebreathCooldown;
+            }
+        }
+
+        
     }
 }

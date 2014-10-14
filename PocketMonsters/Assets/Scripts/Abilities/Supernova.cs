@@ -4,11 +4,11 @@
 
     public class Supernova : SpecialAbility
     {
-        public const int SupernovaDamage = 10; // if pokemon max health = ~20/30.
+        private int supernovaDamage = 10; // if pokemon max health = ~20/30.
 
         public const int SupernovaHitChance = 5;
 
-        public const int SupernovaCooldown = 3;
+        private int supernovaCooldown = 3;
         
         private bool supernovaHit;
 
@@ -30,13 +30,28 @@
             }
         }
 
-        public string ThundershockOnMiss
+        public string SupernovaOnMiss
         {
             get
             {
                 return this.supernovaOnMiss;
             }
         }
-        // do dmg method , enemyCurrentHP - SupernovaDamage 
+
+        public int SupernovaDamage
+        {
+            get
+            {
+                return this.supernovaDamage;
+            }
+        }
+
+        public int SupernovaCooldown
+        {
+            get
+            {
+                return this.supernovaCooldown;
+            }
+        }
     }
 }

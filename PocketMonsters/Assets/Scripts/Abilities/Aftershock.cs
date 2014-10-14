@@ -4,11 +4,11 @@
 
     public class Aftershock : SpecialAbility
     {
-        public const int AftershockDamage = 8; // if pokemon max health = ~20/30.
+        private int aftershockDamage = 8; 
 
         public const int AftershockHitChance = 7;
 
-        public const int AftershockCooldown = 2;
+        private int aftershockCooldown = 2;
 
         private bool aftershockHit;
 
@@ -21,8 +21,7 @@
         {
             this.aftershockHit = this.TargetIsHit();
         }
-        // do dmg method , enemyCurrentHP - AftershockDamage 
-
+       
         public string AftershockOnHit
         {
             get
@@ -36,6 +35,22 @@
             get
             {
                 return this.aftershockOnMiss;
+            }
+        }
+
+        public int AftershockDamage
+        {
+            get
+            {
+                return this.aftershockDamage;
+            }
+        }
+
+        public int AftershockCooldown
+        {
+            get
+            {
+                return this.aftershockCooldown;
             }
         }
 

@@ -4,11 +4,11 @@
 
     public class Frostbolt : SpecialAbility
     {
-        public const int FrostboltDamage = 4; // if pokemon max health = ~20/30.
+        private int frostboltDamage = 4; 
 
         public const int FrostboltHitChance = 9;
 
-        public const int FrostboltCooldown = 1;
+        private int frostboltCooldown = 1;
 
         private bool frostboltHit;
 
@@ -21,8 +21,7 @@
         {
             this.frostboltHit = this.TargetIsHit();
         }
-        // do dmg method , enemyCurrentHP - FrostBoltDamage 
-
+        
         public string FrostboltOnHit
         {
             get
@@ -36,6 +35,22 @@
             get
             {
                 return this.frostboltOnMiss;
+            }
+        }
+
+        public int FrostboltDamage
+        {
+            get
+            {
+                return this.frostboltDamage;
+            }
+        }
+
+        public int FrostboltCooldown
+        {
+            get
+            {
+                return this.frostboltCooldown;
             }
         }
 

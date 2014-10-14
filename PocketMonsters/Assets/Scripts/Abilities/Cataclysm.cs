@@ -4,11 +4,11 @@
 
     public class Cataclysm : SpecialAbility
     {
-        public const int CataclysmDamage = 100; // if pokemon max health = ~20/30.
+        private int cataclysmDamage = 100; // if pokemon max health = ~20/30.
 
         public const int CataclysmHitChance = 1;
 
-        public const int CataclysmCooldown = 5;
+        private int cataclysmCooldown = 5;
 
         private bool cataclysmHit;
 
@@ -21,8 +21,7 @@
         {
             this.cataclysmHit = this.TargetIsHit();
         }
-        // do dmg method , enemyCurrentHP - CataclysmDamage (100% of enemy HP) 
-
+        
         public string CataclysmOnHit
         {
             get
@@ -36,6 +35,22 @@
             get
             {
                 return this.cataclysmOnMiss;
+            }
+        }
+
+        public int CataclysmDamage
+        {
+            get
+            {
+                return this.cataclysmDamage;
+            }
+        }
+
+        public int CataclysmCooldown
+        {
+            get
+            {
+                return this.cataclysmCooldown;
             }
         }
 

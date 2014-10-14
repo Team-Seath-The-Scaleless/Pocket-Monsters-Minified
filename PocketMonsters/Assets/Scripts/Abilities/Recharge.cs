@@ -4,11 +4,11 @@
 
     public class Recharge : SpecialAbility
     {
-        public const int RechargeHeal = 5; // if pokemon max health = ~20/30.
+        private int rechargeHeal = 5; 
 
         public const int RechargeHitChance = 8;
 
-        public const int RechargeCooldown = 2;
+        private int rechargeCooldown = 2;
 
         private bool rechargeHit;
 
@@ -38,6 +38,20 @@
             }
         }
 
-        // do heal method , allyCurrentHP + RechargeHeal 
+        public int RechargeHeal
+        {
+            get
+            {
+                return this.rechargeHeal;
+            }
+        }
+
+        public int RechargeCooldown
+        {
+            get
+            {
+                return this.rechargeCooldown;
+            }
+        }
     }
 }
