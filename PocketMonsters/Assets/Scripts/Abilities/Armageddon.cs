@@ -4,18 +4,54 @@
 
     public class Armageddon : SpecialAbility
     {
-        public const int ArmageddonDamage = 15; // if pokemon max health = ~20/30.
+        private int armageddonDamage = 15; 
 
         public const int ArmageddonHitChance = 3;
 
+        private int armageddonCooldown = 4;
+
         private bool armageddonHit;
 
-        protected Armageddon(int armageddonDamage)
+        private string armageddonOnHit = "The unstopable flames burn everything around!";
+
+        private string armageddonOnMiss = "Summoning Armageddon failed!";
+
+        protected Armageddon(int armageddonDamage, int armageddonCooldown)
             : base(AbilityType.Battle, ArmageddonHitChance)
         {
             this.armageddonHit = this.TargetIsHit();
         }
 
-        // do dmg method , enemyCurrentHP - ArmageddonDamage 
+        public string ArmageddonOnHit
+        {
+            get
+            {
+                return this.armageddonOnHit;
+            }
+        }
+
+        public string ArmageddonOnMiss
+        {
+            get
+            {
+                return this.armageddonOnMiss;
+            }
+        }
+
+        public int ArmageddonDamage
+        {
+            get
+            {
+                return this.armageddonDamage;
+            }
+        }
+
+        public int ArmageddonCooldown
+        {
+            get
+            {
+                return this.armageddonCooldown;
+            }
+        }
     }
 }

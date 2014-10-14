@@ -4,18 +4,54 @@
 
     public class Flamestrike : SpecialAbility
     {
-        public const int FlamestrikeDamage = 6; // if pokemon max health = ~20/30.
-        
+        private int flamestrikeDamage = 6;
+
         public const int FlamestrikeHitChance = 7;
+
+        private int flamestrikeCooldown = 2;
 
         private bool flamestrikeHit;
 
-        protected Flamestrike(int flamestrikeDamage)
+        private string flamestrikeOnHit = "The enemy minion burst into flame!";
+
+        private string flamestrikeOnMiss = "Flamestrike has missed the target!";
+
+        protected Flamestrike(int flamestrikeDamage, int flamestrikeCooldown)
             : base(AbilityType.Battle, FlamestrikeHitChance)
         {
             this.flamestrikeHit = this.TargetIsHit();
         }
 
-        // do dmg method , enemyCurrentHP - FlamestrikeDamage 
+        public string FlamestrikeOnHit
+        {
+            get
+            {
+                return this.flamestrikeOnHit;
+            }
+        }
+
+        public string FlamestrikeOnMiss
+        {
+            get
+            {
+                return this.flamestrikeOnMiss;
+            }
+        }
+
+        public int FlamestrikeDamage
+        {
+            get
+            {
+                return this.flamestrikeDamage;
+            }
+        }
+
+        public int FlamestrikeCooldown
+        {
+            get
+            {
+                return this.flamestrikeCooldown;
+            }
+        }
     }
 }

@@ -21,6 +21,6 @@
             }
         }
 
-        public IList<IPokemon> Pokemons { get; set; }
+        public IList<IPokemon> Pokemons { get;private set; }
     }
 }

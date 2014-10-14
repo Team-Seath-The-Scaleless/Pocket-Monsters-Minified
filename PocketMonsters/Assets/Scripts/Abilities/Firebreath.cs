@@ -4,20 +4,66 @@
 
     public class Firebreath : SpecialAbility
     {
-        public const int FirebreathHeal = 2;
+        private int firebreathHeal = 2;
 
-        public const int FirebreathDamage = 3; // if pokemon max health = ~20/30.
+        private int firebreathDamage = 3; 
 
         public const int FirebreathHitChance = 8;
 
+        private int firebreathCooldown = 1;
+        
         private bool firebreathHit;
 
-        protected Firebreath(int firebreathHeal, int firebreathDamage)
+        private string firebreathOnHit = "The force of fire stole some hit points from your enemy!";
+
+        private string firebreathOnMiss = "Firebreath has missed the target!";
+
+        protected Firebreath(int firebreathHeal, int firebreathDamage, int firebreathCooldown)
             : base(AbilityType.Battle, FirebreathHitChance)
         {
             this.firebreathHit = this.TargetIsHit();
         }
 
-        // do dmg+heal method , allyCurrentHP + FlamebreathHeal  and EnemyCurrentHP - Flamebreath Damage
+        public string FirebreathOnHit
+        {
+            get
+            {
+                return this.firebreathOnHit;
+            }
+        }
+
+        public string FirebreathOnMiss
+        {
+            get
+            {
+                return this.firebreathOnMiss;
+            }
+        }
+
+        public int FirebreathDamage
+        {
+            get
+            {
+                return this.firebreathDamage;
+            }
+        }
+
+        public int FirebreathHeal
+        {
+            get
+            {
+                return this.firebreathHeal;
+            }
+        }
+
+        public int FirebreathCooldown
+        {
+            get
+            {
+                return this.firebreathCooldown;
+            }
+        }
+
+        
     }
 }

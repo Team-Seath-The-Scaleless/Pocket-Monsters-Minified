@@ -4,7 +4,6 @@
     using System.Linq;
     using System.Text;
     using System.Collections.Generic;
-
     using Interfaces;
     using Abilities;
 
@@ -22,6 +21,7 @@
             this.Type = type;
             this.IsAlive = true;
             this.Abilities = new List<IAbility> { new NormalAttack(this.Attack) };
+            this.CurrentlyActive = false;
         }
 
         public int Health { get; protected set; }
@@ -43,6 +43,8 @@
         public PokemonType Type { get; protected set; }
 
         public IList<IAbility> Abilities { get; protected set; }
+
+		public bool CurrentlyActive { get; set; }
 
         // Lol... Better Attack(target){}
         public void TakeDamage(int damage)
