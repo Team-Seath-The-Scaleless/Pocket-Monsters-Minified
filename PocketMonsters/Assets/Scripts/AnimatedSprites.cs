@@ -14,7 +14,7 @@
 
         public float offsetY = 0.75f;
         public int rowImages = 3;
-
+        
         public void Update()
         {
             //Calculate index.
