@@ -8,12 +8,34 @@
 
         public const int RechargeHitChance = 8;
 
+        public const int RechargeCooldown = 2;
+
         private bool rechargeHit;
 
-        protected Recharge(int rechargeHeal)
+        private string rechargeOnHit = "The strong lightning force recharges your health!";
+
+        private string rechargeOnMiss = "You failed to recharge!";
+
+        protected Recharge(int rechargeHeal, int rechargeCooldown)
             : base(AbilityType.Battle, RechargeHitChance)
         {
             this.rechargeHit = this.TargetIsHit();
+        }
+
+        public string RechargeOnHit
+        {
+            get
+            {
+                return this.rechargeOnHit;
+            }
+        }
+
+        public string RechargeOnMiss
+        {
+            get
+            {
+                return this.rechargeOnMiss;
+            }
         }
 
         // do heal method , allyCurrentHP + RechargeHeal 
