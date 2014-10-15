@@ -2,9 +2,9 @@
 {
     public enum PokemonType
     {
-        Normal,
+        Earth,
+        Lightning,
         Fire,
-        Water,
-        Grass
+        Frost
     }
 }

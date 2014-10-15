@@ -2,21 +2,14 @@
 {
     public class Charmander : Pokemon
     {
-        private const int BasicHp = 40;
+        private const int NormalAttack = 5;
 
-        private const int BasicAttack = 50;
+        private const int Health = 40;
 
-        private const int BasicDefense = 40;
-
-        private const int BasicSpecAttack = 60;
-
-        private const int BasicSpecDefense = 50;
-
-        private const int BasicSpeed = 65;
+        private const int SpecialAttack = 6;
 
         public Charmander() :
-            base(Charmander.BasicHp, Charmander.BasicAttack, Charmander.BasicDefense, Charmander.BasicSpecAttack,
-            Charmander.BasicSpecDefense, Charmander.BasicSpeed, PokemonType.Fire)
+            base(Charmander.Attack, Charmander.Health, Charmander.NormalAttack, PokemonType.Lightning)
         {
         }
     }

@@ -9,15 +9,12 @@
 
     public abstract class Pokemon : IPokemon
     {
-        protected Pokemon(int health, int attack, int defense, int specialAttack, int specialDefense, int speed, PokemonType type)
+        protected Pokemon(int health, int attack, int specialAttack, PokemonType type)
         {
             this.Health = health;
             this.MaxHealth = health;
             this.Attack = attack;
-            this.Defense = defense;
             this.SpecialAttack = specialAttack;
-            this.SpecialDefense = specialDefense;
-            this.Speed = speed;
             this.Type = type;
             this.IsAlive = true;
             this.Abilities = new List<IAbility> { new NormalAttack(this.Attack) };
@@ -26,19 +23,11 @@
 
         public int Health { get; protected set; }
 
-        public int MaxHealth { get; protected set; }
-
-        public bool IsAlive { get; protected set; }
-
-        public int Speed { get; protected set; }
-
         public int Attack { get; protected set; }
-
-        public int Defense { get; protected set; }
 
         public int SpecialAttack { get; protected set; }
 
-        public int SpecialDefense { get; protected set; }
+        public bool IsAlive { get; protected set; }
 
         public PokemonType Type { get; protected set; }
 

@@ -2,21 +2,14 @@
 {
     public class Separatist : Pokemon
     {
-        private const int BasicHp = 38;
+        private const int NormalAttack = 4;
 
-        private const int BasicAttack = 52;
+        private const int Health = 42;
 
-        private const int BasicDefense = 30;
-
-        private const int BasicSpecAttack = 28;
-
-        private const int BasicSpecDefense = 30;
-
-        private const int BasicSpeed = 65;
+        private const int SpecialAttack = 5;
 
         public Separatist() :
-            base(Separatist.BasicHp, Separatist.BasicAttack, Separatist.BasicDefense, Separatist.BasicSpecAttack,
-            Separatist.BasicSpecDefense, Separatist.BasicSpeed, PokemonType.Normal)
+            base(Separatist.Attack, Separatist.Health, Separatist.NormalAttack, PokemonType.Fire)
         {
         }
     }

@@ -2,21 +2,14 @@
 {
     public class Pesho : Pokemon
     {
-        private const int BasicHp = 50;
+        private const int NormalAttack = 6;
 
-        private const int BasicAttack = 70;
+        private const int Health = 48;
 
-        private const int BasicDefense = 50;
-
-        private const int BasicSpecAttack = 50;
-
-        private const int BasicSpecDefense = 50;
-
-        private const int BasicSpeed = 70;
+        private const int SpecialAttack = 8;
 
         public Pesho() :
-            base(Pesho.BasicHp, Pesho.BasicAttack, Pesho.BasicDefense, Pesho.BasicSpecAttack,
-            Pesho.BasicSpecDefense, Pesho.BasicSpeed, PokemonType.Grass)
+            base(Pesho.Attack, Pesho.Health, Pesho.NormalAttack, PokemonType.Earth)
         {
         }
     }

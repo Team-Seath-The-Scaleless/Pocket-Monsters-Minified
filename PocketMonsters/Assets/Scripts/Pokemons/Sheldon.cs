@@ -2,21 +2,14 @@
 {
     public class Sheldon : Pokemon
     {
-        private const int BasicHp = 50;
+        private const int NormalAttack = 3;
 
-        private const int BasicAttack = 48;
+        private const int Health = 44;
 
-        private const int BasicDefense = 45;
-
-        private const int BasicSpecAttack = 68;
-
-        private const int BasicSpecDefense = 60;
-
-        private const int BasicSpeed = 50;
+        private const int SpecialAttack = 4;
 
         public Sheldon() :
-            base(Sheldon.BasicHp, Sheldon.BasicAttack, Sheldon.BasicDefense, Sheldon.BasicSpecAttack,
-            Sheldon.BasicSpecDefense, Sheldon.BasicSpeed, PokemonType.Fire)
+            base(Sheldon.Attack, Sheldon.Health, Sheldon.NormalAttack, PokemonType.Frost)
         {
         }
     }
