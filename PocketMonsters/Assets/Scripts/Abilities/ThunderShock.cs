@@ -4,55 +4,22 @@
 
     public class Thundershock : SpecialAbility
     {
-        private int thundershockDamage = 5; 
+        public const int ThundershockDamage = 5; 
 
         public const int ThundershockHitChance = 8;
 
-        private int thundershockCooldown = 1;
+        public const int ThundershockCooldown = 1;
 
-        private bool thundershockHit;
+        public const string ThundershockHitMessage = "The target has been thudnershocked!";
 
-        private string thundershockOnHit = "The target has been thudnershocked!";
+        public const string ThundershockMissMessage = "Thundershock has missed the target!";
 
-        private string thundershockOnMiss = "Thundershock has missed the target!";
-
-        protected Thundershock(int thundershockDamage, int thundershockCooldown)
+        protected Thundershock()
             : base(AbilityType.Battle, ThundershockHitChance)
         {
-            this.thundershockHit = this.TargetIsHit();
-        }
-   
-        public string ThundershockOnHit
-        {
-            get
-            {
-                return this.thundershockOnHit;
-            }
+            this.ThundershockHit = this.TargetIsHit();
         }
 
-        public string ThundershockOnMiss
-        {
-            get
-            {
-                return this.thundershockOnMiss;
-            }
-        }
-
-        public int ThundershockDamage
-        {
-            get
-            {
-                return this.thundershockDamage;
-            }
-        }
-
-        public int ThundershockCooldown
-        {
-            get
-            {
-                return this.thundershockCooldown;
-            }
-        }
-
+        public bool ThundershockHit { get; private set; }
     }
 }

@@ -4,54 +4,22 @@
 
     public class Recharge : SpecialAbility
     {
-        private int rechargeHeal = 5; 
+        public const int RechargeHeal = 5; 
 
         public const int RechargeHitChance = 8;
 
-        private int rechargeCooldown = 2;
+        public const int RechargeCooldown = 2;
 
-        private bool rechargeHit;
+        public const string RechargeHitMessage = "The strong lightning force recharges your health!";
 
-        private string rechargeOnHit = "The strong lightning force recharges your health!";
+        public const string RechargeMissMessage = "You failed to recharge!";
 
-        private string rechargeOnMiss = "You failed to recharge!";
-
-        protected Recharge(int rechargeHeal, int rechargeCooldown)
+        protected Recharge()
             : base(AbilityType.Battle, RechargeHitChance)
         {
-            this.rechargeHit = this.TargetIsHit();
+            this.RechargeHit = this.TargetIsHit();
         }
 
-        public string RechargeOnHit
-        {
-            get
-            {
-                return this.rechargeOnHit;
-            }
-        }
-
-        public string RechargeOnMiss
-        {
-            get
-            {
-                return this.rechargeOnMiss;
-            }
-        }
-
-        public int RechargeHeal
-        {
-            get
-            {
-                return this.rechargeHeal;
-            }
-        }
-
-        public int RechargeCooldown
-        {
-            get
-            {
-                return this.rechargeCooldown;
-            }
-        }
+        public bool RechargeHit { get; private set; }
     }
 }

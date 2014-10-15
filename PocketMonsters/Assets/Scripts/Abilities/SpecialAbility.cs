@@ -9,6 +9,7 @@
         protected SpecialAbility(AbilityType type, int spellHitChance)
             : base(type)
         {
+            this.SpellHitChance = spellHitChance;
         }
 
         public int SpellHitChance { get; protected set; }
