@@ -4,24 +4,28 @@
 
     public class Firebreath : SpecialAbility
     {
-        public const int FirebreathHeal = 2;
+        private const int FirebreathHeal = 2;
 
-        public const int FirebreathDamage = 3; 
+        private const int FirebreathDamage = 3;
 
-        public const int FirebreathHitChance = 8;
+        private const int FirebreathHitChance = 8;
 
-        public const int FirebreathCooldown = 1;
+        private const int FirebreathCooldown = 1;
 
-        public const string FirebreathHitMessage = "The force of fire stole some hit points from your enemy!";
+        private const string FirebreathHitMessage = "The force of fire stole some hit points from your enemy!";
 
-        public const string FirebreathMissMessage = "Firebreath has missed the target!";
+        private const string FirebreathMissMessage = "Firebreath has missed the target!";
 
         protected Firebreath()
-            : base(AbilityType.Battle, FirebreathHitChance)
+            : base(AbilityType.Battle, FirebreathHitChance,
+            FirebreathCooldown, FirebreathHitMessage, FirebreathMissMessage)
         {
-            this.FirebreathHit = this.TargetIsHit();
+            this.Heal = FirebreathHeal;
+            this.Damage = FirebreathDamage;
         }
 
-        public bool FirebreathHit { get; private set; }
+        public int Heal { get; private set; }
+
+        public int Damage { get; private set; }
     }
 }

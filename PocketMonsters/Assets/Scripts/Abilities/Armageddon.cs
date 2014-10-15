@@ -4,22 +4,23 @@
 
     public class Armageddon : SpecialAbility
     {
-        public const int ArmageddonDamage = 15; 
+        private const int ArmageddonDamage = 15;
 
-        public const int ArmageddonHitChance = 3;
+        private const int ArmageddonHitChance = 3;
 
-        public const int ArmageddonCooldown = 4;
+        private const int ArmageddonCooldown = 4;
 
-        public const string ArmageddonHitMessage = "The unstopable flames burn everything around!";
+        private const string ArmageddonHitMessage = "The unstopable flames burn everything around!";
 
-        public const string ArmageddonMissMessage = "Summoning Armageddon failed!";
+        private const string ArmageddonMissMessage = "Summoning Armageddon failed!";
 
         protected Armageddon()
-            : base()
+            : base(AbilityType.Battle, ArmageddonHitChance,
+            ArmageddonCooldown, ArmageddonHitMessage, ArmageddonMissMessage)
         {
-            this.ArmageddonHit = this.TargetIsHit();
+            this.Damage = ArmageddonDamage;
         }
 
-        public bool ArmageddonHit { get; private set; }
+        public int Damage { get; private set; }
     }
 }

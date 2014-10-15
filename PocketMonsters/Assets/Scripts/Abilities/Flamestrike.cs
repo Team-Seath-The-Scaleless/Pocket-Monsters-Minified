@@ -4,22 +4,23 @@
 
     public class Flamestrike : SpecialAbility
     {
-        public const int FlamestrikeDamage = 6;
+        private const int FlamestrikeDamage = 6;
 
-        public const int FlamestrikeHitChance = 7;
+        private const int FlamestrikeHitChance = 7;
 
-        public const int FlamestrikeCooldown = 2;
+        private const int FlamestrikeCooldown = 2;
 
-        public const string FlamestrikeHitMessage = "The enemy minion burst into flame!";
+        private const string FlamestrikeHitMessage = "The enemy minion burst into flame!";
 
-        public const string FlamestrikeMissMessage = "Flamestrike has missed the target!";
+        private const string FlamestrikeMissMessage = "Flamestrike has missed the target!";
 
         protected Flamestrike()
-            : base(AbilityType.Battle, FlamestrikeHitChance)
+            : base(AbilityType.Battle, FlamestrikeHitChance,
+            FlamestrikeCooldown, FlamestrikeHitMessage, FlamestrikeMissMessage)
         {
-            this.FlamestrikeHit = this.TargetIsHit();
+            this.Damage = FlamestrikeDamage;
         }
 
-        public bool FlamestrikeHit { get; private set; }
+        public int Damage { get; private set; }
     }
 }

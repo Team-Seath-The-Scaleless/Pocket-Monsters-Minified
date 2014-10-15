@@ -4,22 +4,23 @@
 
     public class Supernova : SpecialAbility
     {
-        public const int SupernovaDamage = 10;
+        private const int SupernovaDamage = 10;
 
-        public const int SupernovaHitChance = 5;
+        private const int SupernovaHitChance = 5;
 
-        public const int SupernovaCooldown = 3;
+        private const int SupernovaCooldown = 3;
 
-        public const string SupernovaHitMessage = "The Supernova released the ultimate force!";
+        private const string SupernovaHitMessage = "The Supernova released the ultimate force!";
 
-        public const string SupernovaMissMessage = "Supernova has missed the target!";
+        private const string SupernovaMissMessage = "Supernova has missed the target!";
 
         protected Supernova()
-            : base(AbilityType.Battle, SupernovaHitChance)
+            : base(AbilityType.Battle, SupernovaHitChance,
+            SupernovaCooldown, SupernovaHitMessage, SupernovaMissMessage)
         {
-            this.SupernovaHit = this.TargetIsHit();
+            this.Damage = SupernovaDamage;
         }
 
-        public bool SupernovaHit { get; private set; }
+        public int Damage { get; private set; }
     }
 }
