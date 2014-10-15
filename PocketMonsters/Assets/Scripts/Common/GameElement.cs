@@ -6,11 +6,11 @@ using UnityEngine;
 
 namespace Common
 {
-    public abstract class GameElement : MonoBehaviour
+    public abstract class GameElement
     {
         public float PositionX { get; protected set; }
 
-        public float PositionY { get { return 0.0F; } }
+        public float PositionY { get; protected set; }
 
         public float PositionZ { get; protected set; }
     }

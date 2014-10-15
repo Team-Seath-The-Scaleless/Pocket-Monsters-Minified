@@ -11,34 +11,83 @@
 
     public class Hero : GameElement, IMovable, IPokemonTrainer
     {
-        public Hero()
+        private GameObject playerObject;
+        private bool isMoving;
+        private Vector3 startPosition;
+        private Vector3 endPosition;
+        private float moveSpeed = 10f;
+        private float increment;
+
+
+        public Hero(float startX, float startY, float startZ, GameObject playerOnField)
         {
-            //this.Player = this.gameObject;
+            this.PositionX = startX;
+            this.PositionY = startY;
+            this.PositionZ = startZ;
+            this.Player = playerOnField;
             this.Pokemons = new List<IPokemon>();
+
+            this.startPosition = playerOnField.transform.position;
+            this.endPosition = playerOnField.transform.position;
         }
 
-        public GameObject Player { get; private set; }
+        public GameObject Player
+        {
+            get { return this.playerObject; }
+            private set { this.playerObject = value; }
+        }
 
         public IList<IPokemon> Pokemons { get; private set; }
 
-        public void Move(string direction)
+        public void Move()
         {
-            switch (direction)
+            if (this.increment <= 1 && this.isMoving == true)
             {
-                case "west":
-                    this.PositionX -= 1F;
-                    break;
-                case "east":
-                    this.PositionX += 1F;
-                    break;
-                case "north":
-                    this.PositionZ += 1F;
-                    break;
-                case "south":
-                    this.PositionZ -= 1F;
-                    break;
-                default:
-                    throw new InvalidOperationException("wrong direction");
+                this.increment += this.moveSpeed / 200;
+                Debug.Log("Moving");
+            }
+            else
+            {
+                this.isMoving = false;
+                Debug.Log("Stopped");
+            }
+
+            if (this.isMoving)
+            {
+                this.Player.transform.position = Vector3.Lerp(this.startPosition, this.endPosition, this.increment);
+            }
+
+            if (Input.GetKey(KeyCode.UpArrow) && isMoving == false)
+            {
+                this.increment = 0;
+                this.isMoving = true;
+                this.startPosition = this.Player.transform.position;
+                this.PositionZ += 1f;
+                this.endPosition = new Vector3(this.PositionX, this.PositionY, this.PositionZ);
+            }
+            else if (Input.GetKey(KeyCode.DownArrow) && isMoving == false)
+            {
+                this.increment = 0;
+                this.isMoving = true;
+                this.startPosition = this.Player.transform.position;
+                this.PositionZ -= 1f;
+                this.endPosition = new Vector3(this.PositionX, this.PositionY, this.PositionZ);
+            }
+            else if (Input.GetKey(KeyCode.LeftArrow) && isMoving == false)
+            {
+                this.increment = 0;
+                this.isMoving = true;
+                this.startPosition = this.Player.transform.position;
+                this.PositionX -= 1f;
+                this.endPosition = new Vector3(this.PositionX, this.PositionY, this.PositionZ);
+            }
+            else if (Input.GetKey(KeyCode.RightArrow) && isMoving == false)
+            {
+                this.increment = 0;
+                this.isMoving = true;
+                this.startPosition = this.Player.transform.position;
+                this.PositionX += 1f;
+                this.endPosition = new Vector3(this.PositionX, this.PositionY, this.PositionZ);
             }
         }
     }

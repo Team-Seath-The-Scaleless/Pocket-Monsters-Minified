@@ -8,5 +8,6 @@ namespace Environment
 {
     public abstract class Environment : GameElement
     {
+
     }
 }
