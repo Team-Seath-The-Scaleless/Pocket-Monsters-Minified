@@ -5,7 +5,10 @@ using System.Text;
 
 namespace Assets.Scripts.Creatures
 {
-    class FoodItems
+    enum FoodItems
     {
+        apple,
+        bannana,
+        peach
     }
 }
