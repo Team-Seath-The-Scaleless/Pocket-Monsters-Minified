@@ -19,12 +19,14 @@
         private const string EruptionMissMessage = "Eruption has missed the target!";
 
         public Eruption()
-            : base(AbilityType.Battle, EruptionHitChance,
+            : base(AbilityType.Earth, EruptionHitChance,
             EruptionCooldown, EruptionHitMessage, EruptionMissMessage)
         {
             this.Damage = EruptionDamage;
         }
 
         public int Damage { get; private set; }
+
+        public int Heal { get; private set; }
     }
 }

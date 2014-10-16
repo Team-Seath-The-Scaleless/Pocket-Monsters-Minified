@@ -7,7 +7,7 @@
     public class NormalAttack : Ability, IDamageAbility
     {
        public NormalAttack(int damage)
-            : base(AbilityType.Battle)
+            : base(AbilityType.Normal)
         {
             this.Damage = damage;
         }

@@ -2,7 +2,10 @@
 {
     public enum AbilityType
     {
-        Battle,
-        Map
+        Normal,
+        Fire,
+        Frost,
+        Earth,
+        Lightning
     }
 }

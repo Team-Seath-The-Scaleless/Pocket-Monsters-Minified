@@ -6,7 +6,7 @@
 
     public class Flamestrike : SpecialAbility, IDamageAbility
     {
-        private const int FlamestrikeDamage = 6;
+        private const int FlamestrikeDamage = 9;
 
         private const int FlamestrikeHitChance = 7;
 
@@ -17,7 +17,7 @@
         private const string FlamestrikeMissMessage = "Flamestrike has missed the target!";
 
         public Flamestrike()
-            : base(AbilityType.Battle, FlamestrikeHitChance,
+            : base(AbilityType.Fire, FlamestrikeHitChance,
             FlamestrikeCooldown, FlamestrikeHitMessage, FlamestrikeMissMessage)
         {
             this.Damage = FlamestrikeDamage;

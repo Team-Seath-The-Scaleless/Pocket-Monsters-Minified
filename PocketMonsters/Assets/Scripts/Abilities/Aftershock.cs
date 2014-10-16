@@ -6,7 +6,7 @@
 
     public class Aftershock : SpecialAbility, IDamageAbility
     {
-        private const int AftershockDamage = 8;
+        private const int AftershockDamage = 9;
 
         private const int AftershockHitChance = 7;
 
@@ -17,7 +17,7 @@
         private const string AftershockMissMessage = "Aftershock has missed the target!";
 
         public Aftershock()
-            : base(AbilityType.Battle, AftershockHitChance,
+            : base(AbilityType.Earth, AftershockHitChance,
             AftershockCooldown, AftershockHitMessage, AftershockMissMessage)
         {
             this.Damage = AftershockDamage;

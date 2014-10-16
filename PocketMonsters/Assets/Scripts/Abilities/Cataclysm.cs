@@ -6,7 +6,7 @@
 
     public class Cataclysm : SpecialAbility, IDamageAbility
     {
-        private const int CataclysmDamage = 100; // if pokemon max health = ~20/30.
+        private const int CataclysmDamage = 100; 
 
         private const int CataclysmHitChance = 1;
 
@@ -17,7 +17,7 @@
         private const string CataclysmMissMessage = "Cataclysm has failed to begin!";
 
         public Cataclysm()
-            : base(AbilityType.Battle, CataclysmHitChance,
+            : base(AbilityType.Earth, CataclysmHitChance,
             CataclysmCooldown, CataclysmHitMessage, CataclysmMissMessage)
         {
             this.Damage = CataclysmDamage;

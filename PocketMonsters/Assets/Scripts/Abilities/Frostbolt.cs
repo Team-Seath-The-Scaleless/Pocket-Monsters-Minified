@@ -6,7 +6,7 @@
 
     public class Frostbolt : SpecialAbility, IDamageAbility
     {
-        private const int FrostboltDamage = 4;
+        private const int FrostboltDamage = 5;
 
         private const int FrostboltHitChance = 9;
 
@@ -17,7 +17,7 @@
         private const string FrostboltMissMessage = "Frostbolt has missed the target!";
 
         public Frostbolt()
-            : base(AbilityType.Battle, FrostboltHitChance,
+            : base(AbilityType.Frost, FrostboltHitChance,
             FrostboltCooldown, FrostboltHitMessage, FrostboltMissMessage)
         {
             this.Damage = FrostboltDamage;
