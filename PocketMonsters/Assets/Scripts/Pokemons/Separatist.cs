@@ -6,10 +6,10 @@
 
         private const int Health = 42;
 
-        private const int SpecialAttack = 5;
+        private const int SpecAttack = 5;
 
         public Separatist() :
-            base(Separatist.SpecialAttack, Separatist.Health, Separatist.NormalAttack, PokemonType.Fire)
+            base(Separatist.Health, Separatist.NormalAttack, Separatist.SpecAttack, PokemonType.Earth)
         {
         }
     }

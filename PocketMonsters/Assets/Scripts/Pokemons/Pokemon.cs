@@ -11,7 +11,7 @@
     {
         protected Pokemon(int health, int attack, int specialAttack, PokemonType type)
         {
-            this.Health = health;
+            this.CurrentHealth = health;
             this.MaxHealth = health;
             this.Attack = attack;
             this.SpecialAttack = specialAttack;
@@ -21,7 +21,9 @@
             this.CurrentlyActive = false;
         }
 
-        public int Health { get; protected set; }
+        public int CurrentHealth { get; protected set; }
+
+        public int MaxHealth { get; protected set; }
 
         public int Attack { get; protected set; }
 
@@ -38,27 +40,25 @@
         // Lol... Better Attack(target){}
         public void TakeDamage(int damage)
         {
-            this.Health -= damage;
-            if (this.Health <= 0)
+            this.CurrentHealth -= damage;
+            if (this.CurrentHealth <= 0)
             {
-                this.Health = 0;
+                this.CurrentHealth = 0;
                 this.IsAlive = false;
             }
         }
 
         public void Heal(int health)
         {
-            this.Health += health;
-            if (this.Health > this.MaxHealth)
+            this.CurrentHealth += health;
+            if (this.CurrentHealth > this.MaxHealth)
             {
-                this.Health = this.MaxHealth;
+                this.CurrentHealth = this.MaxHealth;
             }
         }
 
         public void LearnAbility(IAbility ability)
         {
-            // should probably check for max number of abilities
-
             if (!this.Abilities.Contains(ability))
             {
                 this.Abilities.Add(ability);
@@ -67,7 +67,6 @@
 
         public void ForgetAbility(IAbility ability)
         {
-            // should probably add custom exception
             if (this.Abilities.Contains(ability) && this.Abilities.Count <= 1)
             {
                 throw new InvalidOperationException();
@@ -75,7 +74,5 @@
 
             this.Abilities.Remove(ability);
         }
-
-        public int MaxHealth { get; set; }
     }
 }

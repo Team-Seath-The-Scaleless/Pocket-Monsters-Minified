@@ -6,10 +6,10 @@
 
         private const int Health = 39;
 
-        private const int SpecialAttack = 6;
+        private const int SpecAttack = 6;
 
         public Drunkemon() :
-            base(Drunkemon.SpecialAttack, Drunkemon.Health, Drunkemon.NormalAttack, PokemonType.Lightning)
+            base(Drunkemon.Health, Drunkemon.NormalAttack, Drunkemon.SpecAttack, PokemonType.Fire)
         {
         }
     }

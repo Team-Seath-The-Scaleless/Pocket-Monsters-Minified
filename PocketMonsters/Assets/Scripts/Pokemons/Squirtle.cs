@@ -6,10 +6,10 @@
 
         private const int Health = 43;
 
-        private const int SpecialAttack = 4;
+        private const int SpecAttack = 4;
 
         public Squirtle() :
-            base(Squirtle.SpecialAttack, Squirtle.Health, Squirtle.NormalAttack, PokemonType.Frost)
+            base(Squirtle.Health, Squirtle.NormalAttack, Squirtle.SpecAttack, PokemonType.Water)
         {
         }
     }

@@ -6,7 +6,7 @@
 
     public interface IPokemon
     {
-        int Health { get; }
+        int CurrentHealth { get; }
 
         int MaxHealth { get; }
 

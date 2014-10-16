@@ -6,10 +6,10 @@
 
         private const int Health = 44;
 
-        private const int SpecialAttack = 4;
+        private const int SpecAttack = 4;
 
         public Sheldon() :
-            base(Sheldon.SpecialAttack, Sheldon.Health, Sheldon.NormalAttack, PokemonType.Frost)
+            base(Sheldon.Health, Sheldon.NormalAttack, Sheldon.SpecAttack, PokemonType.Lightning)
         {
         }
     }

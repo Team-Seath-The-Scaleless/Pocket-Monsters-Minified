@@ -6,10 +6,10 @@
 
         private const int Health = 38;
 
-        private const int SpecialAttack = 7;
+        private const int SpecAttack = 7;
 
         public Bulbasaur() :
-            base(Bulbasaur.SpecialAttack, Bulbasaur.Health, Bulbasaur.NormalAttack, PokemonType.Lightning)
+            base(Bulbasaur.Health, Bulbasaur.NormalAttack, Bulbasaur.SpecAttack, PokemonType.Grass)
         {
         }
     }

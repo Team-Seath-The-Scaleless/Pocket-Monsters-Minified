@@ -5,6 +5,8 @@
         Earth,
         Lightning,
         Fire,
-        Frost
+        Frost,
+        Water,
+        Grass
     }
 }

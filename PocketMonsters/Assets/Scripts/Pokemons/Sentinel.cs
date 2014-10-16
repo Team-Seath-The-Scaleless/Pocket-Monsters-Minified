@@ -6,10 +6,10 @@
 
         private const int Health = 45;
 
-        private const int SpecialAttack = 4;
+        private const int SpecAttack = 4;
 
         public Sentinel() :
-            base(Sentinel.SpecialAttack, Sentinel.Health, Sentinel.NormalAttack, PokemonType.Frost)
+            base(Sentinel.Health, Sentinel.NormalAttack, Sentinel.SpecAttack, PokemonType.Lightning)
         {
         }
     }

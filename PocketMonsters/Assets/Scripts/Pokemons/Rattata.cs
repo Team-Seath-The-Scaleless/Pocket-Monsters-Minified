@@ -6,10 +6,10 @@
 
         private const int Health = 41;
 
-        private const int SpecialAttack = 5;
+        private const int SpecAttack = 5;
 
         public Rattata() :
-            base(Rattata.SpecialAttack, Rattata.Health, Rattata.NormalAttack, PokemonType.Fire)
+            base(Rattata.Health, Rattata.NormalAttack, Rattata.SpecAttack, PokemonType.Earth)
         {
         }
     }

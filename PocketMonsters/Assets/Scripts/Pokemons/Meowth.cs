@@ -6,10 +6,10 @@
 
         private const int Health = 46;
 
-        private const int SpecialAttack = 7;
+        private const int SpecAttack = 7;
 
         public Meowth() :
-            base(Meowth.SpecialAttack, Meowth.Health, Meowth.NormalAttack, PokemonType.Earth)
+            base(Meowth.Health, Meowth.NormalAttack, Meowth.SpecAttack, PokemonType.Lightning)
         {
         }
     }
