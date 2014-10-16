@@ -16,7 +16,7 @@ namespace Scripts
             this.playerObject = GameObject.Find("Player");
             if (GameData.player == null)
             {
-                GameData.player = new Hero(-2f, 1f, 0f, this.playerObject);
+				GameData.player = new Hero(-2f, 1f, 0f, this.playerObject,GameData.playerPokemons);
             }
         }
 
