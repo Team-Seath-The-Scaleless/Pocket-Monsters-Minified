@@ -6,11 +6,15 @@
 
     public interface IPokemon
     {
+
+		int Health { get; set;}
+
         int CurrentHealth { get; }
+
 
         int MaxHealth { get; }
 
-        bool IsAlive { get; }
+		bool IsAlive { get; set; }
 
         int Attack { get; }
 
@@ -22,7 +26,7 @@
 
 		bool CurrentlyActive { get; set; }
 			
-        void TakeDamage(int damage);
+        void TakeDamage(IPokemon target);
 
         void Heal(int health);
 
