@@ -9,7 +9,7 @@
         private const int SpecialAttack = 8;
 
         public Grandfatty() :
-            base(Grandfatty.Attack, Grandfatty.Health, Grandfatty.NormalAttack, PokemonType.Earth)
+            base(Grandfatty.Health, Grandfatty.NormalAttack, Grandfatty.SpecialAttack, PokemonType.Earth)
         {
         }
     }

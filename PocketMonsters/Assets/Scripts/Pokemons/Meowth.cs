@@ -9,7 +9,7 @@
         private const int SpecialAttack = 7;
 
         public Meowth() :
-            base(Meowth.Attack, Meowth.Health, Meowth.NormalAttack, PokemonType.Earth)
+            base(Meowth.SpecialAttack, Meowth.Health, Meowth.NormalAttack, PokemonType.Earth)
         {
         }
     }

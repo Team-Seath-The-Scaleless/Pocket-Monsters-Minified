@@ -9,7 +9,7 @@
         private const int SpecialAttack = 8;
 
         public Pesho() :
-            base(Pesho.Attack, Pesho.Health, Pesho.NormalAttack, PokemonType.Earth)
+            base(Pesho.SpecialAttack, Pesho.Health, Pesho.NormalAttack, PokemonType.Earth)
         {
         }
     }

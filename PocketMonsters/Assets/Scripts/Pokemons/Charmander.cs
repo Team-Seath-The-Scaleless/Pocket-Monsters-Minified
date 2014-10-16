@@ -9,7 +9,7 @@
         private const int SpecialAttack = 6;
 
         public Charmander() :
-            base(Charmander.Attack, Charmander.Health, Charmander.NormalAttack, PokemonType.Lightning)
+            base(Charmander.SpecialAttack, Charmander.Health, Charmander.NormalAttack, PokemonType.Lightning)
         {
         }
     }

@@ -9,7 +9,7 @@
         private const int SpecialAttack = 5;
 
         public Roggenrola() :
-            base(Roggenrola.Attack, Roggenrola.Health, Roggenrola.NormalAttack, PokemonType.Fire)
+            base(Roggenrola.SpecialAttack, Roggenrola.Health, Roggenrola.NormalAttack, PokemonType.Fire)
         {
         }
     }

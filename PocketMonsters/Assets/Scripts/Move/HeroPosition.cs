@@ -7,7 +7,7 @@ using Interfaces;
 
 namespace Assets.Scripts.Move
 {  
-    public abstract class HeroPosition : IMovable
+    public abstract class HeroPosition // : IMovable
     {
         public int StartPosition { get; set; }
         public int CurrentPosition { get; set; }

@@ -9,7 +9,7 @@
         private const int SpecialAttack = 5;
 
         public Separatist() :
-            base(Separatist.Attack, Separatist.Health, Separatist.NormalAttack, PokemonType.Fire)
+            base(Separatist.SpecialAttack, Separatist.Health, Separatist.NormalAttack, PokemonType.Fire)
         {
         }
     }

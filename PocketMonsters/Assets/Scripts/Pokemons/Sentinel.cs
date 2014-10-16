@@ -9,7 +9,7 @@
         private const int SpecialAttack = 4;
 
         public Sentinel() :
-            base(Sentinel.Attack, Sentinel.Health, Sentinel.NormalAttack, PokemonType.Frost)
+            base(Sentinel.SpecialAttack, Sentinel.Health, Sentinel.NormalAttack, PokemonType.Frost)
         {
         }
     }

@@ -75,5 +75,7 @@
 
             this.Abilities.Remove(ability);
         }
+
+        public int MaxHealth { get; set; }
     }
 }

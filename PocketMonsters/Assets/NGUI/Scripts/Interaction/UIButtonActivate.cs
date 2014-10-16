@@ -17,7 +17,7 @@ public class UIButtonActivate : MonoBehaviour
 
     void OnClick () { 
 		if (target != null) NGUITools.SetActive(target, state);
-		Battlefield.UseNormalAttack ();
+		// Battlefield.UseNormalAttack();
 
 	}
 }

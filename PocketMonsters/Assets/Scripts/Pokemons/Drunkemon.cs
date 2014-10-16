@@ -9,7 +9,7 @@
         private const int SpecialAttack = 6;
 
         public Drunkemon() :
-            base(Drunkemon.Attack, Drunkemon.Health, Drunkemon.NormalAttack, PokemonType.Lightning)
+            base(Drunkemon.SpecialAttack, Drunkemon.Health, Drunkemon.NormalAttack, PokemonType.Lightning)
         {
         }
     }
