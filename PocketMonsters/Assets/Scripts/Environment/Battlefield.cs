@@ -53,7 +53,8 @@ namespace Environment
 
         public void UseNormalAttack()
         {
-			this.playerActivePokemon.TakeDamage (this.enemyActivePokemon);
+            int attack = this.playerActivePokemon.Attack;
+            this.enemyActivePokemon.TakeDamage(attack);
         }
 
         public void UseSpecialAttack()
