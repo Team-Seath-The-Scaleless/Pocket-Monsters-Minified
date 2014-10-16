@@ -2,57 +2,27 @@
 {
     using System;
 
-    public class Thundershock : SpecialAbility
+    using Interfaces;
+
+    public class Thundershock : SpecialAbility, IDamageAbility
     {
-        private int thundershockDamage = 5; 
+        private const int ThundershockDamage = 7;
 
-        public const int ThundershockHitChance = 8;
+        private const int ThundershockHitChance = 9;
 
-        private int thundershockCooldown = 1;
+        private const int ThundershockCooldown = 2;
 
-        private bool thundershockHit;
+        private const string ThundershockHitMessage = "The target has been thudnershocked!";
 
-        private string thundershockOnHit = "The target has been thudnershocked!";
+        private const string ThundershockMissMessage = "Thundershock has missed the target!";
 
-        private string thundershockOnMiss = "Thundershock has missed the target!";
-
-        protected Thundershock(int thundershockDamage, int thundershockCooldown)
-            : base(AbilityType.Battle, ThundershockHitChance)
+        public Thundershock()
+            : base(AbilityType.Lightning, ThundershockHitChance,
+            ThundershockCooldown, ThundershockHitMessage, ThundershockMissMessage)
         {
-            this.thundershockHit = this.TargetIsHit();
-        }
-   
-        public string ThundershockOnHit
-        {
-            get
-            {
-                return this.thundershockOnHit;
-            }
+            this.Damage = ThundershockDamage;
         }
 
-        public string ThundershockOnMiss
-        {
-            get
-            {
-                return this.thundershockOnMiss;
-            }
-        }
-
-        public int ThundershockDamage
-        {
-            get
-            {
-                return this.thundershockDamage;
-            }
-        }
-
-        public int ThundershockCooldown
-        {
-            get
-            {
-                return this.thundershockCooldown;
-            }
-        }
-
+        public int Damage { get; private set; }
     }
 }

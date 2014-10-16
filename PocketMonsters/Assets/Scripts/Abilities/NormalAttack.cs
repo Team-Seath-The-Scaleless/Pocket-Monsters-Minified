@@ -1,11 +1,13 @@
-﻿using System;
-
-namespace Abilities
+﻿namespace Abilities
 {
-    public class NormalAttack : Ability
+    using System;
+
+    using Interfaces;
+
+    public class NormalAttack : Ability, IDamageAbility
     {
        public NormalAttack(int damage)
-            : base(AbilityType.Battle)
+            : base(AbilityType.Normal)
         {
             this.Damage = damage;
         }

@@ -2,56 +2,27 @@
 {
     using System;
 
-    public class Flamestrike : SpecialAbility
+    using Interfaces;
+
+    public class Flamestrike : SpecialAbility, IDamageAbility
     {
-        private int flamestrikeDamage = 6;
+        private const int FlamestrikeDamage = 9;
 
-        public const int FlamestrikeHitChance = 7;
+        private const int FlamestrikeHitChance = 7;
 
-        private int flamestrikeCooldown = 2;
+        private const int FlamestrikeCooldown = 2;
 
-        private bool flamestrikeHit;
+        private const string FlamestrikeHitMessage = "The enemy minion burst into flame!";
 
-        private string flamestrikeOnHit = "The enemy minion burst into flame!";
+        private const string FlamestrikeMissMessage = "Flamestrike has missed the target!";
 
-        private string flamestrikeOnMiss = "Flamestrike has missed the target!";
-
-        protected Flamestrike(int flamestrikeDamage, int flamestrikeCooldown)
-            : base(AbilityType.Battle, FlamestrikeHitChance)
+        public Flamestrike()
+            : base(AbilityType.Fire, FlamestrikeHitChance,
+            FlamestrikeCooldown, FlamestrikeHitMessage, FlamestrikeMissMessage)
         {
-            this.flamestrikeHit = this.TargetIsHit();
+            this.Damage = FlamestrikeDamage;
         }
 
-        public string FlamestrikeOnHit
-        {
-            get
-            {
-                return this.flamestrikeOnHit;
-            }
-        }
-
-        public string FlamestrikeOnMiss
-        {
-            get
-            {
-                return this.flamestrikeOnMiss;
-            }
-        }
-
-        public int FlamestrikeDamage
-        {
-            get
-            {
-                return this.flamestrikeDamage;
-            }
-        }
-
-        public int FlamestrikeCooldown
-        {
-            get
-            {
-                return this.flamestrikeCooldown;
-            }
-        }
+        public int Damage { get; private set; }
     }
 }

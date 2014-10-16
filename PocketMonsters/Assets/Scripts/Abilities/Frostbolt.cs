@@ -2,57 +2,27 @@
 {
     using System;
 
-    public class Frostbolt : SpecialAbility
+    using Interfaces;
+
+    public class Frostbolt : SpecialAbility, IDamageAbility
     {
-        private int frostboltDamage = 4; 
+        private const int FrostboltDamage = 5;
 
-        public const int FrostboltHitChance = 9;
+        private const int FrostboltHitChance = 9;
 
-        private int frostboltCooldown = 1;
+        private const int FrostboltCooldown = 1;
 
-        private bool frostboltHit;
+        private const string FrostboltHitMessage = "The target has been hit by a massive frostbolt!";
 
-        private string frostboltOnHit = "The target has been hit by a massive frostbolt!";
+        private const string FrostboltMissMessage = "Frostbolt has missed the target!";
 
-        private string frostboltOnMiss = "Frostbolt has missed the target!";
-
-        protected Frostbolt(int frostboltDamage, int frostboltCooldown)
-            : base(AbilityType.Battle, FrostboltHitChance)
+        public Frostbolt()
+            : base(AbilityType.Frost, FrostboltHitChance,
+            FrostboltCooldown, FrostboltHitMessage, FrostboltMissMessage)
         {
-            this.frostboltHit = this.TargetIsHit();
-        }
-        
-        public string FrostboltOnHit
-        {
-            get
-            {
-                return this.frostboltOnHit;
-            }
+            this.Damage = FrostboltDamage;
         }
 
-        public string FrostboltOnMiss
-        {
-            get
-            {
-                return this.frostboltOnMiss;
-            }
-        }
-
-        public int FrostboltDamage
-        {
-            get
-            {
-                return this.frostboltDamage;
-            }
-        }
-
-        public int FrostboltCooldown
-        {
-            get
-            {
-                return this.frostboltCooldown;
-            }
-        }
-
+        public int Damage { get; private set; }
     }
 }

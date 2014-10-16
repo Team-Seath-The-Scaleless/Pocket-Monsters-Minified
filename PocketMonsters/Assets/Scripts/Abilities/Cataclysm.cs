@@ -2,57 +2,27 @@
 {
     using System;
 
-    public class Cataclysm : SpecialAbility
+    using Interfaces;
+
+    public class Cataclysm : SpecialAbility, IDamageAbility
     {
-        private int cataclysmDamage = 100; // if pokemon max health = ~20/30.
+        private const int CataclysmDamage = 100; 
 
-        public const int CataclysmHitChance = 1;
+        private const int CataclysmHitChance = 1;
 
-        private int cataclysmCooldown = 5;
+        private const int CataclysmCooldown = 5;
 
-        private bool cataclysmHit;
+        private const string CataclysmHitMessage = "A massive hole from the ground devours enemy unit!";
 
-        private string cataclysmOnHit = "A massive hole from the ground devours enemy unit!";
+        private const string CataclysmMissMessage = "Cataclysm has failed to begin!";
 
-        private string cataclysmOnMiss = "Cataclysm has failed to begin!";
-
-        protected Cataclysm(int frostboltDamage, int frostboltCooldown)
-            : base(AbilityType.Battle, CataclysmHitChance)
+        public Cataclysm()
+            : base(AbilityType.Earth, CataclysmHitChance,
+            CataclysmCooldown, CataclysmHitMessage, CataclysmMissMessage)
         {
-            this.cataclysmHit = this.TargetIsHit();
-        }
-        
-        public string CataclysmOnHit
-        {
-            get
-            {
-                return this.cataclysmOnHit;
-            }
+            this.Damage = CataclysmDamage;
         }
 
-        public string CataclysmOnMiss
-        {
-            get
-            {
-                return this.cataclysmOnMiss;
-            }
-        }
-
-        public int CataclysmDamage
-        {
-            get
-            {
-                return this.cataclysmDamage;
-            }
-        }
-
-        public int CataclysmCooldown
-        {
-            get
-            {
-                return this.cataclysmCooldown;
-            }
-        }
-
+        public int Damage { get; private set; }
     }
 }

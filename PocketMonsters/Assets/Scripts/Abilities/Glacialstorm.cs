@@ -2,57 +2,27 @@
 {
     using System;
 
-    public class Glacialstorm : SpecialAbility
+    using Interfaces;
+
+    public class Glacialstorm : SpecialAbility, IDamageAbility
     {
-        private int glacialstormDamage = 10; 
+        private const int GlacialstormDamage = 12;
 
-        public const int GlacialstormHitChance = 9;
+        private const int GlacialstormHitChance = 9;
 
-        private int glacialstormCooldown = 5;
+        private const int GlacialstormCooldown = 4;
 
-        private bool glacialstormHit;
+        private const string GlacialstormHitMessage = "The Glacial Storm freezes your enemy blood!";
 
-        private string glacialstormOnHit = "The Glacial Storm freezes your enemy blood!";
+        private const string GlacialstormMissMessage = "Glacial Storm failed to hit!";
 
-        private string glacialstormOnMiss = "Glacial Storm failed to hit!";
-
-        protected Glacialstorm(int glacialstormDamage, int glacialstormCooldown)
-            : base(AbilityType.Battle, GlacialstormHitChance)
+        public Glacialstorm()
+            : base(AbilityType.Frost, GlacialstormHitChance,
+            GlacialstormCooldown, GlacialstormHitMessage, GlacialstormMissMessage)
         {
-            this.glacialstormHit = this.TargetIsHit();
-        }
-        
-        public string GlacialstormOnHit
-        {
-            get
-            {
-                return this.glacialstormOnHit;
-            }
+            this.Damage = GlacialstormDamage;
         }
 
-        public string GlacialstormOnMiss
-        {
-            get
-            {
-                return this.glacialstormOnMiss;
-            }
-        }
-
-        public int GlacialstormDamage
-        {
-            get
-            {
-                return this.glacialstormDamage;
-            }
-        }
-
-        public int GlacialstormCooldown
-        {
-            get
-            {
-                return this.glacialstormCooldown;
-            }
-        }
-
+        public int Damage { get; private set; }
     }
 }

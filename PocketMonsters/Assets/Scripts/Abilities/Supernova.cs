@@ -2,56 +2,27 @@
 {
     using System;
 
-    public class Supernova : SpecialAbility
+    using Interfaces;
+
+    public class Supernova : SpecialAbility, IDamageAbility
     {
-        private int supernovaDamage = 10; // if pokemon max health = ~20/30.
+        private const int SupernovaDamage = 16;
 
-        public const int SupernovaHitChance = 5;
+        private const int SupernovaHitChance = 5;
 
-        private int supernovaCooldown = 3;
-        
-        private bool supernovaHit;
+        private const int SupernovaCooldown = 4;
 
-        private string supernovaOnHit = "The Supernova released the ultimate force!";
+        private const string SupernovaHitMessage = "The Supernova released the ultimate force!";
 
-        private string supernovaOnMiss = "Supernova has missed the target!";
+        private const string SupernovaMissMessage = "Supernova has missed the target!";
 
-        protected Supernova(int supernovaDamage, int supernovaCooldown)
-            : base(AbilityType.Battle, SupernovaHitChance)
+        public Supernova()
+            : base(AbilityType.Lightning, SupernovaHitChance,
+            SupernovaCooldown, SupernovaHitMessage, SupernovaMissMessage)
         {
-            this.supernovaHit = this.TargetIsHit();
+            this.Damage = SupernovaDamage;
         }
 
-        public string SupernovaOnHit
-        {
-            get
-            {
-                return this.supernovaOnHit;
-            }
-        }
-
-        public string SupernovaOnMiss
-        {
-            get
-            {
-                return this.supernovaOnMiss;
-            }
-        }
-
-        public int SupernovaDamage
-        {
-            get
-            {
-                return this.supernovaDamage;
-            }
-        }
-
-        public int SupernovaCooldown
-        {
-            get
-            {
-                return this.supernovaCooldown;
-            }
-        }
+        public int Damage { get; private set; }
     }
 }

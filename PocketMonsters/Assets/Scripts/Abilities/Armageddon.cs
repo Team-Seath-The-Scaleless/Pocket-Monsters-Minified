@@ -2,56 +2,27 @@
 {
     using System;
 
-    public class Armageddon : SpecialAbility
+    using Interfaces;
+
+    public class Armageddon : SpecialAbility, IDamageAbility
     {
-        private int armageddonDamage = 15; 
+        private const int ArmageddonDamage = 20;
 
-        public const int ArmageddonHitChance = 3;
+        private const int ArmageddonHitChance = 3;
 
-        private int armageddonCooldown = 4;
+        private const int ArmageddonCooldown = 5;
 
-        private bool armageddonHit;
+        private const string ArmageddonHitMessage = "The unstopable flames burn everything around!";
 
-        private string armageddonOnHit = "The unstopable flames burn everything around!";
+        private const string ArmageddonMissMessage = "Summoning Armageddon failed!";
 
-        private string armageddonOnMiss = "Summoning Armageddon failed!";
-
-        protected Armageddon(int armageddonDamage, int armageddonCooldown)
-            : base(AbilityType.Battle, ArmageddonHitChance)
+        public Armageddon()
+            : base(AbilityType.Fire, ArmageddonHitChance,
+            ArmageddonCooldown, ArmageddonHitMessage, ArmageddonMissMessage)
         {
-            this.armageddonHit = this.TargetIsHit();
+            this.Damage = ArmageddonDamage;
         }
 
-        public string ArmageddonOnHit
-        {
-            get
-            {
-                return this.armageddonOnHit;
-            }
-        }
-
-        public string ArmageddonOnMiss
-        {
-            get
-            {
-                return this.armageddonOnMiss;
-            }
-        }
-
-        public int ArmageddonDamage
-        {
-            get
-            {
-                return this.armageddonDamage;
-            }
-        }
-
-        public int ArmageddonCooldown
-        {
-            get
-            {
-                return this.armageddonCooldown;
-            }
-        }
+        public int Damage { get; private set; }
     }
 }

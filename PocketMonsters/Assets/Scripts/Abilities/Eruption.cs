@@ -2,66 +2,31 @@
 {
     using System;
 
-    public class Eruption : SpecialAbility
+    using Interfaces;
+
+    public class Eruption : SpecialAbility, IDamageAbility
     {
-        private int eruptionDamage = 7; 
+        private const int EruptionDamage = 7;
 
-        private int eruptionHeal = 5;
+        private const int EruptionHeal = 5;
 
-        public const int EruptionHitChance = 5;
+        private const int EruptionHitChance = 5;
 
-        private int eruptionCooldown = 4;
+        private const int EruptionCooldown = 4;
 
-        private bool eruptionHit;
+        private const string EruptionHitMessage = "The lava waves damages the enemy and restore your health!";
 
-        private string eruptionOnHit = "The lava waves damages the enemy and restore your health!";
+        private const string EruptionMissMessage = "Eruption has missed the target!";
 
-        private string eruptionOnMiss = "Eruption has missed the target!";
-
-        protected Eruption(int eruptionDamage, int eruptionHeal,  int eruptionCooldown)
-            : base(AbilityType.Battle, EruptionHitChance)
+        public Eruption()
+            : base(AbilityType.Earth, EruptionHitChance,
+            EruptionCooldown, EruptionHitMessage, EruptionMissMessage)
         {
-            this.eruptionHit = this.TargetIsHit();
-        }
-       
-        public string EruptionOnHit
-        {
-            get
-            {
-                return this.eruptionOnHit;
-            }
+            this.Damage = EruptionDamage;
         }
 
-        public string EruptionMiss
-        {
-            get
-            {
-                return this.eruptionOnMiss;
-            }
-        }
+        public int Damage { get; private set; }
 
-        public int EruptionDamage
-        {
-            get
-            {
-                return this.eruptionDamage;
-            }
-        }
-
-        public int EruptionHeal
-        {
-            get
-            {
-                return this.eruptionHeal;
-            }
-        }
-
-        public int EruptionCooldown
-        {
-            get
-            {
-                return this.eruptionCooldown;
-            }
-        }
+        public int Heal { get; private set; }
     }
 }

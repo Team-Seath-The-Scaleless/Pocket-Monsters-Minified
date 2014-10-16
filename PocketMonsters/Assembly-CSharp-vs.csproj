@@ -183,9 +183,15 @@
      <Compile Include="Assets\NGUI\Scripts\UI\UIViewport.cs" />
      <Compile Include="Assets\Scripts\Abilities\Ability.cs" />
      <Compile Include="Assets\Scripts\Abilities\AbilityType.cs" />
+     <Compile Include="Assets\Scripts\Abilities\Aftershock.cs" />
      <Compile Include="Assets\Scripts\Abilities\Armageddon.cs" />
+     <Compile Include="Assets\Scripts\Abilities\Balefrost.cs" />
+     <Compile Include="Assets\Scripts\Abilities\Cataclysm.cs" />
+     <Compile Include="Assets\Scripts\Abilities\Eruption.cs" />
      <Compile Include="Assets\Scripts\Abilities\Firebreath.cs" />
      <Compile Include="Assets\Scripts\Abilities\Flamestrike.cs" />
+     <Compile Include="Assets\Scripts\Abilities\Frostbolt.cs" />
+     <Compile Include="Assets\Scripts\Abilities\Glacialstorm.cs" />
      <Compile Include="Assets\Scripts\Abilities\NormalAttack.cs" />
      <Compile Include="Assets\Scripts\Abilities\Recharge.cs" />
      <Compile Include="Assets\Scripts\Abilities\SpecialAbility.cs" />
@@ -199,7 +205,7 @@
      <Compile Include="Assets\Scripts\Creatures\Npc.cs" />
      <Compile Include="Assets\Scripts\Environment\Battlefield.cs" />
      <Compile Include="Assets\Scripts\Environment\Environment.cs" />
-     <Compile Include="Assets\Scripts\Environment\GameField.cs" />
+     <Compile Include="Assets\Scripts\GameData.cs" />
      <Compile Include="Assets\Scripts\Interfaces\IAbility.cs" />
      <Compile Include="Assets\Scripts\Interfaces\IMovable.cs" />
      <Compile Include="Assets\Scripts\Interfaces\IPokemon.cs" />
@@ -217,6 +223,7 @@
      <Compile Include="Assets\Scripts\Pokemons\Separatist.cs" />
      <Compile Include="Assets\Scripts\Pokemons\Sheldon.cs" />
      <Compile Include="Assets\Scripts\Pokemons\Squirtle.cs" />
+     <Compile Include="Assets\Scripts\WorldInitializer.cs" />
      <None Include="Assets\NGUI\Examples\Shaders\Unlit - Depth Cutout.shader" />
      <None Include="Assets\NGUI\ReadMe - 3.7.4.txt" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text 2.shader" />

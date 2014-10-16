@@ -2,68 +2,32 @@
 {
     using System;
 
-    public class Firebreath : SpecialAbility
+    using Interfaces;
+
+    public class Firebreath : SpecialAbility, IDamageAbility, IHealingAbility
     {
-        private int firebreathHeal = 2;
+        private const int FirebreathHeal = 4;
 
-        private int firebreathDamage = 3; 
+        private const int FirebreathDamage = 4;
 
-        public const int FirebreathHitChance = 8;
+        private const int FirebreathHitChance = 8;
 
-        private int firebreathCooldown = 1;
-        
-        private bool firebreathHit;
+        private const int FirebreathCooldown = 2;
 
-        private string firebreathOnHit = "The force of fire stole some hit points from your enemy!";
+        private const string FirebreathHitMessage = "The force of fire stole some hit points from your enemy!";
 
-        private string firebreathOnMiss = "Firebreath has missed the target!";
+        private const string FirebreathMissMessage = "Firebreath has missed the target!";
 
-        protected Firebreath(int firebreathHeal, int firebreathDamage, int firebreathCooldown)
-            : base(AbilityType.Battle, FirebreathHitChance)
+        public Firebreath()
+            : base(AbilityType.Fire, FirebreathHitChance,
+            FirebreathCooldown, FirebreathHitMessage, FirebreathMissMessage)
         {
-            this.firebreathHit = this.TargetIsHit();
+            this.Heal = FirebreathHeal;
+            this.Damage = FirebreathDamage;
         }
 
-        public string FirebreathOnHit
-        {
-            get
-            {
-                return this.firebreathOnHit;
-            }
-        }
+        public int Heal { get; private set; }
 
-        public string FirebreathOnMiss
-        {
-            get
-            {
-                return this.firebreathOnMiss;
-            }
-        }
-
-        public int FirebreathDamage
-        {
-            get
-            {
-                return this.firebreathDamage;
-            }
-        }
-
-        public int FirebreathHeal
-        {
-            get
-            {
-                return this.firebreathHeal;
-            }
-        }
-
-        public int FirebreathCooldown
-        {
-            get
-            {
-                return this.firebreathCooldown;
-            }
-        }
-
-        
+        public int Damage { get; private set; }
     }
 }

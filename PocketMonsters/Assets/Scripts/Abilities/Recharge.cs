@@ -2,56 +2,27 @@
 {
     using System;
 
-    public class Recharge : SpecialAbility
+    using Interfaces;
+
+    public class Recharge : SpecialAbility, IHealingAbility
     {
-        private int rechargeHeal = 5; 
+        private const int RechargeHeal = 8;
 
-        public const int RechargeHitChance = 8;
+        private const int RechargeHitChance = 8;
 
-        private int rechargeCooldown = 2;
+        private const int RechargeCooldown = 3;
 
-        private bool rechargeHit;
+        private const string RechargeHitMessage = "The strong lightning force recharges your health!";
 
-        private string rechargeOnHit = "The strong lightning force recharges your health!";
+        private const string RechargeMissMessage = "You failed to recharge!";
 
-        private string rechargeOnMiss = "You failed to recharge!";
-
-        protected Recharge(int rechargeHeal, int rechargeCooldown)
-            : base(AbilityType.Battle, RechargeHitChance)
+        public Recharge()
+            : base(AbilityType.Lightning, RechargeHitChance,
+            RechargeCooldown, RechargeHitMessage, RechargeMissMessage)
         {
-            this.rechargeHit = this.TargetIsHit();
+            this.Heal = RechargeHeal;
         }
 
-        public string RechargeOnHit
-        {
-            get
-            {
-                return this.rechargeOnHit;
-            }
-        }
-
-        public string RechargeOnMiss
-        {
-            get
-            {
-                return this.rechargeOnMiss;
-            }
-        }
-
-        public int RechargeHeal
-        {
-            get
-            {
-                return this.rechargeHeal;
-            }
-        }
-
-        public int RechargeCooldown
-        {
-            get
-            {
-                return this.rechargeCooldown;
-            }
-        }
+        public int Heal { get; private set; }
     }
 }

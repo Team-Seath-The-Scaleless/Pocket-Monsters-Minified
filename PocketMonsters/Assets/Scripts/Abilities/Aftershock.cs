@@ -2,57 +2,27 @@
 {
     using System;
 
-    public class Aftershock : SpecialAbility
+    using Interfaces;
+
+    public class Aftershock : SpecialAbility, IDamageAbility
     {
-        private int aftershockDamage = 8; 
+        private const int AftershockDamage = 9;
 
-        public const int AftershockHitChance = 7;
+        private const int AftershockHitChance = 7;
 
-        private int aftershockCooldown = 2;
+        private const int AftershockCooldown = 2;
 
-        private bool aftershockHit;
+        private const string AftershockHitMessage = "The ground starts splashing sonic waves and hits the enemy!";
 
-        private string aftershockOnHit = "The ground starts splashing sonic waves and hits the enemy!";
+        private const string AftershockMissMessage = "Aftershock has missed the target!";
 
-        private string aftershockOnMiss = "Aftershock has missed the target!";
-
-        protected Aftershock(int aftershockDamage, int aftershockCooldown)
-            : base(AbilityType.Battle, AftershockHitChance)
+        public Aftershock()
+            : base(AbilityType.Earth, AftershockHitChance,
+            AftershockCooldown, AftershockHitMessage, AftershockMissMessage)
         {
-            this.aftershockHit = this.TargetIsHit();
-        }
-       
-        public string AftershockOnHit
-        {
-            get
-            {
-                return this.aftershockOnHit;
-            }
+            this.Damage = AftershockDamage;
         }
 
-        public string AftershockOnMiss
-        {
-            get
-            {
-                return this.aftershockOnMiss;
-            }
-        }
-
-        public int AftershockDamage
-        {
-            get
-            {
-                return this.aftershockDamage;
-            }
-        }
-
-        public int AftershockCooldown
-        {
-            get
-            {
-                return this.aftershockCooldown;
-            }
-        }
-
+        public int Damage { get; private set; }
     }
 }

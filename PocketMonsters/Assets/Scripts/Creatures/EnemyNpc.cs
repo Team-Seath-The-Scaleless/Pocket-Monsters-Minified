@@ -9,7 +9,7 @@
 
     public class EnemyNpc : Npc, IPokemonTrainer, ITalkable
     {
-        public static readonly string[] DefaultDialogue = { "Here you are", "Let's fight" };
+        private string[] defaultDialogue = { "Here you are", "Let's fight" };
 
         public EnemyNpc(IList<IPokemon> pokemons, string[] dialogueLines = null)
             : base(dialogueLines)
@@ -17,10 +17,10 @@
             this.Pokemons = pokemons;
             if (this.DialogueLines == null)
             {
-                this.DialogueLines = EnemyNpc.DefaultDialogue;
+                this.DialogueLines = this.defaultDialogue;
             }
         }
 
-        public IList<IPokemon> Pokemons { get;private set; }
+        public IList<IPokemon> Pokemons { get; private set; }
     }
 }

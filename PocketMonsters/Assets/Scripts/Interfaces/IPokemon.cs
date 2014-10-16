@@ -12,15 +12,9 @@
 
         bool IsAlive { get; }
 
-        int Speed { get; }
-
         int Attack { get; }
 
-        int Defense { get; }
-
         int SpecialAttack { get; }
-
-        int SpecialDefense { get; }
 
         PokemonType Type { get; }
 

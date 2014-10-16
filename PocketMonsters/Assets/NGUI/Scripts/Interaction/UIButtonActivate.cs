@@ -4,7 +4,7 @@
 //----------------------------------------------
 
 using UnityEngine;
-
+using Environment;
 /// <summary>
 /// Very basic script that will activate or deactivate an object (and all of its children) when clicked.
 /// </summary>
@@ -15,5 +15,9 @@ public class UIButtonActivate : MonoBehaviour
     public GameObject target;
     public bool state = true;
 
-    void OnClick () { if (target != null) NGUITools.SetActive(target, state); }
+    void OnClick () { 
+		if (target != null) NGUITools.SetActive(target, state);
+		Battlefield.UseNormalAttack ();
+
+	}
 }
