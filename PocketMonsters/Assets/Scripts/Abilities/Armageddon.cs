@@ -14,7 +14,7 @@
 
         private const string ArmageddonMissMessage = "Summoning Armageddon failed!";
 
-        protected Armageddon()
+        public Armageddon()
             : base(AbilityType.Battle, ArmageddonHitChance,
             ArmageddonCooldown, ArmageddonHitMessage, ArmageddonMissMessage)
         {

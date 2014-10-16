@@ -14,7 +14,7 @@
 
         private const string RechargeMissMessage = "You failed to recharge!";
 
-        protected Recharge()
+        public Recharge()
             : base(AbilityType.Battle, RechargeHitChance,
             RechargeCooldown, RechargeHitMessage, RechargeMissMessage)
         {

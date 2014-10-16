@@ -4,54 +4,23 @@
 
     public class Balefrost : SpecialAbility
     {
-        private int balefrostDamage = 7; 
+        private const int BalefrostDamage = 7;
 
-        public const int BalefrostHitChance = 8;
+        private const int BalefrostHitChance = 8;
 
-        private int balefrostCooldown = 3;
+        private const int BalefrostCooldown = 3;
 
-        private bool balefrostHit;
+        private const string BalefrostHitMessage = "Huge ice spikes shatter the ground and hit the enemy!";
 
-        private string balefrostOnHit = "Huge ice spikes shatter the ground and hit the enemy!";
+        private const string BalefrostMissMessage = "Balefrost has missed the target!";
 
-        private string balefrostOnMiss = "Balefrost has missed the target!";
-
-        protected Balefrost(int balefrostDamage, int balefrostCooldown)
-            : base(AbilityType.Battle, BalefrostHitChance)
+        public Balefrost()
+            : base(AbilityType.Battle, BalefrostHitChance,
+            BalefrostCooldown, BalefrostHitMessage, BalefrostMissMessage)
         {
-            this.balefrostHit = this.TargetIsHit();
-        }
-       
-        public string BalefrostOnHit
-        {
-            get
-            {
-                return this.balefrostOnHit;
-            }
+            this.Damage = BalefrostDamage;
         }
 
-        public string BalefrostOnMiss
-        {
-            get
-            {
-                return this.balefrostOnMiss;
-            }
-        }
-
-        public int BalefrostDamage
-        {
-            get
-            {
-                return this.balefrostDamage;
-            }
-        }
-
-        public int BalefrostCooldown
-        {
-            get
-            {
-                return this.balefrostCooldown;
-            }
-        }
+        public int Damage { get; private set; }
     }
 }

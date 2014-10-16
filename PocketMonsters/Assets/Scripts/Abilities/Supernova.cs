@@ -14,7 +14,7 @@
 
         private const string SupernovaMissMessage = "Supernova has missed the target!";
 
-        protected Supernova()
+        public Supernova()
             : base(AbilityType.Battle, SupernovaHitChance,
             SupernovaCooldown, SupernovaHitMessage, SupernovaMissMessage)
         {

@@ -16,7 +16,7 @@
 
         private const string FirebreathMissMessage = "Firebreath has missed the target!";
 
-        protected Firebreath()
+        public Firebreath()
             : base(AbilityType.Battle, FirebreathHitChance,
             FirebreathCooldown, FirebreathHitMessage, FirebreathMissMessage)
         {

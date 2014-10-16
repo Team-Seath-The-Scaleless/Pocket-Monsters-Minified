@@ -14,7 +14,7 @@
 
         private const string ThundershockMissMessage = "Thundershock has missed the target!";
 
-        protected Thundershock()
+        public Thundershock()
             : base(AbilityType.Battle, ThundershockHitChance,
             ThundershockCooldown, ThundershockHitMessage, ThundershockMissMessage)
         {

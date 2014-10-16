@@ -14,7 +14,7 @@
 
         private const string FlamestrikeMissMessage = "Flamestrike has missed the target!";
 
-        protected Flamestrike()
+        public Flamestrike()
             : base(AbilityType.Battle, FlamestrikeHitChance,
             FlamestrikeCooldown, FlamestrikeHitMessage, FlamestrikeMissMessage)
         {
