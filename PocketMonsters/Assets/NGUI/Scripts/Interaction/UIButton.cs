@@ -72,7 +72,7 @@ public class UIButton : UIButtonColor
 	/// </summary>
 
 	public List<EventDelegate> onClick = new List<EventDelegate>();
-
+	
 	// Cached value
 	[System.NonSerialized] UISprite mSprite;
 	[System.NonSerialized] UI2DSprite mSprite2D;
