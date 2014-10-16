@@ -21,7 +21,11 @@
             this.CurrentlyActive = false;
         }
 
+
+        public int Health { get; set; }
+
         public int CurrentHealth { get; protected set; }
+
 
         public int MaxHealth { get; protected set; }
 
@@ -29,7 +33,7 @@
 
         public int SpecialAttack { get; protected set; }
 
-        public bool IsAlive { get; protected set; }
+        public bool IsAlive { get; set; }
 
         public PokemonType Type { get; protected set; }
 
@@ -38,13 +42,15 @@
 		public bool CurrentlyActive { get; set; }
 
         // Lol... Better Attack(target){}
-        public void TakeDamage(int damage)
+        public void TakeDamage(IPokemon target)
         {
-            this.CurrentHealth -= damage;
-            if (this.CurrentHealth <= 0)
+			target.Health -= this.Attack;
+			if (target.Health <= 0)
+
             {
-                this.CurrentHealth = 0;
-                this.IsAlive = false;
+
+				target.Health = 0;
+				target.IsAlive = false;
             }
         }
 
