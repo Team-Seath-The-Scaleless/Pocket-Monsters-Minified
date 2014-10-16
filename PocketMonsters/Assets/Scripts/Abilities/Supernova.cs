@@ -2,7 +2,9 @@
 {
     using System;
 
-    public class Supernova : SpecialAbility
+    using Interfaces;
+
+    public class Supernova : SpecialAbility, IDamageAbility
     {
         private const int SupernovaDamage = 10;
 

@@ -2,7 +2,9 @@
 {
     using System;
 
-    public class Frostbolt : SpecialAbility
+    using Interfaces;
+
+    public class Frostbolt : SpecialAbility, IDamageAbility
     {
         private const int FrostboltDamage = 4;
 

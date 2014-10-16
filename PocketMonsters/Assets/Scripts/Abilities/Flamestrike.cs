@@ -2,7 +2,9 @@
 {
     using System;
 
-    public class Flamestrike : SpecialAbility
+    using Interfaces;
+
+    public class Flamestrike : SpecialAbility, IDamageAbility
     {
         private const int FlamestrikeDamage = 6;
 

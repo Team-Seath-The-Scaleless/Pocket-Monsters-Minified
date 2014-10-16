@@ -2,7 +2,9 @@
 {
     using System;
 
-    public class Balefrost : SpecialAbility
+    using Interfaces;
+
+    public class Balefrost : SpecialAbility, IDamageAbility
     {
         private const int BalefrostDamage = 7;
 

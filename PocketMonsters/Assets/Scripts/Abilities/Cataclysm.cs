@@ -2,7 +2,9 @@
 {
     using System;
 
-    public class Cataclysm : SpecialAbility
+    using Interfaces;
+
+    public class Cataclysm : SpecialAbility, IDamageAbility
     {
         private const int CataclysmDamage = 100; // if pokemon max health = ~20/30.
 

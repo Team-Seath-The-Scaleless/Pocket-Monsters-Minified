@@ -2,7 +2,9 @@
 {
     using System;
 
-    public class Firebreath : SpecialAbility
+    using Interfaces;
+
+    public class Firebreath : SpecialAbility, IDamageAbility, IHealingAbility
     {
         private const int FirebreathHeal = 2;
 

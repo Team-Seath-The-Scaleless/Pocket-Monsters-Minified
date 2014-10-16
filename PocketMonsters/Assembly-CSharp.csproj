@@ -208,6 +208,8 @@
     <Compile Include="Assets\Scripts\Environment\Environment.cs" />
     <Compile Include="Assets\Scripts\GameData.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IAbility.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\IDamageAbility.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\IHealingAbility.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IMovable.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IPokemon.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IPokemonTrainer.cs" />

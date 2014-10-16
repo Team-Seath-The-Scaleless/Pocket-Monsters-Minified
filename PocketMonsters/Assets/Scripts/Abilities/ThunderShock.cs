@@ -2,7 +2,9 @@
 {
     using System;
 
-    public class Thundershock : SpecialAbility
+    using Interfaces;
+
+    public class Thundershock : SpecialAbility, IDamageAbility
     {
         private const int ThundershockDamage = 5;
 

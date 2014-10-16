@@ -2,7 +2,9 @@
 {
     using System;
 
-    public class Recharge : SpecialAbility
+    using Interfaces;
+
+    public class Recharge : SpecialAbility, IHealingAbility
     {
         private const int RechargeHeal = 5;
 

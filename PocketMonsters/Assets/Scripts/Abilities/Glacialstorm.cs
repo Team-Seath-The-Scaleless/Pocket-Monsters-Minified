@@ -2,7 +2,9 @@
 {
     using System;
 
-    public class Glacialstorm : SpecialAbility
+    using Interfaces;
+
+    public class Glacialstorm : SpecialAbility, IDamageAbility
     {
         private const int GlacialstormDamage = 10;
 

@@ -2,7 +2,9 @@
 {
     using System;
 
-    public class Aftershock : SpecialAbility
+    using Interfaces;
+
+    public class Aftershock : SpecialAbility, IDamageAbility
     {
         private const int AftershockDamage = 8;
 

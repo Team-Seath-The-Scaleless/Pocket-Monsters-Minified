@@ -2,7 +2,9 @@
 {
     using System;
 
-    public class Eruption : SpecialAbility
+    using Interfaces;
+
+    public class Eruption : SpecialAbility, IDamageAbility
     {
         private const int EruptionDamage = 7;
 

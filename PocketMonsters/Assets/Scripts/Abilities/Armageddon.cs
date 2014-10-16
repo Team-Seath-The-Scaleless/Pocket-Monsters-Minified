@@ -2,7 +2,9 @@
 {
     using System;
 
-    public class Armageddon : SpecialAbility
+    using Interfaces;
+
+    public class Armageddon : SpecialAbility, IDamageAbility
     {
         private const int ArmageddonDamage = 15;
 
