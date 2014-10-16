@@ -212,7 +212,6 @@
      <Compile Include="Assets\Scripts\Creatures\RandomFoodItemsTypes.cs" />
      <Compile Include="Assets\Scripts\Environment\Battlefield.cs" />
      <Compile Include="Assets\Scripts\Environment\Environment.cs" />
-     <Compile Include="Assets\Scripts\Environment\GameField.cs" />
      <Compile Include="Assets\Scripts\GameData.cs" />
      <Compile Include="Assets\Scripts\Interfaces\IAbility.cs" />
      <Compile Include="Assets\Scripts\Interfaces\IDamageAbility.cs" />
@@ -221,8 +220,6 @@
      <Compile Include="Assets\Scripts\Interfaces\IPokemon.cs" />
      <Compile Include="Assets\Scripts\Interfaces\IPokemonTrainer.cs" />
      <Compile Include="Assets\Scripts\Interfaces\ITalkable.cs" />
-     <Compile Include="Assets\Scripts\Move\HeroPosition.cs" />
-     <Compile Include="Assets\Scripts\Move\InputData.cs" />
      <Compile Include="Assets\Scripts\Pokemons\Bulbasaur.cs" />
      <Compile Include="Assets\Scripts\Pokemons\Charmander.cs" />
      <Compile Include="Assets\Scripts\Pokemons\Drunkemon.cs" />
