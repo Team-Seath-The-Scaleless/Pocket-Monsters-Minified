@@ -22,9 +22,9 @@
         }
 
 
-        public int Health { get; set; }
+       
 
-        public int CurrentHealth { get; protected set; }
+        public int CurrentHealth { get;  set; }
 
 
         public int MaxHealth { get; protected set; }
@@ -42,15 +42,13 @@
 		public bool CurrentlyActive { get; set; }
 
         // Lol... Better Attack(target){}
-        public void TakeDamage(IPokemon target)
+        public void TakeDamage(int attack)
         {
-			target.Health -= this.Attack;
-			if (target.Health <= 0)
-
+            this.CurrentHealth -= attack;
+            if (this.CurrentHealth <= 0)
             {
-
-				target.Health = 0;
-				target.IsAlive = false;
+                this.CurrentHealth = 0;
+                this.IsAlive = false;
             }
         }
 
