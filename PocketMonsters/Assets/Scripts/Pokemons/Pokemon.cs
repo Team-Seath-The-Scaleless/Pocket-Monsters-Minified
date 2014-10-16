@@ -21,11 +21,7 @@
             this.CurrentlyActive = false;
         }
 
-
-       
-
         public int CurrentHealth { get;  set; }
-
 
         public int MaxHealth { get; protected set; }
 
