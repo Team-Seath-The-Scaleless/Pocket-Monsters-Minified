@@ -2,7 +2,6 @@
 {
     public class Bulbasaur : Pokemon
     {
-        Bulbasaur = Pokemon.
         private const int NormalAttack = 5;
 
         private const int Health = 38;

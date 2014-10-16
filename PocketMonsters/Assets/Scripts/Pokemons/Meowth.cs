@@ -8,7 +8,7 @@
 
         private const int SpecialAttack = 7;
 
-        public Pesho() :
+        public Meowth() :
             base(Meowth.Attack, Meowth.Health, Meowth.NormalAttack, PokemonType.Earth)
         {
         }

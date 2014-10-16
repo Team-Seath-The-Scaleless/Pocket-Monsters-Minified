@@ -8,7 +8,7 @@
 
         private const int SpecialAttack = 8;
 
-        public Pesho() :
+        public Grandfatty() :
             base(Grandfatty.Attack, Grandfatty.Health, Grandfatty.NormalAttack, PokemonType.Earth)
         {
         }
