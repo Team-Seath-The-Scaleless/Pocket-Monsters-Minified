@@ -19,13 +19,13 @@
         private float increment;
 
 
-        public Hero(float startX, float startY, float startZ, GameObject playerOnField)
+		public Hero(float startX, float startY, float startZ, GameObject playerOnField,List<IPokemon> pokemons)
         {
             this.PositionX = startX;
             this.PositionY = startY;
             this.PositionZ = startZ;
             this.Player = playerOnField;
-            this.Pokemons = new List<IPokemon>();
+            this.Pokemons = pokemons;
 
             this.startPosition = playerOnField.transform.position;
             this.endPosition = playerOnField.transform.position;
