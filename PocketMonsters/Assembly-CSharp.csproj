@@ -204,6 +204,7 @@
     <Compile Include="Assets\Scripts\Creatures\FriendlyNpc.cs" />
     <Compile Include="Assets\Scripts\Creatures\Hero.cs" />
     <Compile Include="Assets\Scripts\Creatures\Npc.cs" />
+    <Compile Include="Assets\Scripts\Creatures\RandomFoodItemsTypes.cs" />
     <Compile Include="Assets\Scripts\Environment\Battlefield.cs" />
     <Compile Include="Assets\Scripts\Environment\Environment.cs" />
     <Compile Include="Assets\Scripts\GameData.cs" />
