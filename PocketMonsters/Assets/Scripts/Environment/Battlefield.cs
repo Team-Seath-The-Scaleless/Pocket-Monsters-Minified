@@ -36,12 +36,14 @@ namespace Environment
 
         public void UseNormalAttack()
         {
-
+			int attack = this.playerActivePokemon.Attack;
+			this.enemyActivePokemon.Health -= attack;
         }
 
         public void UseSpecialAttack()
         {
-
+			int attack = this.enemyActivePokemon.Attack;
+			this.playerActivePokemon.Health -= attack;
         }
 
         // Update is called once per frame
