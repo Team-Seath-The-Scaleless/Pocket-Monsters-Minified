@@ -38,7 +38,7 @@ namespace Environment
 		}
         private IPokemon playerActivePokemon;
       	private IPokemon enemyActivePokemon;
-       
+        private int AbilityCount;
 	   // Use this for initialization
         void Start()
         {
@@ -49,6 +49,7 @@ namespace Environment
             this.enemyActivePokemon = (Pokemon)this.EnemyHero.Pokemons[randomFromEnemyPokemons];
             this.playerActivePokemon.CurrentlyActive = true;
             this.enemyActivePokemon.CurrentlyActive = true;
+            this.AbilityCount = 0;
         }
 
         public void UseNormalAttack()
@@ -59,7 +60,11 @@ namespace Environment
 
         public void UseSpecialAttack()
         {
-
+            //if (AbilityCount > this.playerActivePokemon.Abilities.Count)
+            //{
+            //    AbilityCount = 0;
+            //}
+            //this.enemyActivePokemon.TakeDamage(attack);
         }
 
         // Update is called once per frame
