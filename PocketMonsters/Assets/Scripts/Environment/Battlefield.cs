@@ -3,6 +3,7 @@ using System.Collections;
 using Pokemons;
 using Creatures;
 using Interfaces;
+using Scripts;
 namespace Environment
 {
     public class Battlefield : MonoBehaviour
@@ -14,20 +15,36 @@ namespace Environment
 
         public Battlefield()
         {
-            this.MyHero = myHero;
-            this.EnemyHero = enemyHero;
+			this.MyHero = GameData.player;
+            this.EnemyHero = GameData.enemy;
         }
 
-        public Hero MyHero { get; set; }
-        public EnemyNpc EnemyHero { get; set; }
+        public Hero MyHero 
+		{
+			get{
+				return this.myHero;
+						}
+			set{
+				this.myHero = value;
+						}
+		}
+        public EnemyNpc EnemyHero {
+			get{
+				return this.enemyHero;
+			}
+			set{
+				this.enemyHero = value;
+			}
+		}
         private IPokemon playerActivePokemon;
       	private IPokemon enemyActivePokemon;
        
 	   // Use this for initialization
         void Start()
         {
-            int randomFromMyPokemons = Random.Range(0, this.myHero.Pokemons.Count);
-            int randomFromEnemyPokemons = Random.Range(0, this.enemyHero.Pokemons.Count);
+			Debug.Log (MyHero.Pokemons.Count);
+            int randomFromMyPokemons = 1;
+			int randomFromEnemyPokemons = 1; //Random.Range(0, this.enemyHero.Pokemons.Count);
             this.playerActivePokemon = (Pokemon)this.MyHero.Pokemons[randomFromMyPokemons];
             this.enemyActivePokemon = (Pokemon)this.EnemyHero.Pokemons[randomFromEnemyPokemons];
             this.playerActivePokemon.CurrentlyActive = true;
@@ -36,14 +53,12 @@ namespace Environment
 
         public void UseNormalAttack()
         {
-			int attack = this.playerActivePokemon.Attack;
-			// this.enemyActivePokemon.Health -= attack;
+			this.playerActivePokemon.TakeDamage (this.enemyActivePokemon);
         }
 
         public void UseSpecialAttack()
         {
-			int attack = this.enemyActivePokemon.Attack;
-			// this.playerActivePokemon.Health -= attack;
+
         }
 
         // Update is called once per frame
