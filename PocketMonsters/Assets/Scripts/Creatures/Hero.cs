@@ -22,8 +22,7 @@
         private float moveSpeed = 10f;
         private float increment;
 
-
-		public Hero(float startX, float startY, float startZ, GameObject playerOnField,List<IPokemon> pokemons)
+        public Hero(float startX, float startY, float startZ, GameObject playerOnField, List<IPokemon> pokemons)
         {
             this.PositionX = startX;
             this.PositionY = startY;
@@ -46,7 +45,6 @@
 
         public void Move()
         {
-            
             if (this.increment <= 1 && this.isMoving == true)
             {
                 this.increment += this.moveSpeed / 200;

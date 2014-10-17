@@ -1,6 +1,6 @@
 ﻿namespace Pokemons
 {
-    public class Charmander : Pokemon
+    public class PeachoSaurus : Pokemon
     {
         private const int NormalAttack = 5;
 
@@ -8,8 +8,8 @@
 
         private const int SpecAttack = 6;
 
-        public Charmander() :
-            base(Charmander.Health, Charmander.NormalAttack, Charmander.SpecAttack, PokemonType.Fire)
+        public PeachoSaurus() :
+            base(PeachoSaurus.Health, PeachoSaurus.NormalAttack, PeachoSaurus.SpecAttack, PokemonType.Fire)
         {
         }
     }

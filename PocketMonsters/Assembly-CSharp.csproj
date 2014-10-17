@@ -208,8 +208,11 @@
     <Compile Include="Assets\Scripts\Creatures\FoodItems.cs" />
     <Compile Include="Assets\Scripts\Creatures\FriendlyNpc.cs" />
     <Compile Include="Assets\Scripts\Creatures\Hero.cs" />
+    <Compile Include="Assets\Scripts\Creatures\Mariika.cs" />
+    <Compile Include="Assets\Scripts\Creatures\Nakov.cs" />
     <Compile Include="Assets\Scripts\Creatures\Npc.cs" />
     <Compile Include="Assets\Scripts\Creatures\NpcFoodItems.cs" />
+    <Compile Include="Assets\Scripts\Creatures\Tosho.cs" />
     <Compile Include="Assets\Scripts\Environment\Battlefield.cs" />
     <Compile Include="Assets\Scripts\Environment\Environment.cs" />
     <Compile Include="Assets\Scripts\GameData.cs" />
@@ -225,8 +228,8 @@
     <Compile Include="Assets\Scripts\Items\ItemCoordinatesGenerator.cs" />
     <Compile Include="Assets\Scripts\Items\Items.cs" />
     <Compile Include="Assets\Scripts\Items\ItemsPositionRange.cs" />
-    <Compile Include="Assets\Scripts\Pokemons\Bulbasaur.cs" />
-    <Compile Include="Assets\Scripts\Pokemons\Charmander.cs" />
+    <Compile Include="Assets\Scripts\Pokemons\Gosho.cs" />
+    <Compile Include="Assets\Scripts\Pokemons\PeachoSaurus.cs" />
     <Compile Include="Assets\Scripts\Pokemons\Drunkemon.cs" />
     <Compile Include="Assets\Scripts\Pokemons\Grandfatty.cs" />
     <Compile Include="Assets\Scripts\Pokemons\Meowth.cs" />
@@ -238,7 +241,7 @@
     <Compile Include="Assets\Scripts\Pokemons\Sentinel.cs" />
     <Compile Include="Assets\Scripts\Pokemons\Separatist.cs" />
     <Compile Include="Assets\Scripts\Pokemons\Sheldon.cs" />
-    <Compile Include="Assets\Scripts\Pokemons\Squirtle.cs" />
+    <Compile Include="Assets\Scripts\Pokemons\Ginka.cs" />
     <Compile Include="Assets\Scripts\WorldInitializer.cs" />
     <None Include="Assets\NGUI\Examples\Shaders\Unlit - Depth Cutout.shader" />
     <None Include="Assets\NGUI\ReadMe - 3.7.4.txt" />

@@ -9,7 +9,7 @@
 
     public class EnemyNpc : Npc, IPokemonTrainer, ITalkable
     {
-        private string[] defaultDialogue = { "Here you are", "Let's fight" };
+        private readonly string[] defaultDialogue = { "Here you are", "Let's fight" };
 
         public EnemyNpc(IList<IPokemon> pokemons, string[] dialogueLines = null)
             : base(dialogueLines)

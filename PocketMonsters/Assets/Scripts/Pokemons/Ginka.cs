@@ -1,6 +1,6 @@
 ﻿namespace Pokemons
 {
-    public class Squirtle : Pokemon
+    public class Ginka : Pokemon
     {
         private const int NormalAttack = 3;
 
@@ -8,8 +8,8 @@
 
         private const int SpecAttack = 4;
 
-        public Squirtle() :
-            base(Squirtle.Health, Squirtle.NormalAttack, Squirtle.SpecAttack, PokemonType.Water)
+        public Ginka() :
+            base(Ginka.Health, Ginka.NormalAttack, Ginka.SpecAttack, PokemonType.Water)
         {
         }
     }

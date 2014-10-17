@@ -9,7 +9,7 @@
 
     public class FriendlyNpc : Npc, ITalkable
     {
-        private string[] defaultDialogue = { "Hello", "How are you today" };
+        private readonly string[] defaultDialogue = { "Hello", "How are you today" };
 
         public FriendlyNpc(string[] dialogueLines = null)
             : base(dialogueLines)

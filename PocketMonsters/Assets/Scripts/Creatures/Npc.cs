@@ -10,7 +10,6 @@
 
     public abstract class Npc : GameElement
     {
-        private string[] dialogueLines;
         protected Npc(string[] dialogueLines)
         {
             this.DialogueLines = dialogueLines;

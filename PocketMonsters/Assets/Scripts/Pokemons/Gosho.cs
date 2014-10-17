@@ -1,6 +1,6 @@
 ﻿namespace Pokemons
 {
-    public class Bulbasaur : Pokemon
+    public class Gosho : Pokemon
     {
         private const int NormalAttack = 5;
 
@@ -8,8 +8,8 @@
 
         private const int SpecAttack = 7;
 
-        public Bulbasaur() :
-            base(Bulbasaur.Health, Bulbasaur.NormalAttack, Bulbasaur.SpecAttack, PokemonType.Grass)
+        public Gosho() :
+            base(Gosho.Health, Gosho.NormalAttack, Gosho.SpecAttack, PokemonType.Grass)
         {
         }
     }
