@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Assets.Scripts.Creatures
+﻿namespace Creatures
 {
-    enum FoodItems
+    public enum FoodItems
     {
-        apple,
-        bannana,
-        peach
+        Apple,
+        Bannana,
+        Peach
     }
 }
