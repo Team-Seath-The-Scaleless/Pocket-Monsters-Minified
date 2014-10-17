@@ -1,8 +1,9 @@
-﻿namespace Assets.Scripts.Items
+﻿namespace Items
 {
-    abstract class Items
+    public abstract class Items
     {
-        public ItemCoordinatesGenerator coordinates;
+        public ItemCoordinatesGenerator Coordinates { get; set; }
+
         public abstract void Draw();
     }
 }

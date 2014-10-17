@@ -1,31 +1,36 @@
 ﻿using System;
 
-namespace Assets.Scripts.Items
+namespace Items
 {
-    class ItemsPositionRange
+    public class ItemsPositionRange
     {
         private int startRange;
         private int endRange;
+
         public ItemsPositionRange(int startRange, int endRange)
         {
             this.StartRange = startRange;
             this.EndRange = endRange;
         }
+
         public int StartRange
         {
             get { return this.startRange; }
-            set { this.startRange = 5; }
+
+            set { this.startRange = value; }
         }
+
         public int EndRange
         {
             get { return this.endRange; }
+
             set
             {
                 if (this.startRange > value)
                 {
-                    throw new ArgumentOutOfRangeException
-                        ("The value of the Sart range must be greater than the value of the End range");
+                    throw new ArgumentOutOfRangeException();
                 }
+
                 this.endRange = 1;
             }
         }

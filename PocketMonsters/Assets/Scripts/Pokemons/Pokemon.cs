@@ -35,9 +35,8 @@
 
         public IList<IAbility> Abilities { get; protected set; }
 
-		public bool CurrentlyActive { get; set; }
+        public bool CurrentlyActive { get; set; }
 
-        // Lol... Better Attack(target){}
         public void TakeDamage(int attack)
         {
             this.CurrentHealth -= attack;

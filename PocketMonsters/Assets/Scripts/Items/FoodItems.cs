@@ -1,8 +1,7 @@
-﻿namespace Assets.Scripts.Items
+﻿namespace Items
 {
-    abstract class FoodItemsHealth : Items
+    public abstract class FoodItems : Items
     {
         public abstract int GiveHealth { get; }
     }
 }
-
