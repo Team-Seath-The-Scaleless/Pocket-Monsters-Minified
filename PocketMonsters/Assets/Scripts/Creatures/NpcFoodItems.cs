@@ -13,7 +13,7 @@
     {
         public float FoodItemPositionGenerator() 
         {
-            Random rnd = new Random();
+			System.Random rnd = new System.Random();
             int number = rnd.Next(0, 100);
             double value = rnd.NextDouble();
             float result = (float)(number + Math.Round(value, 2));
