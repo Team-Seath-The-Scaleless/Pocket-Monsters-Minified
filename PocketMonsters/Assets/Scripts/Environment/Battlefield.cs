@@ -39,8 +39,8 @@ namespace Environment
 				this.enemyHero = value;
 			}
 		}
-        private IPokemon playerActivePokemon;
-      	private IPokemon enemyActivePokemon;
+        private static IPokemon playerActivePokemon;
+      	private static IPokemon enemyActivePokemon;
         private int AbilityCount;
 	   // Use this for initialization
         void Start()
@@ -49,43 +49,55 @@ namespace Environment
 			int randomFromEnemyPokemons = 1; //Random.Range(0, this.enemyHero.Pokemons.Count);
             //this.playerActivePokemon = (Pokemon)this.MyHero.Pokemons[randomFromMyPokemons];
             //this.enemyActivePokemon = (Pokemon)this.EnemyHero.Pokemons[randomFromEnemyPokemons];
-			this.playerActivePokemon = new Meowth ();
-			this.enemyActivePokemon = new Pesho();
-			this.playerActivePokemon.Abilities.Add(new Armageddon());
-            this.playerActivePokemon.CurrentlyActive = true;
-            this.enemyActivePokemon.CurrentlyActive = true;
+			Battlefield.playerActivePokemon = new Meowth ();
+			Battlefield.enemyActivePokemon = new Pesho();
+			Battlefield.playerActivePokemon.Abilities.Add(new Armageddon());
+			Battlefield.playerActivePokemon.CurrentlyActive = true;
+			Battlefield.enemyActivePokemon.CurrentlyActive = true;
             this.AbilityCount = 1;
         }
 
         public void UseNormalAttack()
         {
-            int attack = this.playerActivePokemon.Attack;
-            this.enemyActivePokemon.TakeDamage(attack);
-			Debug.Log (this.enemyActivePokemon.CurrentHealth);
+			int attack = Battlefield.playerActivePokemon.Attack;
+			Battlefield.enemyActivePokemon.TakeDamage(attack);
+			Debug.Log (Battlefield.enemyActivePokemon.CurrentHealth);
         }
 
         public void UseSpecialAttack()
         {
-            if (AbilityCount > this.playerActivePokemon.Abilities.Count) {
+			if (AbilityCount > Battlefield.playerActivePokemon.Abilities.Count) {
 								AbilityCount = 1;
 			}
-			Debug.Log (this.enemyActivePokemon.CurrentHealth);
-			IDamageAbility damageAbility = this.playerActivePokemon.Abilities [AbilityCount] as IDamageAbility;
+			Debug.Log (Battlefield.enemyActivePokemon.CurrentHealth);
+			IDamageAbility damageAbility = Battlefield.playerActivePokemon.Abilities [AbilityCount] as IDamageAbility;
 			if ((object)damageAbility != null) {
-					this.enemyActivePokemon.TakeDamage (damageAbility.Damage);
-				Debug.Log (this.enemyActivePokemon.CurrentHealth);
+				Battlefield.enemyActivePokemon.TakeDamage (damageAbility.Damage);
+				Debug.Log (Battlefield.enemyActivePokemon.CurrentHealth);
 			} else {
 				Debug.Log("Fail");
 						}
 
-			IHealingAbility healAbility = this.playerActivePokemon.Abilities [AbilityCount] as IHealingAbility;
+			IHealingAbility healAbility = Battlefield.playerActivePokemon.Abilities [AbilityCount] as IHealingAbility;
 			if ((object)healAbility != null) {
-				this.playerActivePokemon.Heal(healAbility.Heal);
+				Battlefield.playerActivePokemon.Heal(healAbility.Heal);
 			}else {
 				Debug.Log("Fail");
 			}
-
         }
+		
+		public static string GetHeroName(){
+			return Battlefield.playerActivePokemon.GetType().Name;		
+		}
+
+		public static string GetEnemyPokemonName(){
+			return Battlefield.enemyActivePokemon.GetType().Name;		
+		} 
+
+		public static string HeroHealth(){
+			return Battlefield.playerActivePokemon.CurrentHealth + "/" +
+				Battlefield.playerActivePokemon.MaxHealth;
+		}
 
         // Update is called once per frame
         void Update()
