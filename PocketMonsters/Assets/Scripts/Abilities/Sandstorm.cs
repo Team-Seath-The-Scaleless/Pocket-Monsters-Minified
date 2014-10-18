@@ -4,7 +4,7 @@
 
     using Interfaces;
 
-    public class Sandstorm : SpecialAbility, IDamageAbility
+    public class Sandstorm : DamageAbility
     {
         private const int SandstormDamage = 11;
 
@@ -18,11 +18,9 @@
 
         public Sandstorm()
             : base(AbilityType.Earth, SandstormHitChance,
-            SandstormCooldown, SandstormHitMessage, SandstormMissMessage)
+            SandstormCooldown, SandstormHitMessage, SandstormMissMessage, SandstormDamage)
         {
-            this.Damage = SandstormDamage;
-        }
 
-        public int Damage { get; private set; }
+        }
     }
 }

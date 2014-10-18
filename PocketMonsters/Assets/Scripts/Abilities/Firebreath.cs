@@ -4,7 +4,7 @@
 
     using Interfaces;
 
-    public class Firebreath : SpecialAbility, IDamageAbility, IHealingAbility
+    public class Firebreath : DamageAbility
     {
         private const int FirebreathHeal = 4;
 
@@ -20,14 +20,8 @@
 
         public Firebreath()
             : base(AbilityType.Fire, FirebreathHitChance,
-            FirebreathCooldown, FirebreathHitMessage, FirebreathMissMessage)
-        {
-            this.Heal = FirebreathHeal;
-            this.Damage = FirebreathDamage;
+            FirebreathCooldown, FirebreathHitMessage, FirebreathMissMessage,FirebreathDamage)
+        {          
         }
-
-        public int Heal { get; private set; }
-
-        public int Damage { get; private set; }
     }
 }

@@ -4,7 +4,7 @@
 
     using Interfaces;
 
-    public class Lightning : SpecialAbility, IDamageAbility
+    public class Lightning : DamageAbility
     {
         private const int LightningDamage = 10;
 
@@ -18,11 +18,9 @@
 
         public Lightning()
             : base(AbilityType.Lightning, LightningHitChance,
-            LightningCooldown, LightningHitMessage, LightningMissMessage)
+            LightningCooldown, LightningHitMessage, LightningMissMessage,LightningDamage)
         {
-            this.Damage = LightningDamage;
-        }
 
-        public int Damage { get; private set; }
+        }
     }
 }

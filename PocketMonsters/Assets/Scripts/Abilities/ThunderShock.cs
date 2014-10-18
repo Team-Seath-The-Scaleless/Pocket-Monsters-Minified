@@ -4,7 +4,7 @@
 
     using Interfaces;
 
-    public class Thundershock : SpecialAbility, IDamageAbility
+    public class Thundershock : DamageAbility
     {
         private const int ThundershockDamage = 7;
 
@@ -18,11 +18,9 @@
 
         public Thundershock()
             : base(AbilityType.Lightning, ThundershockHitChance,
-            ThundershockCooldown, ThundershockHitMessage, ThundershockMissMessage)
+            ThundershockCooldown, ThundershockHitMessage, ThundershockMissMessage,ThundershockDamage)
         {
-            this.Damage = ThundershockDamage;
+            
         }
-
-        public int Damage { get; private set; }
     }
 }

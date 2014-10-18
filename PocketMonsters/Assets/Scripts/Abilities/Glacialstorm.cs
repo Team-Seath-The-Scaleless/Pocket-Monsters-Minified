@@ -4,7 +4,7 @@
 
     using Interfaces;
 
-    public class Glacialstorm : SpecialAbility, IDamageAbility
+    public class Glacialstorm : DamageAbility
     {
         private const int GlacialstormDamage = 12;
 
@@ -18,11 +18,9 @@
 
         public Glacialstorm()
             : base(AbilityType.Frost, GlacialstormHitChance,
-            GlacialstormCooldown, GlacialstormHitMessage, GlacialstormMissMessage)
+            GlacialstormCooldown, GlacialstormHitMessage, GlacialstormMissMessage, GlacialstormDamage)
         {
-            this.Damage = GlacialstormDamage;
-        }
 
-        public int Damage { get; private set; }
+        }
     }
 }

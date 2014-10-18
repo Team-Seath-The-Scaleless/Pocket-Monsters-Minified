@@ -4,7 +4,7 @@
 
     using Interfaces;
 
-    public class Iceblade : SpecialAbility, IDamageAbility
+    public class Iceblade : DamageAbility
     {
         private const int IcebladeDamage = 5;
 
@@ -18,11 +18,9 @@
 
         public Iceblade()
             : base(AbilityType.Frost, IcebladeHitChance,
-            IcebladeCooldown, IcebladeHitMessage, IcebladeMissMessage)
+            IcebladeCooldown, IcebladeHitMessage, IcebladeMissMessage, IcebladeDamage)
         {
-            this.Damage = IcebladeDamage;
-        }
 
-        public int Damage { get; private set; }
+        }
     }
 }

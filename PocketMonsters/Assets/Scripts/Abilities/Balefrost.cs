@@ -4,7 +4,7 @@
 
     using Interfaces;
 
-    public class Balefrost : SpecialAbility, IDamageAbility
+    public class Balefrost : DamageAbility
     {
         private const int BalefrostDamage = 8;
 
@@ -18,11 +18,8 @@
 
         public Balefrost()
             : base(AbilityType.Frost, BalefrostHitChance,
-            BalefrostCooldown, BalefrostHitMessage, BalefrostMissMessage)
+            BalefrostCooldown, BalefrostHitMessage, BalefrostMissMessage, BalefrostDamage)
         {
-            this.Damage = BalefrostDamage;
         }
-
-        public int Damage { get; private set; }
     }
 }

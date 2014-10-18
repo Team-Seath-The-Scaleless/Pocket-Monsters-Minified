@@ -4,7 +4,7 @@
 
     using Interfaces;
 
-    public class Aftershock : SpecialAbility, IDamageAbility
+    public class Aftershock : DamageAbility
     {
         private const int AftershockDamage = 9;
 
@@ -18,11 +18,8 @@
 
         public Aftershock()
             : base(AbilityType.Earth, AftershockHitChance,
-            AftershockCooldown, AftershockHitMessage, AftershockMissMessage)
+            AftershockCooldown, AftershockHitMessage, AftershockMissMessage, AftershockDamage)
         {
-            this.Damage = AftershockDamage;
         }
-
-        public int Damage { get; private set; }
     }
 }

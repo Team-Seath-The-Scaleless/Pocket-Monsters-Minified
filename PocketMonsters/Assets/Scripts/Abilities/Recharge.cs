@@ -4,7 +4,7 @@
 
     using Interfaces;
 
-    public class Recharge : SpecialAbility, IHealingAbility
+    public class Recharge : HealAbility
     {
         private const int RechargeHeal = 8;
 
@@ -18,11 +18,9 @@
 
         public Recharge()
             : base(AbilityType.Lightning, RechargeHitChance,
-            RechargeCooldown, RechargeHitMessage, RechargeMissMessage)
+            RechargeCooldown, RechargeHitMessage, RechargeMissMessage, RechargeHeal)
         {
-            this.Heal = RechargeHeal;
+ 
         }
-
-        public int Heal { get; private set; }
     }
 }

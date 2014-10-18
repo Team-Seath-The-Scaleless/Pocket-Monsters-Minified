@@ -4,7 +4,7 @@
 
     using Interfaces;
 
-    public class Flamestrike : SpecialAbility, IDamageAbility
+    public class Flamestrike : DamageAbility
     {
         private const int FlamestrikeDamage = 9;
 
@@ -18,11 +18,8 @@
 
         public Flamestrike()
             : base(AbilityType.Fire, FlamestrikeHitChance,
-            FlamestrikeCooldown, FlamestrikeHitMessage, FlamestrikeMissMessage)
+            FlamestrikeCooldown, FlamestrikeHitMessage, FlamestrikeMissMessage,FlamestrikeDamage)
         {
-            this.Damage = FlamestrikeDamage;
         }
-
-        public int Damage { get; private set; }
     }
 }

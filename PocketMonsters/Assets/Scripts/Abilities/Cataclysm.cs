@@ -4,7 +4,7 @@
 
     using Interfaces;
 
-    public class Cataclysm : SpecialAbility, IDamageAbility
+    public class Cataclysm : DamageAbility
     {
         private const int CataclysmDamage = 100; 
 
@@ -18,11 +18,8 @@
 
         public Cataclysm()
             : base(AbilityType.Earth, CataclysmHitChance,
-            CataclysmCooldown, CataclysmHitMessage, CataclysmMissMessage)
+            CataclysmCooldown, CataclysmHitMessage, CataclysmMissMessage, CataclysmDamage)
         {
-            this.Damage = CataclysmDamage;
         }
-
-        public int Damage { get; private set; }
     }
 }

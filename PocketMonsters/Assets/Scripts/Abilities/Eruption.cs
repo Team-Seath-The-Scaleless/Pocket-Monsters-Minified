@@ -4,7 +4,7 @@
 
     using Interfaces;
 
-    public class Eruption : SpecialAbility, IDamageAbility
+    public class Eruption : DamageAbility
     {
         private const int EruptionDamage = 7;
 
@@ -20,13 +20,8 @@
 
         public Eruption()
             : base(AbilityType.Earth, EruptionHitChance,
-            EruptionCooldown, EruptionHitMessage, EruptionMissMessage)
+            EruptionCooldown, EruptionHitMessage, EruptionMissMessage, EruptionDamage)
         {
-            this.Damage = EruptionDamage;
         }
-
-        public int Damage { get; private set; }
-
-        public int Heal { get; private set; }
     }
 }

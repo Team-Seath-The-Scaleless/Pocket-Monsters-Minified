@@ -4,7 +4,7 @@
 
     using Interfaces;
 
-    public class Enflame : SpecialAbility, IDamageAbility
+    public class Enflame : DamageAbility
     {
         private const int EnflameDamage = 13;
 
@@ -18,11 +18,8 @@
 
         public Enflame()
             : base(AbilityType.Fire, EnflameHitChance,
-            EnflameCooldown, EnflameHitMessage, EnflameMissMessage)
+            EnflameCooldown, EnflameHitMessage, EnflameMissMessage, EnflameDamage)
         {
-            this.Damage = EnflameDamage;
         }
-
-        public int Damage { get; private set; }
     }
 }

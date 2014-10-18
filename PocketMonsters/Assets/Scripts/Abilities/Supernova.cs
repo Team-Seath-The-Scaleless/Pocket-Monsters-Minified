@@ -4,7 +4,7 @@
 
     using Interfaces;
 
-    public class Supernova : SpecialAbility, IDamageAbility
+    public class Supernova : DamageAbility
     {
         private const int SupernovaDamage = 16;
 
@@ -18,11 +18,9 @@
 
         public Supernova()
             : base(AbilityType.Lightning, SupernovaHitChance,
-            SupernovaCooldown, SupernovaHitMessage, SupernovaMissMessage)
+            SupernovaCooldown, SupernovaHitMessage, SupernovaMissMessage,SupernovaDamage)
         {
-            this.Damage = SupernovaDamage;
-        }
 
-        public int Damage { get; private set; }
+        }
     }
 }

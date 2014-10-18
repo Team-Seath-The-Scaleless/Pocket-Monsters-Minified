@@ -4,7 +4,7 @@
 
     using Interfaces;
 
-    public class Armageddon : SpecialAbility, IDamageAbility
+    public class Armageddon : DamageAbility
     {
         private const int ArmageddonDamage = 20;
 
@@ -18,11 +18,8 @@
 
         public Armageddon()
             : base(AbilityType.Fire, ArmageddonHitChance,
-            ArmageddonCooldown, ArmageddonHitMessage, ArmageddonMissMessage)
+            ArmageddonCooldown, ArmageddonHitMessage, ArmageddonMissMessage, ArmageddonDamage)
         {
-            this.Damage = ArmageddonDamage;
         }
-
-        public int Damage { get; private set; }
     }
 }

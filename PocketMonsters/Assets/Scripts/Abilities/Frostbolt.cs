@@ -4,7 +4,7 @@
 
     using Interfaces;
 
-    public class Frostbolt : SpecialAbility, IDamageAbility
+    public class Frostbolt : DamageAbility
     {
         private const int FrostboltDamage = 5;
 
@@ -18,11 +18,8 @@
 
         public Frostbolt()
             : base(AbilityType.Frost, FrostboltHitChance,
-            FrostboltCooldown, FrostboltHitMessage, FrostboltMissMessage)
+            FrostboltCooldown, FrostboltHitMessage, FrostboltMissMessage,FrostboltDamage)
         {
-            this.Damage = FrostboltDamage;
         }
-
-        public int Damage { get; private set; }
     }
 }
