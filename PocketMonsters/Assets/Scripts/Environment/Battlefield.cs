@@ -51,7 +51,7 @@ namespace Environment
             //this.enemyActivePokemon = (Pokemon)this.EnemyHero.Pokemons[randomFromEnemyPokemons];
 			this.playerActivePokemon = new Meowth ();
 			this.enemyActivePokemon = new Pesho();
-			this.playerActivePokemon.Abilities.Add(new Balefrost());
+			this.playerActivePokemon.Abilities.Add(new Armageddon());
             this.playerActivePokemon.CurrentlyActive = true;
             this.enemyActivePokemon.CurrentlyActive = true;
             this.AbilityCount = 1;
@@ -69,16 +69,22 @@ namespace Environment
             if (AbilityCount > this.playerActivePokemon.Abilities.Count) {
 								AbilityCount = 1;
 			}
-
+			Debug.Log (this.enemyActivePokemon.CurrentHealth);
 			IDamageAbility damageAbility = this.playerActivePokemon.Abilities [AbilityCount] as IDamageAbility;
 			if ((object)damageAbility != null) {
-				this.enemyActivePokemon.TakeDamage(damageAbility.Damage);
-			}
+					this.enemyActivePokemon.TakeDamage (damageAbility.Damage);
+				Debug.Log (this.enemyActivePokemon.CurrentHealth);
+			} else {
+				Debug.Log("Fail");
+						}
 
 			IHealingAbility healAbility = this.playerActivePokemon.Abilities [AbilityCount] as IHealingAbility;
 			if ((object)healAbility != null) {
 				this.playerActivePokemon.Heal(healAbility.Heal);
+			}else {
+				Debug.Log("Fail");
 			}
+
         }
 
         // Update is called once per frame
