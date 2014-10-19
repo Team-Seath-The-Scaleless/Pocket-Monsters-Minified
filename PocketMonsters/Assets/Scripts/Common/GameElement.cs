@@ -8,41 +8,11 @@
 
     public abstract class GameElement
     {
-		private float positionY;
+        public float PositionX { get; protected set; }
 
-		private float positionX;
+        public float PositionY { get; protected set; }
 
-		private float positionZ;
-
-		public float PositionX
-		{
-			get{
-				return this.positionX;
-			}
-			protected set{
-				this.positionX = value;
-			}
-		}
-
-        public float PositionY 
-		{ 
-			get 
-			{ return 1F; 
-			} 
-			set{
-				this.positionY = value;
-						}
-		}
-
-        public float PositionZ 
-		{
-			get{
-				return this.positionZ;
-			}
-			protected set{
-				this.positionZ = value;
-			}
-		}
+        public float PositionZ { get; protected set; }
 
     }
 }

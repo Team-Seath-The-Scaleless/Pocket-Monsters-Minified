@@ -10,9 +10,18 @@
 
     public abstract class Npc : GameElement
     {
-        protected Npc(string[] dialogueLines)
+        private GameObject npc;
+
+        protected Npc(GameObject objectOnField, string[] dialogueLines)
         {
+            this.NpcObject = objectOnField;
             this.DialogueLines = dialogueLines;
+        }
+
+        public GameObject NpcObject
+        {
+            get { return this.npc; }
+            private set { this.npc = value; }
         }
 
         public string[] DialogueLines { get; protected set; }

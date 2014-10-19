@@ -4,6 +4,6 @@ namespace Interfaces
 {
     public interface IHealingAbility : IAbility
     {
-        int Heal { get; }
+        void Heal(IPokemon target);
     }
 }

@@ -1,26 +1,19 @@
 ﻿namespace Abilities
 {
     using System;
-
     using Interfaces;
 
-    public class Sandstorm : DamageAbility
+    public class SandStorm : DamageAbility
     {
-        private const int SandstormDamage = 11;
+        private const int SandStormDamage = 11;
+        private const int SandStormHitChance = 6;
+        private const int SandStormCooldown = 3;
+        private const string SandStormHitMessage = "A massive sandstorm initialize and hit the enemy!";
+        private const string SandStormMissMessage = "Sandstorm failed to start!";
 
-        private const int SandstormHitChance = 6;
-
-        private const int SandstormCooldown = 3;
-
-        private const string SandstormHitMessage = "A massive sandstorm initialize and hit the enemy!";
-
-        private const string SandstormMissMessage = "Sandstorm failed to start!";
-
-        public Sandstorm()
-            : base(AbilityType.Earth, SandstormHitChance,
-            SandstormCooldown, SandstormHitMessage, SandstormMissMessage, SandstormDamage)
-        {
-
-        }
+        public SandStorm()
+            : base(SandStormDamage, AbilityType.Earth, SandStormHitChance, SandStormCooldown,
+            SandStormHitMessage, SandStormMissMessage)
+        { }
     }
 }

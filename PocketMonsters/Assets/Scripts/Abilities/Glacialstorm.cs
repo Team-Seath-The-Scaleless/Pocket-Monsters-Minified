@@ -1,24 +1,19 @@
 ﻿namespace Abilities
 {
     using System;
-
     using Interfaces;
 
-    public class Glacialstorm : DamageAbility
+    public class GlacialStorm : DamageAbility
     {
-        private const int GlacialstormDamage = 12;
+        private const int GlacialStormDamage = 12;
+        private const int GlacialStormHitChance = 9;
+        private const int GlacialStormCooldown = 4;
+        private const string GlacialStormHitMessage = "The Glacial Storm freezes your enemy blood!";
+        private const string GlacialStormMissMessage = "Glacial Storm failed to hit!";
 
-        private const int GlacialstormHitChance = 9;
-
-        private const int GlacialstormCooldown = 4;
-
-        private const string GlacialstormHitMessage = "The Glacial Storm freezes your enemy blood!";
-
-        private const string GlacialstormMissMessage = "Glacial Storm failed to hit!";
-
-        public Glacialstorm()
-            : base(AbilityType.Frost, GlacialstormHitChance,
-            GlacialstormCooldown, GlacialstormHitMessage, GlacialstormMissMessage, GlacialstormDamage)
+        public GlacialStorm()
+            : base(GlacialStormDamage, AbilityType.Frost, GlacialStormHitChance,
+            GlacialStormCooldown, GlacialStormHitMessage, GlacialStormMissMessage)
         {
 
         }

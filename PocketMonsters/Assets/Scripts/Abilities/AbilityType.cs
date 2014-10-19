@@ -2,7 +2,6 @@
 {
     public enum AbilityType
     {
-        Normal,
         Fire,
         Frost,
         Earth,

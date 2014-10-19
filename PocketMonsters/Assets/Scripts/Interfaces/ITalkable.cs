@@ -7,6 +7,6 @@ namespace Interfaces
 {
     public interface ITalkable
     {
-        string[] DialogueLines { get; }
+        void Talk();
     }
 }

@@ -1,26 +1,19 @@
 ﻿namespace Abilities
 {
     using System;
-
     using Interfaces;
 
-    public class Supernova : DamageAbility
+    public class SuperNova : DamageAbility
     {
-        private const int SupernovaDamage = 16;
+        private const int SuperNovaDamage = 16;
+        private const int SuperNovaHitChance = 5;
+        private const int SuperNovaCooldown = 4;
+        private const string SuperNovaHitMessage = "The Supernova released the ultimate force!";
+        private const string SuperNovaMissMessage = "Supernova has missed the target!";
 
-        private const int SupernovaHitChance = 5;
-
-        private const int SupernovaCooldown = 4;
-
-        private const string SupernovaHitMessage = "The Supernova released the ultimate force!";
-
-        private const string SupernovaMissMessage = "Supernova has missed the target!";
-
-        public Supernova()
-            : base(AbilityType.Lightning, SupernovaHitChance,
-            SupernovaCooldown, SupernovaHitMessage, SupernovaMissMessage,SupernovaDamage)
-        {
-
-        }
+        public SuperNova()
+            : base(SuperNovaDamage, AbilityType.Lightning, SuperNovaHitChance, SuperNovaCooldown,
+            SuperNovaHitMessage, SuperNovaMissMessage)
+        { }
     }
 }

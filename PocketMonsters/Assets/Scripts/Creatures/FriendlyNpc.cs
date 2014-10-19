@@ -5,19 +5,27 @@
     using System.Text;
     using System.Collections.Generic;
 
+    using UnityEngine;
     using Interfaces;
 
-    public class FriendlyNpc : Npc, ITalkable
+    public abstract class FriendlyNpc : Npc, ITalkable
     {
         private readonly string[] defaultDialogue = { "Hello", "How are you today" };
 
-        public FriendlyNpc(string[] dialogueLines = null)
-            : base(dialogueLines)
+        public FriendlyNpc(float posX, float posY, float posZ, GameObject objectOnField, string[] dialogueLines)
+            : base(objectOnField, dialogueLines)
         {
-            if (this.DialogueLines == null)
+            base.PositionX = posX;
+            base.PositionY = posY;
+            base.PositionZ = posZ;
+
+            if (dialogueLines == null)
             {
-                this.DialogueLines = this.defaultDialogue;
+                base.DialogueLines = this.defaultDialogue;
             }
         }
+
+        public abstract void Talk();
+        public abstract void StopTalking();
     }
 }

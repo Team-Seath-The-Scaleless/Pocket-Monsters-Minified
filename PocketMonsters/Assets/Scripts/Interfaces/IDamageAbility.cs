@@ -4,6 +4,6 @@ namespace Interfaces
 {
     public interface IDamageAbility
     {
-        int Damage { get; }
+        void Hit(IPokemon target);
     }
 }

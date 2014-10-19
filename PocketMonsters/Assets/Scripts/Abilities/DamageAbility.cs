@@ -6,15 +6,16 @@ using Interfaces;
 
 namespace Abilities
 {
-   public abstract class DamageAbility : SpecialAbility, IDamageAbility
+    public abstract class DamageAbility : SpecialAbility, IDamageAbility
     {
+        public DamageAbility(int abilityPower, AbilityType type, int hitChance,
+            int cooldown, string hitMsg, string missMsg)
+            : base(abilityPower, type, hitChance, cooldown, hitMsg, missMsg)
+        { }
 
-        public int Damage { get; private set; }
-        public DamageAbility(AbilityType type, int hitChance,
-            int cooldown, string hitMsg, string missMsg, int damage)
-            : base(type, hitChance, cooldown, hitMsg, missMsg)
+        public void Hit(IPokemon target)
         {
-            this.Damage = damage;
+            target.CurrentHealth -= this.AbilityPower;
         }
     }
 }

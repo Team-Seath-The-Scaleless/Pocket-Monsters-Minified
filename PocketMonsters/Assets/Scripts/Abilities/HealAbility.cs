@@ -8,12 +8,14 @@ namespace Abilities
 {
 	public abstract class HealAbility : SpecialAbility, IHealingAbility
     {
-         public int Heal { get; set; }
-         public HealAbility(AbilityType type, int hitChance,
-            int cooldown, string hitMsg, string missMsg, int heal)
-            : base(type, hitChance, cooldown, hitMsg, missMsg)
-        {
-            this.Heal = heal;
-        }
+         public HealAbility(int abilityPower, AbilityType type, int hitChance,
+            int cooldown, string hitMsg, string missMsg)
+            : base(abilityPower, type, hitChance, cooldown, hitMsg, missMsg)
+        { }
+        
+         public void Heal(IPokemon target)
+         {
+             target.CurrentHealth += this.AbilityPower;
+         }
     }
 }

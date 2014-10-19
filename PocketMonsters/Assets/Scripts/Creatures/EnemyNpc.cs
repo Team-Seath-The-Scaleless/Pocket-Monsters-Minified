@@ -1,19 +1,23 @@
 ﻿namespace Creatures
 {
     using System;
-    using System.Linq;
-    using System.Text;
     using System.Collections.Generic;
 
+    using UnityEngine;
     using Interfaces;
 
-    public class EnemyNpc : Npc, IPokemonTrainer, ITalkable
+    public abstract class EnemyNpc : Npc, IPokemonTrainer, ITalkable
     {
         private readonly string[] defaultDialogue = { "Here you are", "Let's fight" };
 
-        public EnemyNpc(IList<IPokemon> pokemons, string[] dialogueLines = null)
-            : base(dialogueLines)
+        public EnemyNpc(float posX, float posY, float posZ, IList<IPokemon> pokemons,
+            GameObject objectOnField, string[] dialogueLines = null)
+            : base(objectOnField, dialogueLines)
         {
+            base.PositionX = posX;
+            base.PositionY = posY;
+            base.PositionZ = posZ;
+
             this.Pokemons = pokemons;
             if (this.DialogueLines == null)
             {
@@ -22,5 +26,8 @@
         }
 
         public IList<IPokemon> Pokemons { get; private set; }
+
+        public abstract void Talk();
+        public abstract void StopTalking();
     }
 }

@@ -6,9 +6,9 @@
     {
         private static readonly Random HitChanceCalculator = new Random();
 
-        protected SpecialAbility(AbilityType type, int hitChance,
+        protected SpecialAbility(int abilityPower, AbilityType type, int hitChance,
             int cooldown, string hitMsg, string missMsg)
-            : base(type)
+            : base(abilityPower, type)
         {
             this.HitChance = hitChance;
             this.Cooldown = cooldown;
