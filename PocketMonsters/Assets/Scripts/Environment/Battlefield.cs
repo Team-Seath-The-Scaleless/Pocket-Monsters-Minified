@@ -17,6 +17,10 @@
         public UILabel enemyPokemonLevelLabel;
         public UILabel playerPokemonHealthLabel;
         public UILabel actionResultLabel;
+        public GameObject firstSpecialButton;
+        public GameObject secondSpecialButton;
+        public GameObject thirdSpecialButton;
+        public GameObject fourthSpecialButton;
 
         private bool playerTurn;
         private bool enemyTurn;
@@ -28,30 +32,9 @@
 
         private EnemyNpc enemyHero;
 
-        public Hero MyHero
-        {
-            get
-            {
-                return this.myHero;
-            }
-            set
-            {
-                this.myHero = value;
-            }
-        }
-        public EnemyNpc EnemyHero
-        {
-            get
-            {
-                return this.enemyHero;
-            }
-            set
-            {
-                this.enemyHero = value;
-            }
-        }
-        private static IPokemon playerActivePokemon;
-        private static IPokemon enemyActivePokemon;
+
+        private IPokemon playerActivePokemon;
+        private IPokemon enemyActivePokemon;
         private int AbilityCount;
 
         void Start()
@@ -60,6 +43,8 @@
             Debug.Log(GameData.player);
             Debug.Log(GameData.currentEnemy);
             Debug.Log(GameData.npcs.Count);
+
+
 
             //int randomFromMyPokemons = 1;
             //int randomFromEnemyPokemons = 1; //Random.Range(0, this.enemyHero.Pokemons.Count);
@@ -73,41 +58,41 @@
             //this.AbilityCount = 1;
         }
 
-        //public void UseNormalAttack()
-        //{
-        //    int attack = Battlefield.playerActivePokemon.Attack;
-        //    Battlefield.enemyActivePokemon.TakeDamage(attack);
-        //    Debug.Log(Battlefield.enemyActivePokemon.CurrentHealth);
-        //}
+        public void UseNormalAttack()
+        {
+            this.enemyActivePokemon.CurrentHealth -= this.playerActivePokemon.AttackDamage;
+        }
 
-        //public void UseSpecialAttack()
-        //{
-        //    if (AbilityCount > Battlefield.playerActivePokemon.Abilities.Count)
-        //    {
-        //        AbilityCount = 1;
-        //    }
-        //    Debug.Log(Battlefield.enemyActivePokemon.CurrentHealth);
-        //    IDamageAbility damageAbility = Battlefield.playerActivePokemon.Abilities[AbilityCount] as IDamageAbility;
-        //    if ((object)damageAbility != null)
-        //    {
-        //        Battlefield.enemyActivePokemon.TakeDamage(damageAbility.Damage);
-        //        Debug.Log(Battlefield.enemyActivePokemon.CurrentHealth);
-        //    }
-        //    else
-        //    {
-        //        Debug.Log("Fail");
-        //    }
+        public void UseSpecialAttack(GameObject buttonPressed)
+        {
+            int abilityIndex = int.Parse(buttonPressed.name.Substring(0, buttonPressed.name.IndexOf('_')));
+            Debug.Log(abilityIndex);
+            //if (AbilityCount > Battlefield.playerActivePokemon.Abilities.Count)
+            //{
+            //    AbilityCount = 1;
+            //}
+            //Debug.Log(Battlefield.enemyActivePokemon.CurrentHealth);
+            //IDamageAbility damageAbility = Battlefield.playerActivePokemon.Abilities[AbilityCount] as IDamageAbility;
+            //if ((object)damageAbility != null)
+            //{
+            //    Battlefield.enemyActivePokemon.TakeDamage(damageAbility.Damage);
+            //    Debug.Log(Battlefield.enemyActivePokemon.CurrentHealth);
+            //}
+            //else
+            //{
+            //    Debug.Log("Fail");
+            //}
 
-        //    IHealingAbility healAbility = Battlefield.playerActivePokemon.Abilities[AbilityCount] as IHealingAbility;
-        //    if ((object)healAbility != null)
-        //    {
-        //        Battlefield.playerActivePokemon.Heal(healAbility.Heal);
-        //    }
-        //    else
-        //    {
-        //        Debug.Log("Fail");
-        //    }
-        //}
+            //IHealingAbility healAbility = Battlefield.playerActivePokemon.Abilities[AbilityCount] as IHealingAbility;
+            //if ((object)healAbility != null)
+            //{
+            //    Battlefield.playerActivePokemon.Heal(healAbility.Heal);
+            //}
+            //else
+            //{
+            //    Debug.Log("Fail");
+            //}
+        }
 
         //public static string GetHeroName()
         //{
