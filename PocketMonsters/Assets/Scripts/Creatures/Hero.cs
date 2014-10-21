@@ -7,6 +7,7 @@
 
     using UnityEngine;
     using Scripts;
+    using Abilities;
     using Common;
     using Interfaces;
 
@@ -267,16 +268,23 @@
         private void StartBattle()
         {
             GameData.currentEnemy = (EnemyNpc)this.foundNpc;
+            RechargePokemons(this.Pokemons);
+            RechargePokemons(GameData.currentEnemy.Pokemons);
             Application.LoadLevel("BattleScene");
         }
 
-        private void HealPokemons()
+        private void RechargePokemons(IList<IPokemon> pokemons)
         {
-            foreach (var pokemon in this.Pokemons)
+            foreach (var pokemon in pokemons)
             {
                 pokemon.CurrentHealth = pokemon.MaxHealth;
                 pokemon.IsAlive = true;
                 pokemon.CurrentlyActive = false;
+
+                foreach (var ability in pokemon.Abilities)
+                {
+                    ((SpecialAbility)ability).CurrentCooldown = 0;
+                }
             }
         }
     }
