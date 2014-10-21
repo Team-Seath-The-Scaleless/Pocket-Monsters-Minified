@@ -6,10 +6,10 @@
 
     public class VillageGirl : FriendlyNpc
     {
-        public const string prefabPath = "Prefabs/VillagerGirl";
+        public const string NpcPrefabPath = "Prefabs/VillagerGirl";
 
         public VillageGirl(float posX, float posY, float posZ, GameObject objectOnField, string[] dialogueLines = null)
-            : base(posX, posY, posZ, objectOnField, dialogueLines)
+            : base(posX, posY, posZ, objectOnField, NpcPrefabPath, dialogueLines)
         { }
         
         public override void Talk()

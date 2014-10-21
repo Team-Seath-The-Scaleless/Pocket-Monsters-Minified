@@ -9,6 +9,8 @@
         
         int MaxHealth { get; }
 
+        int CurrentLevel { get; }
+
         bool IsAlive { get; set; }
 
         bool CurrentlyActive { get; set; }

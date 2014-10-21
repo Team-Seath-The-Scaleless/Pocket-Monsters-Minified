@@ -9,17 +9,17 @@
 
     public class Bandit : EnemyNpc
     {
-        public const string prefabPath = "Prefabs/Bandit";
+        public const string NpcPrefabPath = "Prefabs/Bandit";
         private static readonly IList<IPokemon> BanditPokemons =
             new List<IPokemon>
             {
                 new Rattata(),
                 new Squirtle(),
-                new Grandfatty()
+                new Nidoqueen()
             };
 
         public Bandit(float posX, float posY, float posZ, GameObject objectOnField, string[] dialogueLines = null)
-            : base(posX, posY, posZ, BanditPokemons, objectOnField, dialogueLines)
+            : base(posX, posY, posZ, BanditPokemons, objectOnField, NpcPrefabPath, dialogueLines)
         { }
 
         public override void Talk()

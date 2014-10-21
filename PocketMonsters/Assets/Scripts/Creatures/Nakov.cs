@@ -9,17 +9,17 @@
 
     public class Nakov : EnemyNpc
     {
-        public const string prefabPath = "Prefabs/Nakov";
+        public const string NpcPrefabPath = "Prefabs/Nakov";
         private static readonly IList<IPokemon> NakovPokemons =
             new List<IPokemon>
             {
-                new Pesho(),
-                new Drunkemon(),
-                new Separatist()
+                new MewTwo(),
+                new Charizard(),
+                new Snorlax()
             };
 
         public Nakov(float posX, float posY, float posZ, GameObject objectOnField, string[] dialogueLines = null)
-            : base(posX, posY, posZ, NakovPokemons, objectOnField, dialogueLines)
+            : base(posX, posY, posZ, NakovPokemons, objectOnField, NpcPrefabPath, dialogueLines)
         { }
 
         public override void Talk()

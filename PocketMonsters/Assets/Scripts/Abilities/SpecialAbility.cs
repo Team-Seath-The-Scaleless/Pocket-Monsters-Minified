@@ -7,18 +7,21 @@
         private static readonly Random HitChanceCalculator = new Random();
 
         protected SpecialAbility(int abilityPower, AbilityType type, int hitChance,
-            int cooldown, string hitMsg, string missMsg)
+            int baseCooldown, int currentCooldown, string hitMsg, string missMsg)
             : base(abilityPower, type)
         {
             this.HitChance = hitChance;
-            this.Cooldown = cooldown;
+            this.BaseCooldown = baseCooldown;
+            this.CurrentCooldown = currentCooldown;
             this.HitMessage = hitMsg;
             this.MissMessage = missMsg;
         }
 
         public int HitChance { get; protected set; }
 
-        public int Cooldown { get; protected set; }
+        public int BaseCooldown { get; private set; }
+
+        public int CurrentCooldown { get; set; }
 
         public string HitMessage { get; protected set; }
 

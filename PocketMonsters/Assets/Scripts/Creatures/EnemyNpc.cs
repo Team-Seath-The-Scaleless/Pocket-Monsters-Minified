@@ -11,8 +11,8 @@
         private readonly string[] defaultDialogue = { "Here you are", "Let's fight" };
 
         public EnemyNpc(float posX, float posY, float posZ, IList<IPokemon> pokemons,
-            GameObject objectOnField, string[] dialogueLines = null)
-            : base(objectOnField, dialogueLines)
+            GameObject objectOnField, string prefabPath, string[] dialogueLines = null)
+            : base(objectOnField, prefabPath, dialogueLines)
         {
             base.PositionX = posX;
             base.PositionY = posY;

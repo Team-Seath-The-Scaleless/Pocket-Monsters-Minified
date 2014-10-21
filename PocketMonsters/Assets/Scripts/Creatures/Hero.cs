@@ -28,7 +28,7 @@
         private float moveSpeed = 10f;
         private float increment;
 
-        public Hero(float startX, float startY, float startZ, GameObject playerOnField, List<IPokemon> pokemons)
+        public Hero(float startX, float startY, float startZ, GameObject playerOnField, IList<IPokemon> pokemons)
         {
             this.PositionX = startX;
             this.PositionY = startY;
@@ -37,15 +37,15 @@
             this.drawer = this.Player.GetComponent<AnimatedSprites>();
             this.Pokemons = pokemons;
 
-            this.interactionPanel = playerOnField.transform.Find("PanelBackground").gameObject;
-            this.startPosition = playerOnField.transform.position;
-            this.endPosition = playerOnField.transform.position;
+            this.interactionPanel = this.Player.transform.Find("PanelBackground").gameObject;
+            this.startPosition = this.Player.transform.position;
+            this.endPosition = this.Player.transform.position;
         }
 
         public GameObject Player
         {
             get { return this.playerObject; }
-            private set { this.playerObject = value; }
+            set { this.playerObject = value; }
         }
 
         public IList<IPokemon> Pokemons { get; private set; }
@@ -172,13 +172,22 @@
                 CheckForNearbyNpcs();
             }
 
+            if (this.interactionPanel == null)
+            {
+                this.interactionPanel = this.Player.transform.Find("PanelBackground").gameObject;
+            }
+
+            if (this.drawer == null)
+            {
+                this.drawer = this.Player.GetComponent<AnimatedSprites>();
+            }
+
             if (this.interactionPanel.activeInHierarchy)
             {
                 if (this.challengedToFight)
                 {
                     if (Input.GetKeyDown(KeyCode.Space))
                     {
-                        Debug.Log("FIGHTOO");
                         StartBattle();
                     }
                 }
@@ -212,6 +221,11 @@
 
         private void CheckForNearbyNpcs()
         {
+            if (this.foundNpc != null)
+            {
+                this.foundNpc = null;                
+            }
+
             foreach (var npc in GameData.npcs)
             {
                 if (this.Player.GetComponent<BoxCollider>().bounds.Contains(npc.NpcObject.transform.position))
@@ -238,6 +252,7 @@
                     }
                     else if (this.foundNpc.GetType().BaseType == typeof(EnemyNpc))
                     {
+                        Debug.Log(this.foundNpc);
                         ((EnemyNpc)this.foundNpc).StopTalking();
                     }
 
@@ -253,6 +268,16 @@
         {
             GameData.currentEnemy = (EnemyNpc)this.foundNpc;
             Application.LoadLevel("BattleScene");
+        }
+
+        private void HealPokemons()
+        {
+            foreach (var pokemon in this.Pokemons)
+            {
+                pokemon.CurrentHealth = pokemon.MaxHealth;
+                pokemon.IsAlive = true;
+                pokemon.CurrentlyActive = false;
+            }
         }
     }
 }

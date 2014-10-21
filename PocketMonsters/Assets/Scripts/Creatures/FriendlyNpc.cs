@@ -12,8 +12,8 @@
     {
         private readonly string[] defaultDialogue = { "Hello", "How are you today" };
 
-        public FriendlyNpc(float posX, float posY, float posZ, GameObject objectOnField, string[] dialogueLines)
-            : base(objectOnField, dialogueLines)
+        public FriendlyNpc(float posX, float posY, float posZ, GameObject objectOnField, string prefabPath, string[] dialogueLines)
+            : base(objectOnField, prefabPath, dialogueLines)
         {
             base.PositionX = posX;
             base.PositionY = posY;
