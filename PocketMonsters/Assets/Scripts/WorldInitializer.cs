@@ -6,6 +6,7 @@
 
     using Creatures;
     using Interfaces;
+    using Items;
     using Pokemons;
 
     public class WorldInitializer : MonoBehaviour
@@ -16,6 +17,7 @@
         {
             CreatePlayer();
             CreateNpcs();
+            CreateItemsOnMap();
         }
 
         private void Update()
@@ -78,6 +80,24 @@
                         new Vector3(npc.PositionX, npc.PositionY, npc.PositionZ);
                 }
             }
+        }
+
+        private void CreateItemsOnMap()
+        {
+            if (GameData.items == null)
+            {
+                GameData.items = new List<IEatable>();
+
+                Banana firstBanana = new Banana();
+                firstBanana.Draw(-9f, 1f, 39f, Banana.ItemPrefabPath);
+                GameData.items.Add(firstBanana);
+
+                Apple firstApple = new Apple();
+                firstApple.Draw(-5f, 1f, 7f, Apple.ItemPrefabPath);
+                GameData.items.Add(firstApple);
+            }
+
+            
         }
     }
 }

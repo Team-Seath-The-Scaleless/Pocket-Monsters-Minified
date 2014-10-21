@@ -78,6 +78,17 @@
                         hit.collider.gameObject.tag.Equals("NPC"))
                     {
                         this.canMove = false;
+
+                        if (hit.collider.gameObject.name.Equals("ExitCave"))
+                        {
+                            GameOver();
+                        }
+                    }
+
+                    if (hit.collider.gameObject.tag.Equals("foodItem"))
+                    {
+                        this.RechargePokemons(this.Pokemons);
+                        MonoBehaviour.Destroy(hit.collider.gameObject);
                     }
                 }
 
@@ -104,6 +115,17 @@
                         hit.collider.gameObject.tag.Equals("NPC"))
                     {
                         this.canMove = false;
+
+                        if (hit.collider.gameObject.name.Equals("ExitCave"))
+                        {
+                            GameOver();
+                        }
+                    }
+
+                    if (hit.collider.gameObject.tag.Equals("foodItem"))
+                    {
+                        this.RechargePokemons(this.Pokemons);
+                        MonoBehaviour.Destroy(hit.collider.gameObject);
                     }
                 }
 
@@ -130,6 +152,17 @@
                         hit.collider.gameObject.tag.Equals("NPC"))
                     {
                         this.canMove = false;
+
+                        if (hit.collider.gameObject.name.Equals("ExitCave"))
+                        {
+                            GameOver();
+                        }
+                    }
+
+                    if (hit.collider.gameObject.tag.Equals("foodItem"))
+                    {
+                        this.RechargePokemons(this.Pokemons);
+                        MonoBehaviour.Destroy(hit.collider.gameObject);
                     }
                 }
 
@@ -156,6 +189,17 @@
                         hit.collider.gameObject.tag.Equals("NPC"))
                     {
                         this.canMove = false;
+
+                        if (hit.collider.gameObject.name.Equals("ExitCave"))
+                        {
+                            GameOver();
+                        }
+                    }
+
+                    if (hit.collider.gameObject.tag.Equals("foodItem"))
+                    {
+                        this.RechargePokemons(this.Pokemons);
+                        MonoBehaviour.Destroy(hit.collider.gameObject);
                     }
                 }
 
@@ -181,6 +225,14 @@
             if (this.drawer == null)
             {
                 this.drawer = this.Player.GetComponent<AnimatedSprites>();
+            }
+
+            if (this.Player.transform.Find("MessageBox").gameObject.activeInHierarchy)
+            {
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    this.Player.transform.Find("MessageBox").gameObject.SetActive(false);
+                }
             }
 
             if (this.interactionPanel.activeInHierarchy)
@@ -215,11 +267,11 @@
             this.interactionPanel.GetComponentInChildren<TextMesh>().text = "Press Spacebar to Talk";
         }
 
-        private void HideInteractionLabel()
+        public void HideInteractionLabel()
         {
             this.interactionPanel.SetActive(false);
         }
-
+        
         private void CheckForNearbyNpcs()
         {
             if (this.foundNpc != null)
@@ -267,6 +319,11 @@
 
         private void StartBattle()
         {
+            if (this.foundNpc == null)
+            {
+                throw new TargetMissingException("The detected target is missing.");
+            }
+
             GameData.currentEnemy = (EnemyNpc)this.foundNpc;
             RechargePokemons(this.Pokemons);
             RechargePokemons(GameData.currentEnemy.Pokemons);
@@ -285,6 +342,19 @@
                 {
                     ((SpecialAbility)ability).CurrentCooldown = 0;
                 }
+            }
+        }
+
+        private void GameOver()
+        {
+            var enemyNpcs = GameData.npcs.Where(n => n.GetType().BaseType == typeof(EnemyNpc)).ToList();
+            if (enemyNpcs.Count <= 0)
+            {
+                Application.LoadLevel("GameOverScene");
+            }
+            else
+            {
+                this.Player.transform.Find("MessageBox").gameObject.SetActive(true);
             }
         }
     }
