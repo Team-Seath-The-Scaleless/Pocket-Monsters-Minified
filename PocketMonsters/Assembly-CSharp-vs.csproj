@@ -212,8 +212,6 @@
      <Compile Include="Assets\Scripts\Creatures\Hero.cs" />
      <Compile Include="Assets\Scripts\Creatures\Nakov.cs" />
      <Compile Include="Assets\Scripts\Creatures\Npc.cs" />
-     <Compile Include="Assets\Scripts\Creatures\NpcFoodItems.cs" />
-     <Compile Include="Assets\Scripts\Creatures\RandomFoodItemsTypes.cs" />
      <Compile Include="Assets\Scripts\Creatures\VillageGirl.cs" />
      <Compile Include="Assets\Scripts\Environment\Battlefield.cs" />
      <Compile Include="Assets\Scripts\GameData.cs" />
@@ -231,6 +229,7 @@
      <Compile Include="Assets\Scripts\Items\Banana.cs" />
      <Compile Include="Assets\Scripts\Items\FoodItem.cs" />
      <Compile Include="Assets\Scripts\Items\Item.cs" />
+     <Compile Include="Assets\Scripts\Items\RandomFoodItemsTypes.cs" />
      <Compile Include="Assets\Scripts\Pokemons\Bulbasaur.cs" />
      <Compile Include="Assets\Scripts\Pokemons\Charizard.cs" />
      <Compile Include="Assets\Scripts\Pokemons\Charmander.cs" />
@@ -280,7 +279,6 @@
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Packed.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Packed 3.shader" />
      <None Include="Assets\NGUI\Examples\Shaders\Unlit - Additive Colored.shader" />
-     <None Include="Assets\PokemonGameDiagram.cd" />
      <None Include="Assets\NGUI\Examples\Atlases\Refractive\Refractive Font - Header.txt" />
      <None Include="Assets\NGUI\Examples\Shaders\Refractive.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text (TextureClip).shader" />

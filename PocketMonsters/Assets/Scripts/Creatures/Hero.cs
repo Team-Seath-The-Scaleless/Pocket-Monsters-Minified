@@ -274,7 +274,7 @@
         
         private void CheckForNearbyNpcs()
         {
-            if (this.foundNpc != null)
+            if (this.foundNpc != null && this.foundNpc.NpcObject != null)
             {
                 if (this.foundNpc.NpcObject.transform.Find("ChatBubble").gameObject.activeInHierarchy)
                 {
@@ -302,7 +302,7 @@
             }
             else
             {
-                if (this.foundNpc != null)
+                if (this.foundNpc != null && this.foundNpc.NpcObject != null)
                 {
                     if (this.foundNpc.GetType().BaseType == typeof(FriendlyNpc))
                     {
