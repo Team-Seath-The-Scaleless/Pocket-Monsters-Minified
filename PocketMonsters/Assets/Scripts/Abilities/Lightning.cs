@@ -15,6 +15,7 @@
         public Lightning()
             : base(LightningDamage, AbilityType.Lightning, LightningHitChance,
             LightningBaseCooldown, LightningCurrentCooldown, LightningHitMessage, LightningMissMessage)
-        { }
+        {
+        }
     }
 }

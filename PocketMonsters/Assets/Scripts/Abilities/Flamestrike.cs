@@ -15,6 +15,7 @@
         public Flamestrike()
             : base(FlamestrikeDamage, AbilityType.Fire, FlamestrikeHitChance, FlamestrikeBaseCooldown,
             FlamestrikeCurrentCooldown, FlamestrikeHitMessage, FlamestrikeMissMessage)
-        { }
+        {  
+        }
     }
 }

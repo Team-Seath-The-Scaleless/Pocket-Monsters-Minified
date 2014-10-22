@@ -9,11 +9,11 @@
     using Common;
     using Creatures;
 
-    class NpcFoodItems : GameElement
+    public class NpcFoodItems : GameElement
     {
         public float FoodItemPositionGenerator() 
         {
-			System.Random rnd = new System.Random();
+            System.Random rnd = new System.Random();
             int number = rnd.Next(0, 100);
             double value = rnd.NextDouble();
             float result = (float)(number + Math.Round(value, 2));

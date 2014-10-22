@@ -15,6 +15,7 @@
         public Frostbolt()
             : base(FrostboltDamage, AbilityType.Frost, FrostboltHitChance,
             FrostboltCurrentCooldown, FrostboltBaseCooldown, FrostboltHitMessage, FrostboltMissMessage)
-        { }
+        {
+        }
     }
 }

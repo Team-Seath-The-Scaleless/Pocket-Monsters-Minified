@@ -15,6 +15,7 @@
         public Balefrost()
             : base(BalefrostDamage, AbilityType.Frost, BalefrostHitChance, BalefrostBaseCooldown,
             BalefrostCurrentCooldown, BalefrostHitMessage, BalefrostMissMessage)
-        { }
+        {
+        }
     }
 }

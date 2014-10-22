@@ -16,6 +16,7 @@
         public Firebreath()
             : base(FirebreathDamage, AbilityType.Fire, FirebreathHitChance, FirebreathBaseCooldown,
             FirebreathCurrentCooldown, FirebreathHitMessage, FirebreathMissMessage)
-        { }
+        {  
+        }
     }
 }

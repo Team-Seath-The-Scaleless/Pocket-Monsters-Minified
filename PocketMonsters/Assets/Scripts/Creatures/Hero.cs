@@ -261,17 +261,17 @@
             }
         }
 
+        public void HideInteractionLabel()
+        {
+            this.interactionPanel.SetActive(false);
+        }
+
         private void ShowInteractionLabel()
         {
             this.interactionPanel.SetActive(true);
             this.interactionPanel.GetComponentInChildren<TextMesh>().text = "Press Spacebar to Talk";
         }
 
-        public void HideInteractionLabel()
-        {
-            this.interactionPanel.SetActive(false);
-        }
-        
         private void CheckForNearbyNpcs()
         {
             if (this.foundNpc != null)

@@ -10,7 +10,8 @@
 
         public VillageGirl(float posX, float posY, float posZ, GameObject objectOnField, string[] dialogueLines = null)
             : base(posX, posY, posZ, objectOnField, NpcPrefabPath, dialogueLines)
-        { }
+        {  
+        }
         
         public override void Talk()
         {

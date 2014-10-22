@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Assets.Scripts.Creatures
+﻿namespace Creatures
 {
-    enum RandomFoodItemsTypes
+    public enum RandomFoodItemsTypes
     {
-        apple,
-        bannana,
-        orange,
-        peach,
-        strawberry
+        Apple,
+        Bannana,
+        Orange,
+        Peach,
+        Strawberry,
+        Cherry
     }
 }

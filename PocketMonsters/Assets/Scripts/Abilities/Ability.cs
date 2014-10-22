@@ -15,7 +15,11 @@
 
         public int AbilityPower
         {
-            get { return this.abilityPower; }
+            get
+            {
+                return this.abilityPower;
+            }
+
             private set
             {
                 if (value < 0)
@@ -28,6 +32,5 @@
         }
 
         public AbilityType Type { get; protected set; }
-
     }
 }

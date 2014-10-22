@@ -15,6 +15,7 @@
         public IceBlade()
             : base(IceBladeDamage, AbilityType.Frost, IceBladeHitChance, IceBladeBaseCooldown,
             IceBladeCurrentCooldown, IceBladeHitMessage, IceBladeMissMessage)
-        { }
+        {
+        }
     }
 }

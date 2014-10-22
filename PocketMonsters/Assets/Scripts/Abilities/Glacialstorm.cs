@@ -16,7 +16,6 @@
             : base(GlacialStormDamage, AbilityType.Frost, GlacialStormHitChance,
             GlacialStormBaseCooldown, GlacialStormCurrentCooldown, GlacialStormHitMessage, GlacialStormMissMessage)
         {
-
         }
     }
 }

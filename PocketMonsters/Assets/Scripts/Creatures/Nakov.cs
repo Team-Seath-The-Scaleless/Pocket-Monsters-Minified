@@ -20,7 +20,8 @@
 
         public Nakov(float posX, float posY, float posZ, GameObject objectOnField, string[] dialogueLines = null)
             : base(posX, posY, posZ, NakovPokemons, objectOnField, NpcPrefabPath, dialogueLines)
-        { }
+        {  
+        }
 
         public override void Talk()
         {

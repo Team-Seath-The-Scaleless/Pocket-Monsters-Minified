@@ -15,6 +15,7 @@
         public Armageddon()
             : base(ArmageddonDamage, AbilityType.Fire, ArmageddonHitChance,
             ArmageddonBaseCooldown, ArmageddonCurrentCooldown, ArmageddonHitMessage, ArmageddonMissMessage)
-        { } 
+        {  
+        }
     }
 }

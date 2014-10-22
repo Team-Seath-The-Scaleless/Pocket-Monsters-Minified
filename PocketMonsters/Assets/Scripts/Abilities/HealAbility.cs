@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Interfaces;
-
-namespace Abilities
+﻿namespace Abilities
 {
-	public abstract class HealAbility : SpecialAbility, IHealingAbility
+    using Interfaces;
+
+    public abstract class HealAbility : SpecialAbility, IHealingAbility
     {
-         public HealAbility(int abilityPower, AbilityType type, int hitChance,
+         protected HealAbility(int abilityPower, AbilityType type, int hitChance,
             int baseCooldown, int currentCooldown, string hitMsg, string missMsg)
             : base(abilityPower, type, hitChance, baseCooldown, currentCooldown, hitMsg, missMsg)
-        { }
+         { 
+         }
         
          public void Heal(IPokemon target)
          {

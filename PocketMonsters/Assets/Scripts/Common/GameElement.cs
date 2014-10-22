@@ -13,6 +13,5 @@
         public float PositionY { get; protected set; }
 
         public float PositionZ { get; protected set; }
-
     }
 }

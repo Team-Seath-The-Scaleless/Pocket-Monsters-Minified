@@ -15,6 +15,7 @@
         public Recharge()
             : base(RechargeHeal, AbilityType.Lightning, RechargeHitChance, RechargeBaseCooldown,
             RechargeCurrentCooldown, RechargeHitMessage, RechargeMissMessage)
-        { }
+        {
+        }
     }
 }
