@@ -42,6 +42,7 @@
         private bool playerTurn;
         private bool enemyTurn;
         private bool enemyUsedAbility;
+        private bool duelEnded;
 
         void Start()
         {
@@ -54,37 +55,40 @@
 
         void Update()
         {
-            if (this.playerTurn && this.actionResultLabel.gameObject.activeInHierarchy)
+            if (!this.duelEnded)
             {
-                if (Input.GetKeyDown(KeyCode.Space))
+                if (this.playerTurn && this.actionResultLabel.gameObject.activeInHierarchy)
                 {
-                    this.playerTurn = false;
-                    this.enemyTurn = true;
-                    this.enemyUsedAbility = false;
-                    DecreaseAbilityCooldowns(this.enemyActivePokemon);
+                    if (Input.GetKeyDown(KeyCode.Space))
+                    {
+                        this.playerTurn = false;
+                        this.enemyTurn = true;
+                        this.enemyUsedAbility = false;
+                        DecreaseAbilityCooldowns(this.enemyActivePokemon);
+                    }
                 }
-            }
-            else if (this.enemyTurn && this.actionResultLabel.gameObject.activeInHierarchy)
-            {
-                if (!this.enemyUsedAbility)
+                else if (this.enemyTurn && this.actionResultLabel.gameObject.activeInHierarchy)
                 {
-                    EnemyExecuteTurn();                    
-                }
+                    if (!this.enemyUsedAbility)
+                    {
+                        EnemyExecuteTurn();
+                    }
 
-                if (Input.GetKeyDown(KeyCode.Space))
-                {
-                    this.playerTurn = true;
-                    this.enemyTurn = false;
-                    this.actionResultLabel.gameObject.SetActive(false);
-                    this.actionButtons.SetActive(true);
-                    DecreaseAbilityCooldowns(this.playerActivePokemon);
+                    if (Input.GetKeyDown(KeyCode.Space))
+                    {
+                        this.playerTurn = true;
+                        this.enemyTurn = false;
+                        this.actionResultLabel.gameObject.SetActive(false);
+                        this.actionButtons.SetActive(true);
+                        DecreaseAbilityCooldowns(this.playerActivePokemon);
+                    }
                 }
             }
         }
 
         public void UseNormalAttack()
         {
-            if (this.notificationPopup.activeInHierarchy)
+            if (this.notificationPopup.activeInHierarchy || this.duelEnded)
             {
                 return;
             }
@@ -106,7 +110,7 @@
 
         public void UseSpecialAttack(GameObject buttonPressed)
         {
-            if (this.notificationPopup.activeInHierarchy)
+            if (this.notificationPopup.activeInHierarchy || this.duelEnded)
             {
                 return;
             }
@@ -162,6 +166,7 @@
 
             if (AllPokemonsDead(alivePlayerPokemons.Count))
             {
+                this.duelEnded = true;
                 GameData.currentEnemy = null;
                 ShowBattleResult("loss");
 
@@ -181,6 +186,7 @@
 
             if (AllPokemonsDead(aliveEnemyPokemons.Count))
             {
+                this.duelEnded = true;
                 GameData.npcs.Remove(GameData.currentEnemy);
                 GameData.currentEnemy = null;
                 ShowBattleResult("win");
