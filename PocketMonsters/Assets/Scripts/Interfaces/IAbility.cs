@@ -6,7 +6,6 @@
     public interface IAbility
     {
         int AbilityPower { get; }
-
         AbilityType Type { get; }
     }
 }

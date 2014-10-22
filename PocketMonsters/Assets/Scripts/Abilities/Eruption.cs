@@ -16,7 +16,6 @@
         public Eruption()
             : base(EruptionDamage, AbilityType.Earth, EruptionHitChance, EruptionBaseCooldown,
             EruptionCurrentCooldown, EruptionHitMessage, EruptionMissMessage)
-        {
-        }
+        { }
     }
 }

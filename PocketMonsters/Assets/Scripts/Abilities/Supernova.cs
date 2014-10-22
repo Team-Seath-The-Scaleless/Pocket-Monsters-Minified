@@ -15,7 +15,6 @@
         public SuperNova()
             : base(SuperNovaDamage, AbilityType.Lightning, SuperNovaHitChance, SuperNovaBaseCooldown,
             SuperNovaCurrentCooldown, SuperNovaHitMessage, SuperNovaMissMessage)
-        {
-        }
+        { }
     }
 }

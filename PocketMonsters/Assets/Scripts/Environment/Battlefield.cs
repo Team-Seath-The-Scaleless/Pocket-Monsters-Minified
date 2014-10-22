@@ -1,7 +1,7 @@
 ﻿namespace Environment
 {
+    using UnityEngine;
     using System.Collections;
-    using System.Collections.Generic;
     using System.Linq;
 
     using Scripts;
@@ -9,8 +9,7 @@
     using Creatures;
     using Interfaces;
     using Pokemons;
-
-    using UnityEngine;
+    using System.Collections.Generic;
 
     public class Battlefield : MonoBehaviour
     {
@@ -44,7 +43,7 @@
         private bool enemyTurn;
         private bool enemyUsedAbility;
 
-        public void Start()
+        void Start()
         {
             this.randomNumberGenerator = new System.Random();
             this.playerTurn = true;
@@ -53,7 +52,7 @@
             EnemySelectPokemon();
         }
 
-        public void Update()
+        void Update()
         {
             if (this.playerTurn && this.actionResultLabel.gameObject.activeInHierarchy)
             {
@@ -87,7 +86,6 @@
         {
             if (this.notificationPopup.activeInHierarchy)
             {
-                Debug.Log("NE MOJE");
                 return;
             }
 
@@ -156,22 +154,7 @@
                 UpdateEnemyStats();
             }
         }
-
-        public void EnableButtons()
-        {
-            GameObject buttonsContainer = this.firstSpecialButton.transform.parent.gameObject;
-
-            foreach (Transform button in buttonsContainer.transform)
-            {
-                button.GetComponent<BoxCollider2D>().enabled = true;
-            }
-        }
-
-        public void BackToWorld()
-        {
-            Application.LoadLevel("MainWorld");
-        }
-
+        
         private void PlayerSelectPokemon() 
         {
             var alivePlayerPokemons = GameData.player.Pokemons.Where(p => p.IsAlive).ToList();
@@ -239,8 +222,10 @@
             {
                 return true;
             }
-            
-            return false;
+            else
+            {
+                return false;
+            }
         }
 
         private void ShowNotification()
@@ -253,6 +238,16 @@
         {
             this.actionResultLabel.gameObject.SetActive(true);
             this.actionResultLabel.text = resultToShow;
+        }
+
+        public void EnableButtons()
+        {
+            GameObject buttonsContainer = this.firstSpecialButton.transform.parent.gameObject;
+
+            foreach (Transform button in buttonsContainer.transform)
+            {
+                button.GetComponent<BoxCollider2D>().enabled = true;
+            }
         }
 
         private void DisableButtons()
@@ -389,6 +384,11 @@
                 this.fightResultPopup.GetComponentInChildren<UILabel>().text =
                     "You lost. Don't forget to get your revenge next time. Click me to get back to the world.";
             }
+        }
+
+        public void BackToWorld()
+        {
+            Application.LoadLevel("MainWorld");
         }
     }
 }

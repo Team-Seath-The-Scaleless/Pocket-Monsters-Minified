@@ -15,7 +15,6 @@
         public Thundershock()
             : base(ThundershockDamage, AbilityType.Lightning, ThundershockHitChance, ThundershockBaseCooldown,
             ThundershockCurrentCooldown, ThundershockHitMessage, ThundershockMissMessage)
-        {
-        }
+        { }
     }
 }

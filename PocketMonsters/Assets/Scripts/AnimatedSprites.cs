@@ -5,10 +5,10 @@
 
     public class AnimatedSprites : MonoBehaviour
     {
-        // Here you can place the number of columns of your sheet.
+        //Here you can place the number of columns of your sheet.
         public int uvAnimationTileX = 0;
 
-        // Here you can place the number of rows of your sheet.
+        //Here you can place the number of rows of your sheet.
         public int uvAnimationTileY = 0;
         public float framesPerSecond = 10.0f;
 
@@ -17,20 +17,20 @@
         
         public void Update()
         {
-            // Calculate index.
+            //Calculate index.
             int index = (int)(Time.time * framesPerSecond);
             
-            // Repeat when exhausting all frames.
+            //Repeat when exhausting all frames.
             index = index % (rowImages * 1);
 
-            // Size of every tile.
+            //Size of every tile.
             Vector2 size = new Vector2((1.0f / uvAnimationTileX), (1.0f / uvAnimationTileY));
 
-            // Split into horizontal and vertical index.
+            //Split into horizontal and vertical index.
             float uIndex = index % uvAnimationTileX;
             //float vIndex = index / uvAnimationTileX;
 
-            // Build offset.
+            //Build offset.
             //Vector2 offset = new Vector2(uIndex * size.x, 1.0f - size.y - vIndex * size.y);
             Vector2 offset = new Vector2(uIndex * size.x, offsetY);
 

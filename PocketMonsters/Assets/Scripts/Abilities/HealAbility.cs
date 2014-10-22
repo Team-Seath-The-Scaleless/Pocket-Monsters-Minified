@@ -1,14 +1,17 @@
-﻿namespace Abilities
-{
-    using Interfaces;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Interfaces;
 
-    public abstract class HealAbility : SpecialAbility, IHealingAbility
+namespace Abilities
+{
+	public abstract class HealAbility : SpecialAbility, IHealingAbility
     {
-         protected HealAbility(int abilityPower, AbilityType type, int hitChance,
+         public HealAbility(int abilityPower, AbilityType type, int hitChance,
             int baseCooldown, int currentCooldown, string hitMsg, string missMsg)
             : base(abilityPower, type, hitChance, baseCooldown, currentCooldown, hitMsg, missMsg)
-         { 
-         }
+        { }
         
          public void Heal(IPokemon target)
          {

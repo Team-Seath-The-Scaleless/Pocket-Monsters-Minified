@@ -5,8 +5,6 @@
         Fire,
         Frost,
         Earth,
-        Lightning,
-        Water,
-        Air
+        Lightning
     }
 }

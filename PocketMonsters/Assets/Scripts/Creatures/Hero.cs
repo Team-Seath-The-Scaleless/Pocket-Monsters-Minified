@@ -261,21 +261,26 @@
             }
         }
 
-        public void HideInteractionLabel()
-        {
-            this.interactionPanel.SetActive(false);
-        }
-
         private void ShowInteractionLabel()
         {
             this.interactionPanel.SetActive(true);
             this.interactionPanel.GetComponentInChildren<TextMesh>().text = "Press Spacebar to Talk";
         }
 
+        public void HideInteractionLabel()
+        {
+            this.interactionPanel.SetActive(false);
+        }
+        
         private void CheckForNearbyNpcs()
         {
             if (this.foundNpc != null)
             {
+                if (this.foundNpc.NpcObject.transform.Find("ChatBubble").gameObject.activeInHierarchy)
+                {
+                    this.foundNpc.NpcObject.transform.Find("ChatBubble").gameObject.SetActive(false);
+                }
+
                 this.foundNpc = null;                
             }
 
@@ -305,7 +310,6 @@
                     }
                     else if (this.foundNpc.GetType().BaseType == typeof(EnemyNpc))
                     {
-                        Debug.Log(this.foundNpc);
                         ((EnemyNpc)this.foundNpc).StopTalking();
                     }
 

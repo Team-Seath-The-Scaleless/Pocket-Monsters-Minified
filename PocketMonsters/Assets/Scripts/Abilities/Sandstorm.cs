@@ -15,7 +15,6 @@
         public SandStorm()
             : base(SandStormDamage, AbilityType.Earth, SandStormHitChance, SandStormBaseCooldown,
             SandStormCurrentCooldown, SandStormHitMessage, SandStormMissMessage)
-        { 
-        }
+        { }
     }
 }

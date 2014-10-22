@@ -1,7 +1,6 @@
 ﻿namespace Pokemons
 {
     using System.Collections.Generic;
-
     using Abilities;
     using Interfaces;
 

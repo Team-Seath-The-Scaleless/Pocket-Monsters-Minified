@@ -15,7 +15,6 @@
         public Aftershock()
             : base(AftershockDamage, AbilityType.Earth, AftershockHitChance,
             AftershockBaseCooldown, AftershockCurrentCooldown, AftershockHitMessage, AftershockMissMessage)
-        {
-        }
+        { }
     }
 }

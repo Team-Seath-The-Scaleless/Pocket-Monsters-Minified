@@ -10,7 +10,7 @@
     {
         private readonly string[] defaultDialogue = { "Here you are", "Let's fight" };
 
-        protected EnemyNpc(float posX, float posY, float posZ, IList<IPokemon> pokemons,
+        public EnemyNpc(float posX, float posY, float posZ, IList<IPokemon> pokemons,
             GameObject objectOnField, string prefabPath, string[] dialogueLines = null)
             : base(objectOnField, prefabPath, dialogueLines)
         {
@@ -28,7 +28,6 @@
         public IList<IPokemon> Pokemons { get; private set; }
 
         public abstract void Talk();
-
         public abstract void StopTalking();
     }
 }

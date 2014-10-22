@@ -15,7 +15,6 @@
         public Cataclysm()
             : base(CataclysmDamage, AbilityType.Earth, CataclysmHitChance, CataclysmBaseCooldown,
             CataclysmCurrentCooldown, CataclysmHitMessage, CataclysmMissMessage)
-        {  
-        }
+        { }
     }
 }

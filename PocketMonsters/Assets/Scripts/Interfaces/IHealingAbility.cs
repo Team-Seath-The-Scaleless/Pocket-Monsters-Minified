@@ -1,6 +1,8 @@
-﻿namespace Interfaces
+﻿using System;
+
+namespace Interfaces
 {
-    public interface IHealingAbility : IAbility
+    public interface IHealingAbility
     {
         void Heal(IPokemon target);
     }

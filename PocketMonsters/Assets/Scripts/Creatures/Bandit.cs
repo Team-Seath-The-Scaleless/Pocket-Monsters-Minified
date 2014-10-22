@@ -20,8 +20,7 @@
 
         public Bandit(float posX, float posY, float posZ, GameObject objectOnField, string[] dialogueLines = null)
             : base(posX, posY, posZ, BanditPokemons, objectOnField, NpcPrefabPath, dialogueLines)
-        { 
-        }
+        { }
 
         public override void Talk()
         {

@@ -96,6 +96,8 @@
                 firstApple.Draw(-5f, 1f, 7f, Apple.ItemPrefabPath);
                 GameData.items.Add(firstApple);
             }
+
+            
         }
     }
 }

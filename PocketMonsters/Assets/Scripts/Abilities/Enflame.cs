@@ -15,7 +15,6 @@
         public Enflame()
             : base(EnflameDamage, AbilityType.Fire, EnflameHitChance, EnflameBaseCooldown,
             EnflameCurrentCooldown, EnflameHitMessage, EnflameMissMessage)
-        { 
-        }
+        { }
     }
 }

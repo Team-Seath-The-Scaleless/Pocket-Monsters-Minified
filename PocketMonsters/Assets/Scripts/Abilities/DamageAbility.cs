@@ -1,14 +1,17 @@
-﻿namespace Abilities
-{
-    using Interfaces;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Interfaces;
 
+namespace Abilities
+{
     public abstract class DamageAbility : SpecialAbility, IDamageAbility
     {
-        protected DamageAbility(int abilityPower, AbilityType type, int hitChance,
+        public DamageAbility(int abilityPower, AbilityType type, int hitChance,
             int baseCooldown, int currentCooldown, string hitMsg, string missMsg)
             : base(abilityPower, type, hitChance, baseCooldown, currentCooldown, hitMsg, missMsg)
-        {  
-        }
+        { }
 
         public void Hit(IPokemon target)
         {
